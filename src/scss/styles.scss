@@ -6,6 +6,7 @@
 html,
 body {
   background-color: $mainBackgroundColor;
+  overflow-x: hidden;
 }
 .wrapper {
   max-width: 1200px;
@@ -14,7 +15,8 @@ body {
 
 header {
   position: relative;
-  overflow-x: hidden;
+
+  margin-bottom: 120px;
   .wrapper {
     max-width: 1089px;
 
@@ -42,7 +44,7 @@ header {
         position: absolute;
         top: 215px;
         letter-spacing: -0.04em;
-        left: 25%;
+        left: 37%;
       }
     }
     .stories-container {
@@ -80,7 +82,7 @@ header {
             &::before {
               @include before_after('../images/decor/img-2.svg', 97px, 102px);
               @include positionDecorIcon;
-              top: -66px;
+              top: -53px;
               left: -47px;
             }
           }
@@ -123,9 +125,13 @@ header {
     top: 85px;
     right: 28px;
 
-    // &::after {
-    //   @include before_after('../images/decor/canvas.png', 700px);
-    // }
+    &::after {
+      @include before_after('../images/decor/canvas.png', 700px);
+      @include positionDecorIcon;
+      mix-blend-mode: multiply;
+      bottom: -273px;
+      right: -227px;
+    }
 
     .date,
     .release {
@@ -146,7 +152,7 @@ header {
   &::before {
     @include before_after('../images/decor/red-snow.svg', 268px);
     @include positionDecorIcon;
-    left: -13px;
+    left: 25px;
     top: 193px;
   }
   &::after {
@@ -155,5 +161,89 @@ header {
     @include positionDecorIcon;
     right: -40px;
     bottom: 0px;
+  }
+}
+main {
+  section.cozy-vibe {
+    padding: 0 28px;
+    position: relative;
+
+    .left-side {
+      width: 55%;
+
+      .upper-content-container {
+        margin-bottom: 60px;
+        .title {
+          color: $primaryGreenColor;
+          font-size: 114px;
+          font-family: $greatVibesRegular;
+          line-height: 92%;
+          margin-bottom: 20px;
+
+          strong {
+            font-size: 48px;
+            font-family: $stolzlBold;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+          }
+        }
+        .text {
+          @include textStyle;
+          margin-bottom: 20px;
+
+          strong {
+            @include strongTextStyle;
+          }
+          em {
+            font-family: $greatVibesRegular;
+            font-size: 54px;
+          }
+        }
+      }
+      .low-content-container {
+        display: flex;
+        justify-content: end;
+        margin-bottom: 60px;
+
+        .picture {
+          mix-blend-mode: multiply;
+          position: absolute;
+          transform: rotate(15deg);
+          left: -122px;
+          bottom: 125px;
+        }
+        .text-container {
+          width: 60%;
+
+          .text {
+            @include textStyle;
+            margin-bottom: 20px;
+
+            strong {
+              @include strongTextStyle;
+            }
+            em {
+              font-family: $greatVibesRegular;
+              font-size: 45px;
+            }
+          }
+        }
+      }
+      .title {
+        font-size: 48px;
+        line-height: 94%;
+        letter-spacing: -0.04em;
+        color: #003619;
+        font-family: $stolzlBold;
+      }
+    }
+    .right-side {
+      .picture {
+        mix-blend-mode: multiply;
+        position: absolute;
+        top: -275px;
+        right: -408px;
+      }
+    }
   }
 }

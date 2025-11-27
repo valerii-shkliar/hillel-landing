@@ -23,6 +23,19 @@ $HiraKaku: 'Hira Kaku', 'sans serif';
   }
 }
 
+@mixin textStyle {
+  color: #003619;
+  font-family: $stolzlRegular;
+  font-size: 32px;
+  line-height: 120%;
+}
+@mixin strongTextStyle {
+  color: #003619;
+  font-family: $stolzlBold;
+  font-size: 32px;
+  line-height: 120%;
+}
+
 @mixin positionDecorIcon {
   position: absolute;
   z-index: 100;

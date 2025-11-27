@@ -152,15 +152,14 @@ legend {
 }
 @font-face {
   font-family: "Hira Kaku";
-  src: url("./../fonts/hira-kaku/HiraKakuStdN-W8-AlphaNum.eot");
-  src: url("./../fonts/hira-kaku/HiraKakuStdN-W8-AlphaNum.eot?#iefix") format("embedded-opentype"), url("./../fonts/hira-kaku/HiraKakuStdN-W8-AlphaNum.woff2") format("woff2"), url("./../fonts/hira-kaku/HiraKakuStdN-W8-AlphaNum.woff") format("woff"), url("./../fonts/hira-kaku/HiraKakuStdN-W8-AlphaNum.ttf") format("truetype"), url("./../fonts/hira-kaku/HiraKakuStdN-W8-AlphaNum.svg#HiraKakuStdN-W8-AlphaNum") format("svg");
+  src: url("./../fonts/hira-kaku/Hiragino-Kaku-Gothic-Std-W8.otf");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 html,
 body {
   background-color: #f3e7cd;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -170,7 +169,7 @@ body {
 
 header {
   position: relative;
-  overflow-x: hidden;
+  margin-bottom: 120px;
 }
 header .wrapper {
   max-width: 1089px;
@@ -201,7 +200,7 @@ header .wrapper .title::after {
   position: absolute;
   top: 215px;
   letter-spacing: -0.04em;
-  left: 25%;
+  left: 37%;
 }
 header .wrapper .stories-container {
   display: flex;
@@ -247,7 +246,7 @@ header .wrapper .stories-container li.story:nth-child(2) .story-text::before {
   background-image: url("../images/decor/img-2.svg");
   position: absolute;
   z-index: 100;
-  top: -66px;
+  top: -53px;
   left: -47px;
 }
 header .wrapper .stories-container li.story:nth-child(3) .story-text::before {
@@ -294,6 +293,20 @@ header .release-caption {
   top: 85px;
   right: 28px;
 }
+header .release-caption::after {
+  content: "";
+  display: inline-block;
+  background-position: center;
+  background-size: contain;
+  width: 700px;
+  height: 700px;
+  background-image: url("../images/decor/canvas.png");
+  position: absolute;
+  z-index: 100;
+  mix-blend-mode: multiply;
+  bottom: -273px;
+  right: -227px;
+}
 header .release-caption .date,
 header .release-caption .release {
   color: #015f2d;
@@ -319,7 +332,7 @@ header::before {
   background-image: url("../images/decor/red-snow.svg");
   position: absolute;
   z-index: 100;
-  left: -13px;
+  left: 25px;
   top: 193px;
 }
 header::after {
@@ -334,4 +347,90 @@ header::after {
   z-index: 100;
   right: -40px;
   bottom: 0px;
+}
+
+main section.cozy-vibe {
+  padding: 0 28px;
+  position: relative;
+}
+main section.cozy-vibe .left-side {
+  width: 55%;
+}
+main section.cozy-vibe .left-side .upper-content-container {
+  margin-bottom: 60px;
+}
+main section.cozy-vibe .left-side .upper-content-container .title {
+  color: #015f2d;
+  font-size: 114px;
+  font-family: "Great Vibes Regular", "sans serif";
+  line-height: 92%;
+  margin-bottom: 20px;
+}
+main section.cozy-vibe .left-side .upper-content-container .title strong {
+  font-size: 48px;
+  font-family: "Stolzl Bold", "sans serif";
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+main section.cozy-vibe .left-side .upper-content-container .text {
+  color: #003619;
+  font-family: "Stolzl Regular", "sans serif";
+  font-size: 32px;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+main section.cozy-vibe .left-side .upper-content-container .text strong {
+  color: #003619;
+  font-family: "Stolzl Bold", "sans serif";
+  font-size: 32px;
+  line-height: 120%;
+}
+main section.cozy-vibe .left-side .upper-content-container .text em {
+  font-family: "Great Vibes Regular", "sans serif";
+  font-size: 54px;
+}
+main section.cozy-vibe .left-side .low-content-container {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 60px;
+}
+main section.cozy-vibe .left-side .low-content-container .picture {
+  mix-blend-mode: multiply;
+  position: absolute;
+  transform: rotate(15deg);
+  left: -122px;
+  bottom: 125px;
+}
+main section.cozy-vibe .left-side .low-content-container .text-container {
+  width: 60%;
+}
+main section.cozy-vibe .left-side .low-content-container .text-container .text {
+  color: #003619;
+  font-family: "Stolzl Regular", "sans serif";
+  font-size: 32px;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+main section.cozy-vibe .left-side .low-content-container .text-container .text strong {
+  color: #003619;
+  font-family: "Stolzl Bold", "sans serif";
+  font-size: 32px;
+  line-height: 120%;
+}
+main section.cozy-vibe .left-side .low-content-container .text-container .text em {
+  font-family: "Great Vibes Regular", "sans serif";
+  font-size: 45px;
+}
+main section.cozy-vibe .left-side .title {
+  font-size: 48px;
+  line-height: 94%;
+  letter-spacing: -0.04em;
+  color: #003619;
+  font-family: "Stolzl Bold", "sans serif";
+}
+main section.cozy-vibe .right-side .picture {
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: -275px;
+  right: -408px;
 }/*# sourceMappingURL=styles.css.map */
