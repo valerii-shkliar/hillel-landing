@@ -1,0 +1,159 @@
+@use 'reset' as *;
+@use 'fonts' as *;
+@use 'variables' as *;
+// @use 'mobile_menu' as *;
+
+html,
+body {
+  background-color: $mainBackgroundColor;
+}
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  position: relative;
+  overflow-x: hidden;
+  .wrapper {
+    max-width: 1089px;
+
+    .title {
+      font-size: 276px;
+      color: $primaryGreenColor;
+      font-family: $HiraKaku;
+      line-height: 92%;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+
+      &::after {
+        content: 'IT School';
+        display: inline-block;
+        @include flex_AlignBooth(center);
+        color: $primaryGreenColor;
+        border-radius: 50%;
+        background-color: #fff6e3;
+        border: 3px solid $primaryGreenColor;
+        font-size: 54px;
+        font-family: $stolzlBold;
+        line-height: 92%;
+        padding: 28px;
+        transform: rotate(-6deg);
+        position: absolute;
+        top: 215px;
+        letter-spacing: -0.04em;
+        left: 25%;
+      }
+    }
+    .stories-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      li.story {
+        max-width: 187px;
+
+        .story-text {
+          color: $primaryDarkColor;
+          font-family: $stolzlRegular;
+          line-height: 110%;
+          font-size: 24px;
+          position: relative;
+
+          strong {
+            font-family: $stolzlBold;
+          }
+        }
+        &:nth-child(1) {
+          .story-text {
+            &::before {
+              @include before_after('../images/decor/img-1.svg', 119px);
+              @include positionDecorIcon;
+              right: -13px;
+              bottom: -75px;
+            }
+          }
+        }
+        &:nth-child(2) {
+          .story-text {
+            text-indent: 40px;
+            &::before {
+              @include before_after('../images/decor/img-2.svg', 97px, 102px);
+              @include positionDecorIcon;
+              top: -66px;
+              left: -47px;
+            }
+          }
+        }
+        &:nth-child(3) {
+          .story-text {
+            &::before {
+              @include before_after('../images/decor/img-3.svg', 96px, 93px);
+              @include positionDecorIcon;
+              top: 25px;
+              right: -27px;
+            }
+          }
+        }
+        &:nth-child(4) {
+          .story-text {
+            &::before {
+              @include before_after('../images/decor/img-4.svg', 80px, 87px);
+              @include positionDecorIcon;
+              bottom: -69px;
+              right: -1px;
+            }
+          }
+        }
+        &:nth-child(5) {
+          .story-text {
+            &::before {
+              @include before_after('../images/decor/img-5.svg', 130px, 124px);
+              @include positionDecorIcon;
+              top: -38px;
+              right: -107px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .release-caption {
+    position: absolute;
+    top: 85px;
+    right: 28px;
+
+    // &::after {
+    //   @include before_after('../images/decor/canvas.png', 700px);
+    // }
+
+    .date,
+    .release {
+      color: $primaryGreenColor;
+    }
+    .date {
+      font-family: $greatVibesRegular;
+      font-size: 40px;
+      line-height: 92%;
+    }
+    .release {
+      font-family: $stolzlBold;
+      line-height: 92%;
+      letter-spacing: -0.04em;
+      font-size: 48px;
+    }
+  }
+  &::before {
+    @include before_after('../images/decor/red-snow.svg', 268px);
+    @include positionDecorIcon;
+    left: -13px;
+    top: 193px;
+  }
+  &::after {
+    @include before_after('../images/decor/red-snow.svg', 133px);
+
+    @include positionDecorIcon;
+    right: -40px;
+    bottom: 0px;
+  }
+}

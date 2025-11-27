@@ -1,0 +1,118 @@
+$mainBackgroundColor: #f3e7cd;
+$primaryGreenColor: #015f2d;
+$primaryDarkColor: #003619;
+
+$stolzlBold: 'Stolzl Bold', 'sans serif';
+$stolzlBook: 'Stolzl Book', 'sans serif';
+$stolzlLight: 'Stolzl Light', 'sans serif';
+$stolzlMedium: 'Stolzl Medium', 'sans serif';
+$stolzlRegular: 'Stolzl Regular', 'sans serif';
+$stolzlThin: 'Stolzl Thin', 'sans serif';
+$greatVibesRegular: 'Great Vibes Regular', 'sans serif';
+$HiraKaku: 'Hira Kaku', 'sans serif';
+
+@mixin before_after($background-image: false, $width, $height: $width) {
+  content: '';
+  display: inline-block;
+  background-position: center;
+  background-size: contain;
+  width: $width;
+  height: $height;
+  @if $background-image {
+    background-image: url($background-image);
+  }
+}
+
+@mixin positionDecorIcon {
+  position: absolute;
+  z-index: 100;
+}
+
+@mixin flex_verticalAlign($position) {
+  display: flex;
+  align-items: $position;
+}
+@mixin flex_horizonAlign($position) {
+  display: flex;
+  justify-content: $position;
+}
+@mixin flex_AlignBooth($positionX, $positionY: $positionX) {
+  display: flex;
+  justify-content: $positionX;
+  align-items: $positionY;
+}
+
+@mixin log-in-btn() {
+  font-family: $primaryFontBold;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #fff;
+  background-color: $mainColor;
+  border-radius: 6px;
+  padding: 10px 26px;
+  border: 1px solid transparent;
+  transition: 0.6s;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-family: $primaryFontMedium;
+  padding: 8px 17px;
+
+  .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    stroke: #fff;
+    margin-right: 4px;
+    transition: 0.6s;
+  }
+  &:hover {
+    border: 1px solid $mainColor;
+    background-color: #eee;
+    color: $mainColor;
+
+    .icon {
+      stroke: $mainColor;
+    }
+  }
+}
+@mixin green-btn {
+  font-family: $primaryFontBold;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #fff;
+  background-color: $mainColor;
+  border-radius: 6px;
+  padding: 10px 26px;
+  border: 1px solid transparent;
+  transition: 0.6s;
+}
+@mixin green-btn-hover {
+  border: 1px solid $mainColor;
+  background-color: #eee;
+  color: $mainColor;
+}
+@mixin owl-nav {
+  display: block;
+
+  button {
+    position: absolute;
+    bottom: 171px;
+    width: 18px;
+    height: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:active {
+      stroke: $mainColor;
+    }
+  }
+  button.owl-prev {
+    background-image: url('../images/icons/arrow-left-slider.svg');
+  }
+  button.owl-next {
+    background-image: url('../images/icons/arrow-right-slider.svg');
+  }
+}
