@@ -1,7 +1,6 @@
 @use 'reset' as *;
 @use 'fonts' as *;
 @use 'variables' as *;
-// @use 'mobile_menu' as *;
 
 html,
 body {
@@ -30,20 +29,8 @@ header {
 
       &::after {
         content: 'IT School';
-        display: inline-block;
-        @include flex_AlignBooth(center);
-        color: $primaryGreenColor;
-        border-radius: 50%;
-        background-color: #fff6e3;
-        border: 3px solid $primaryGreenColor;
-        font-size: 54px;
-        font-family: $stolzlBold;
-        line-height: 92%;
-        padding: 28px;
-        transform: rotate(-6deg);
-        position: absolute;
+        @include ellipseLabel($primaryGreenColor);
         top: 215px;
-        letter-spacing: -0.04em;
         left: 37%;
       }
     }
@@ -167,6 +154,7 @@ main {
   section.cozy-vibe {
     padding: 0 28px;
     position: relative;
+    margin-bottom: 300px;
 
     .left-side {
       width: 55%;
@@ -243,6 +231,113 @@ main {
         position: absolute;
         top: -275px;
         right: -408px;
+      }
+    }
+  }
+  section.first-history {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+
+    &::before {
+      @include before_after('../images/decor/background-paper.png', 1303px, 894px);
+      @include positionDecorIcon;
+      mix-blend-mode: multiply;
+      left: 15%;
+      top: -8%;
+    }
+    .advice-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      ul {
+        li {
+          .title {
+            position: relative;
+            &::before {
+              @include before_after('../images/decor/christmas-tree.svg', 219px, 403px);
+              @include positionDecorIcon;
+              mix-blend-mode: multiply;
+              top: -368px;
+            }
+          }
+        }
+      }
+
+      .picture-container {
+        position: relative;
+        left: -80px;
+
+        .picture {
+          mix-blend-mode: multiply;
+          transform: rotate(-6deg);
+        }
+        &::after {
+          @include before_after('../images/decor/stamp.svg', 177px, 151px);
+          @include positionDecorIcon;
+          mix-blend-mode: multiply;
+          top: 40px;
+          right: 0px;
+        }
+      }
+      @extend .advice-container-class;
+    }
+
+    .main-content-container {
+      .title {
+        color: #003619;
+        font-family: $stolzlBold;
+        line-height: 94%;
+        letter-spacing: 0.04em;
+        font-size: 48px;
+        position: relative;
+        margin-bottom: 40px;
+
+        &::before {
+          content: 'історія №1';
+          text-transform: uppercase;
+          @include ellipseLabel($redColor);
+          top: -100%;
+          left: -6%;
+        }
+      }
+      .qoute {
+        line-height: 120%;
+        font-size: 32px;
+        color: #003619;
+        font-family: $sourceCodePro;
+        margin-bottom: 40px;
+      }
+      .text-container {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .text {
+          font-family: $stolzlRegular;
+          color: #003619;
+          font-size: 32px;
+          line-height: 120%;
+          margin-bottom: 40px;
+
+          strong {
+            font-family: $stolzlBold;
+          }
+        }
+      }
+    }
+    .about-container {
+      @extend .about-container-class;
+
+      .picture-container {
+        .picture {
+          mix-blend-mode: multiply;
+          transform: rotate(10deg);
+          position: absolute;
+          left: -162px;
+          bottom: -80%;
+        }
       }
     }
   }

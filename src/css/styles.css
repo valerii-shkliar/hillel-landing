@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0px;
   margin: 0px;
@@ -156,6 +157,154 @@ legend {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("./../fonts/source-code-pro/SourceCodePro-SemiBold.eot");
+  src: url("./../fonts/source-code-pro/SourceCodePro-SemiBold.eot?#iefix") format("embedded-opentype"), url("./../fonts/source-code-pro/SourceCodePro-SemiBold.woff2") format("woff2"), url("./../fonts/source-code-pro/SourceCodePro-SemiBold.woff") format("woff"), url("./../fonts/source-code-pro/SourceCodePro-SemiBold.ttf") format("truetype"), url("./../fonts/source-code-pro/SourceCodePro-SemiBold.svg#SourceCodePro-SemiBold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+.about-container-class, main section.first-history .about-container {
+  color: #fff6e3;
+  position: relative;
+  align-self: start;
+  padding: 90px 28px 20px;
+}
+.about-container-class ul::before, main section.first-history .about-container ul::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -5px;
+  width: 530px;
+  background-color: #015f2d;
+  transform: rotate(2deg);
+}
+.about-container-class ul li.item, main section.first-history .about-container ul li.item {
+  margin-bottom: 30px;
+}
+.about-container-class ul li.item .title, main section.first-history .about-container ul li.item .title {
+  font-size: 48px;
+  line-height: 94%;
+  letter-spacing: -0.04em;
+  font-family: "Stolzl Bold", "sans serif";
+  position: relative;
+}
+.about-container-class ul li.item, main section.first-history .about-container ul li.item {
+  display: flex;
+  gap: 40px;
+}
+.about-container-class ul li.item .text, main section.first-history .about-container ul li.item .text {
+  min-width: 297px;
+  margin-bottom: 30px;
+  line-height: 120%;
+  font-size: 24px;
+  font-family: "Stolzl Regular", "sans serif";
+  position: relative;
+}
+.about-container-class ul li.item .text strong, main section.first-history .about-container ul li.item .text strong {
+  font-family: "Stolzl Bold", "sans serif";
+}
+.about-container-class ul li.item::before, main section.first-history .about-container ul li.item::before {
+  display: inline-block;
+  font-family: "Great Vibes Regular", "sans serif";
+  font-size: 32px;
+  position: relative;
+}
+.about-container-class ul li.item:nth-of-type(1)::before, main section.first-history .about-container ul li.item:nth-of-type(1)::before {
+  content: "(00)";
+  opacity: 0;
+  visibility: hidden;
+}
+.about-container-class ul li.item:nth-of-type(2)::before, main section.first-history .about-container ul li.item:nth-of-type(2)::before {
+  content: "(01)";
+}
+.about-container-class ul li.item:nth-of-type(3)::before, main section.first-history .about-container ul li.item:nth-of-type(3)::before {
+  content: "(02)";
+}
+.about-container-class ul li.item:nth-of-type(4)::before, main section.first-history .about-container ul li.item:nth-of-type(4)::before {
+  content: "(03)";
+}
+.about-container-class ul li.item:nth-of-type(5)::before, main section.first-history .about-container ul li.item:nth-of-type(5)::before {
+  content: "(04)";
+}
+.about-container-class ul li.item:nth-of-type(6)::before, main section.first-history .about-container ul li.item:nth-of-type(6)::before {
+  content: "(05)";
+}
+
+.advice-container-class, main section.first-history .advice-container {
+  color: #003619;
+  position: relative;
+  padding: 30px 28px 10px;
+}
+.advice-container-class ul, main section.first-history .advice-container ul {
+  position: relative;
+}
+.advice-container-class ul::before, main section.first-history .advice-container ul::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: -40px;
+  bottom: 0;
+  right: -5px;
+  width: 530px;
+  background-color: #fff6e3;
+  transform: rotate(2deg);
+}
+.advice-container-class ul li.item, main section.first-history .advice-container ul li.item {
+  margin-bottom: 30px;
+}
+.advice-container-class ul li.item .title, main section.first-history .advice-container ul li.item .title {
+  font-size: 40px;
+  line-height: 94%;
+  letter-spacing: -0.04em;
+  font-family: "Stolzl Bold", "sans serif";
+  position: relative;
+}
+.advice-container-class ul li.item, main section.first-history .advice-container ul li.item {
+  display: flex;
+  gap: 40px;
+}
+.advice-container-class ul li.item .text, main section.first-history .advice-container ul li.item .text {
+  margin-bottom: 30px;
+  line-height: 120%;
+  font-size: 20px;
+  font-family: "Stolzl Regular", "sans serif";
+  min-width: 297px;
+  position: relative;
+}
+.advice-container-class ul li.item .text strong, main section.first-history .advice-container ul li.item .text strong {
+  font-family: "Stolzl Bold", "sans serif";
+}
+.advice-container-class ul li.item::before, main section.first-history .advice-container ul li.item::before {
+  display: inline-block;
+  font-family: "Great Vibes Regular", "sans serif";
+  font-size: 32px;
+  position: relative;
+}
+.advice-container-class ul li.item:nth-of-type(1)::before, main section.first-history .advice-container ul li.item:nth-of-type(1)::before {
+  content: "(00)";
+  opacity: 0;
+  visibility: hidden;
+}
+.advice-container-class ul li.item:nth-of-type(2)::before, main section.first-history .advice-container ul li.item:nth-of-type(2)::before {
+  content: "(01)";
+}
+.advice-container-class ul li.item:nth-of-type(3)::before, main section.first-history .advice-container ul li.item:nth-of-type(3)::before {
+  content: "(02)";
+}
+.advice-container-class ul li.item:nth-of-type(4)::before, main section.first-history .advice-container ul li.item:nth-of-type(4)::before {
+  content: "(03)";
+}
+.advice-container-class ul li.item:nth-of-type(5)::before, main section.first-history .advice-container ul li.item:nth-of-type(5)::before {
+  content: "(04)";
+}
+.advice-container-class ul li.item:nth-of-type(6)::before, main section.first-history .advice-container ul li.item:nth-of-type(6)::before {
+  content: "(05)";
+}
+
 html,
 body {
   background-color: #f3e7cd;
@@ -188,9 +337,9 @@ header .wrapper .title::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #015f2d;
   border-radius: 50%;
   background-color: #fff6e3;
+  color: #015f2d;
   border: 3px solid #015f2d;
   font-size: 54px;
   font-family: "Stolzl Bold", "sans serif";
@@ -198,8 +347,8 @@ header .wrapper .title::after {
   padding: 28px;
   transform: rotate(-6deg);
   position: absolute;
-  top: 215px;
   letter-spacing: -0.04em;
+  top: 215px;
   left: 37%;
 }
 header .wrapper .stories-container {
@@ -352,6 +501,7 @@ header::after {
 main section.cozy-vibe {
   padding: 0 28px;
   position: relative;
+  margin-bottom: 300px;
 }
 main section.cozy-vibe .left-side {
   width: 55%;
@@ -433,4 +583,125 @@ main section.cozy-vibe .right-side .picture {
   position: absolute;
   top: -275px;
   right: -408px;
+}
+main section.first-history {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+}
+main section.first-history::before {
+  content: "";
+  display: inline-block;
+  background-position: center;
+  background-size: contain;
+  width: 1303px;
+  height: 894px;
+  background-image: url("../images/decor/background-paper.png");
+  position: absolute;
+  z-index: 100;
+  mix-blend-mode: multiply;
+  left: 15%;
+  top: -8%;
+}
+main section.first-history .advice-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main section.first-history .advice-container ul li .title {
+  position: relative;
+}
+main section.first-history .advice-container ul li .title::before {
+  content: "";
+  display: inline-block;
+  background-position: center;
+  background-size: contain;
+  width: 219px;
+  height: 403px;
+  background-image: url("../images/decor/christmas-tree.svg");
+  position: absolute;
+  z-index: 100;
+  mix-blend-mode: multiply;
+  top: -368px;
+}
+main section.first-history .advice-container .picture-container {
+  position: relative;
+  left: -80px;
+}
+main section.first-history .advice-container .picture-container .picture {
+  mix-blend-mode: multiply;
+  transform: rotate(-6deg);
+}
+main section.first-history .advice-container .picture-container::after {
+  content: "";
+  display: inline-block;
+  background-position: center;
+  background-size: contain;
+  width: 177px;
+  height: 151px;
+  background-image: url("../images/decor/stamp.svg");
+  position: absolute;
+  z-index: 100;
+  mix-blend-mode: multiply;
+  top: 40px;
+  right: 0px;
+}
+main section.first-history .main-content-container .title {
+  color: #003619;
+  font-family: "Stolzl Bold", "sans serif";
+  line-height: 94%;
+  letter-spacing: 0.04em;
+  font-size: 48px;
+  position: relative;
+  margin-bottom: 40px;
+}
+main section.first-history .main-content-container .title::before {
+  content: "історія №1";
+  text-transform: uppercase;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #fff6e3;
+  color: #c70b01;
+  border: 3px solid #c70b01;
+  font-size: 54px;
+  font-family: "Stolzl Bold", "sans serif";
+  line-height: 92%;
+  padding: 28px;
+  transform: rotate(-6deg);
+  position: absolute;
+  letter-spacing: -0.04em;
+  top: -100%;
+  left: -6%;
+}
+main section.first-history .main-content-container .qoute {
+  line-height: 120%;
+  font-size: 32px;
+  color: #003619;
+  font-family: "Source Code Pro", "sans serif";
+  margin-bottom: 40px;
+}
+main section.first-history .main-content-container .text-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+main section.first-history .main-content-container .text-container .text {
+  font-family: "Stolzl Regular", "sans serif";
+  color: #003619;
+  font-size: 32px;
+  line-height: 120%;
+  margin-bottom: 40px;
+}
+main section.first-history .main-content-container .text-container .text strong {
+  font-family: "Stolzl Bold", "sans serif";
+}
+main section.first-history .about-container .picture-container .picture {
+  mix-blend-mode: multiply;
+  transform: rotate(10deg);
+  position: absolute;
+  left: -162px;
+  bottom: -80%;
 }/*# sourceMappingURL=styles.css.map */
