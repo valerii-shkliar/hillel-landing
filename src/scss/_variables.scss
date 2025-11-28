@@ -19,6 +19,7 @@ $sourceCodePro: 'Source Code Pro', 'sans serif';
   content: '';
   display: inline-block;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
   width: $width;
   height: $height;
@@ -57,6 +58,22 @@ $sourceCodePro: 'Source Code Pro', 'sans serif';
   display: flex;
   justify-content: $positionX;
   align-items: $positionY;
+}
+
+@mixin alignPositionElement {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin numberCardAdventCalendar($number, $fontSize, $color) {
+  content: $number;
+  position: absolute;
+  display: inline-block;
+  font-size: $fontSize;
+  font-family: $HiraKaku;
+  color: $color;
+  letter-spacing: -0.04em;
 }
 
 @mixin ellipseLabel($color) {

@@ -5,14 +5,14 @@ const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 
-// function copyJS() {
-//   return src('./src/js/*.js')
-//     .pipe(sourcemaps.init())
-//     .pipe(concat('all.min.js'))
-//     .pipe(uglify())
-//     .pipe(sourcemaps.write())
-//     .pipe(dest('./dist/js/'));
-// }
+function copyJS() {
+  return src('./src/js/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(concat('all.min.js'))
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(dest('./dist/js/'));
+}
 // function copyLibraryJS() {
 //   return src('./src/js/owl-carousel/*.js').pipe(dest('./dist/js/owl-carousel/'));
 // }
@@ -62,7 +62,7 @@ function build() {
     // copySVG,
     // copySprites,
     copyFont,
-    // copyJS,
+    copyJS,
     copyCSS,
     // copyLibraryJS,
 
@@ -78,7 +78,7 @@ function start(done) {
   watch('./src/html/*.html', series(copyHTML, reload));
   watch('./src/scss/**/*.scss', series(copyCSS, reload));
   // watch('./src/js/owl-carousel/*.js', series(copyLibraryJS, reload));
-  // watch('./src/js/*.js', series(copyJS, reload));
+  watch('./src/js/*.js', series(copyJS, reload));
   watch(
     [
       './src/images/**/*.png',
