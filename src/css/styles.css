@@ -165,13 +165,14 @@ legend {
   font-style: normal;
   font-display: swap;
 }
-.about-container-class, main section.first-history .about-container {
+.about-container-class, main section.first-history .about-container, main section.second-history .about-container {
   color: #fff6e3;
   position: relative;
   align-self: start;
   padding: 90px 28px 20px;
+  max-width: 400px;
 }
-.about-container-class ul::before, main section.first-history .about-container ul::before {
+.about-container-class ul::before, main section.first-history .about-container ul::before, main section.second-history .about-container ul::before {
   display: inline-block;
   content: "";
   position: absolute;
@@ -182,21 +183,21 @@ legend {
   background-color: #015f2d;
   transform: rotate(2deg);
 }
-.about-container-class ul li.item, main section.first-history .about-container ul li.item {
+.about-container-class ul li.item, main section.first-history .about-container ul li.item, main section.second-history .about-container ul li.item {
   margin-bottom: 30px;
 }
-.about-container-class ul li.item .title, main section.first-history .about-container ul li.item .title {
+.about-container-class ul li.item .title, main section.first-history .about-container ul li.item .title, main section.second-history .about-container ul li.item .title {
   font-size: 48px;
   line-height: 94%;
   letter-spacing: -0.04em;
   font-family: "Stolzl Bold", "sans serif";
   position: relative;
 }
-.about-container-class ul li.item, main section.first-history .about-container ul li.item {
+.about-container-class ul li.item, main section.first-history .about-container ul li.item, main section.second-history .about-container ul li.item {
   display: flex;
-  gap: 40px;
+  gap: 20px;
 }
-.about-container-class ul li.item .text, main section.first-history .about-container ul li.item .text {
+.about-container-class ul li.item .text, main section.first-history .about-container ul li.item .text, main section.second-history .about-container ul li.item .text {
   min-width: 297px;
   margin-bottom: 30px;
   line-height: 120%;
@@ -204,33 +205,33 @@ legend {
   font-family: "Stolzl Regular", "sans serif";
   position: relative;
 }
-.about-container-class ul li.item .text strong, main section.first-history .about-container ul li.item .text strong {
+.about-container-class ul li.item .text strong, main section.first-history .about-container ul li.item .text strong, main section.second-history .about-container ul li.item .text strong {
   font-family: "Stolzl Bold", "sans serif";
 }
-.about-container-class ul li.item::before, main section.first-history .about-container ul li.item::before {
+.about-container-class ul li.item::before, main section.first-history .about-container ul li.item::before, main section.second-history .about-container ul li.item::before {
   display: inline-block;
   font-family: "Great Vibes Regular", "sans serif";
   font-size: 32px;
   position: relative;
 }
-.about-container-class ul li.item:nth-of-type(1)::before, main section.first-history .about-container ul li.item:nth-of-type(1)::before {
+.about-container-class ul li.item:nth-of-type(1)::before, main section.first-history .about-container ul li.item:nth-of-type(1)::before, main section.second-history .about-container ul li.item:nth-of-type(1)::before {
   content: "(00)";
   opacity: 0;
   visibility: hidden;
 }
-.about-container-class ul li.item:nth-of-type(2)::before, main section.first-history .about-container ul li.item:nth-of-type(2)::before {
+.about-container-class ul li.item:nth-of-type(2)::before, main section.first-history .about-container ul li.item:nth-of-type(2)::before, main section.second-history .about-container ul li.item:nth-of-type(2)::before {
   content: "(01)";
 }
-.about-container-class ul li.item:nth-of-type(3)::before, main section.first-history .about-container ul li.item:nth-of-type(3)::before {
+.about-container-class ul li.item:nth-of-type(3)::before, main section.first-history .about-container ul li.item:nth-of-type(3)::before, main section.second-history .about-container ul li.item:nth-of-type(3)::before {
   content: "(02)";
 }
-.about-container-class ul li.item:nth-of-type(4)::before, main section.first-history .about-container ul li.item:nth-of-type(4)::before {
+.about-container-class ul li.item:nth-of-type(4)::before, main section.first-history .about-container ul li.item:nth-of-type(4)::before, main section.second-history .about-container ul li.item:nth-of-type(4)::before {
   content: "(03)";
 }
-.about-container-class ul li.item:nth-of-type(5)::before, main section.first-history .about-container ul li.item:nth-of-type(5)::before {
+.about-container-class ul li.item:nth-of-type(5)::before, main section.first-history .about-container ul li.item:nth-of-type(5)::before, main section.second-history .about-container ul li.item:nth-of-type(5)::before {
   content: "(04)";
 }
-.about-container-class ul li.item:nth-of-type(6)::before, main section.first-history .about-container ul li.item:nth-of-type(6)::before {
+.about-container-class ul li.item:nth-of-type(6)::before, main section.first-history .about-container ul li.item:nth-of-type(6)::before, main section.second-history .about-container ul li.item:nth-of-type(6)::before {
   content: "(05)";
 }
 
@@ -344,10 +345,11 @@ header .wrapper .title::after {
   font-size: 54px;
   font-family: "Stolzl Bold", "sans serif";
   line-height: 92%;
-  padding: 28px;
+  padding: 32px 28px;
   transform: rotate(-6deg);
   position: absolute;
   letter-spacing: -0.04em;
+  z-index: 100;
   top: 215px;
   left: 37%;
 }
@@ -589,6 +591,7 @@ main section.first-history {
   justify-content: space-between;
   gap: 40px;
   position: relative;
+  margin-bottom: 300px;
 }
 main section.first-history::before {
   content: "";
@@ -670,10 +673,11 @@ main section.first-history .main-content-container .title::before {
   font-size: 54px;
   font-family: "Stolzl Bold", "sans serif";
   line-height: 92%;
-  padding: 28px;
+  padding: 32px 28px;
   transform: rotate(-6deg);
   position: absolute;
   letter-spacing: -0.04em;
+  z-index: 100;
   top: -100%;
   left: -6%;
 }
@@ -704,4 +708,138 @@ main section.first-history .about-container .picture-container .picture {
   position: absolute;
   left: -162px;
   bottom: -80%;
+}
+main section.second-history {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+}
+main section.second-history::before {
+  content: "";
+  display: inline-block;
+  background-position: center;
+  background-size: contain;
+  width: 1303px;
+  height: 894px;
+  background-image: url("../images/decor/background-paper.png");
+  position: absolute;
+  z-index: 100;
+  mix-blend-mode: multiply;
+  left: 15%;
+  top: -8%;
+}
+main section.second-history .about-container ul::before {
+  right: -10px;
+  left: initial;
+}
+main section.second-history .about-container .picture-container {
+  position: absolute;
+  left: -46px;
+}
+main section.second-history .about-container .picture-container .picture {
+  mix-blend-mode: multiply;
+  transform: rotate(-10deg);
+}
+main section.second-history .main-content-container {
+  max-width: 970px;
+}
+main section.second-history .main-content-container .content-container:first-child .title::before {
+  content: "історія №2";
+  text-transform: uppercase;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #fff6e3;
+  color: #c70b01;
+  border: 3px solid #c70b01;
+  font-size: 54px;
+  font-family: "Stolzl Bold", "sans serif";
+  line-height: 92%;
+  padding: 32px 28px;
+  transform: rotate(-6deg);
+  position: absolute;
+  letter-spacing: -0.04em;
+  z-index: 100;
+  transform: rotate(7deg);
+  top: -141%;
+  right: -6%;
+}
+main section.second-history .main-content-container .content-container .title {
+  color: #003619;
+  font-family: "Stolzl Bold", "sans serif";
+  line-height: 94%;
+  letter-spacing: 0.04em;
+  font-size: 48px;
+  position: relative;
+  margin-bottom: 40px;
+}
+main section.second-history .main-content-container .content-container .qoute {
+  line-height: 120%;
+  font-size: 32px;
+  color: #003619;
+  font-family: "Source Code Pro", "sans serif";
+  margin-bottom: 40px;
+}
+main section.second-history .main-content-container .content-container .text-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+main section.second-history .main-content-container .content-container .text-container .text {
+  font-family: "Stolzl Regular", "sans serif";
+  color: #003619;
+  font-size: 32px;
+  line-height: 120%;
+  margin-bottom: 40px;
+}
+main section.second-history .main-content-container .content-container .text-container .text strong {
+  font-family: "Stolzl Bold", "sans serif";
+}
+main section.second-history .pictures-container {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 80px;
+}
+main section.second-history .pictures-container::after {
+  content: "";
+  display: inline-block;
+  background-position: center;
+  background-size: contain;
+  width: 274px;
+  height: 274px;
+  background-image: url("../images/decor/red-snow.svg");
+  position: absolute;
+  z-index: 100;
+  right: -4%;
+  bottom: 37%;
+}
+main section.second-history .pictures-container .picture-container {
+  position: relative;
+}
+main section.second-history .pictures-container .picture-container .picture {
+  mix-blend-mode: multiply;
+}
+main section.second-history .pictures-container .picture-container:nth-child(1) {
+  left: -22%;
+}
+main section.second-history .pictures-container .picture-container:nth-child(1) .picture {
+  transform: rotate(8deg);
+}
+main section.second-history .pictures-container .picture-container:nth-child(2) {
+  left: -6%;
+}
+main section.second-history .pictures-container .picture-container:nth-child(2) .picture {
+  transform: rotate(-13deg);
+}
+main section.second-history .pictures-container .picture-container:nth-child(3) {
+  margin-top: auto;
+  left: -6%;
+  bottom: 8%;
+}
+main section.second-history .pictures-container .picture-container:nth-child(3) .picture {
+  transform: rotate(8deg);
 }/*# sourceMappingURL=styles.css.map */

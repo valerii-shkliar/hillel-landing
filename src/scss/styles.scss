@@ -239,6 +239,7 @@ main {
     justify-content: space-between;
     gap: 40px;
     position: relative;
+    margin-bottom: 300px;
 
     &::before {
       @include before_after('../images/decor/background-paper.png', 1303px, 894px);
@@ -337,6 +338,138 @@ main {
           position: absolute;
           left: -162px;
           bottom: -80%;
+        }
+      }
+    }
+  }
+
+  section.second-history {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+
+    &::before {
+      @include before_after('../images/decor/background-paper.png', 1303px, 894px);
+      @include positionDecorIcon;
+      mix-blend-mode: multiply;
+      left: 15%;
+      top: -8%;
+    }
+    .about-container {
+      @extend .about-container-class;
+
+      ul {
+        &::before {
+          right: -10px;
+          left: initial;
+        }
+      }
+
+      .picture-container {
+        position: absolute;
+        left: -46px;
+
+        .picture {
+          mix-blend-mode: multiply;
+          transform: rotate(-10deg);
+        }
+      }
+    }
+
+    .main-content-container {
+      max-width: 970px;
+
+      .content-container {
+        &:first-child {
+          .title {
+            &::before {
+              content: 'історія №2';
+              text-transform: uppercase;
+              @include ellipseLabel($redColor);
+              transform: rotate(7deg);
+              top: -141%;
+              right: -6%;
+            }
+          }
+        }
+
+        .title {
+          color: #003619;
+          font-family: $stolzlBold;
+          line-height: 94%;
+          letter-spacing: 0.04em;
+          font-size: 48px;
+          position: relative;
+          margin-bottom: 40px;
+        }
+        .qoute {
+          line-height: 120%;
+          font-size: 32px;
+          color: #003619;
+          font-family: $sourceCodePro;
+          margin-bottom: 40px;
+        }
+        .text-container {
+          padding-left: 20px;
+          padding-right: 20px;
+
+          .text {
+            font-family: $stolzlRegular;
+            color: #003619;
+            font-size: 32px;
+            line-height: 120%;
+            margin-bottom: 40px;
+
+            strong {
+              font-family: $stolzlBold;
+            }
+          }
+        }
+      }
+    }
+
+    .pictures-container {
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 80px;
+
+      &::after {
+        @include before_after('../images/decor/red-snow.svg', 274px);
+        @include positionDecorIcon;
+        right: -4%;
+        bottom: 37%;
+      }
+
+      .picture-container {
+        position: relative;
+
+        .picture {
+          mix-blend-mode: multiply;
+        }
+
+        &:nth-child(1) {
+          left: -22%;
+          .picture {
+            transform: rotate(8deg);
+          }
+        }
+        &:nth-child(2) {
+          left: -6%;
+          .picture {
+            transform: rotate(-13deg);
+          }
+        }
+        &:nth-child(3) {
+          margin-top: auto;
+          left: -6%;
+          bottom: 8%;
+
+          .picture {
+            transform: rotate(8deg);
+          }
         }
       }
     }

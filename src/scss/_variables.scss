@@ -69,10 +69,11 @@ $sourceCodePro: 'Source Code Pro', 'sans serif';
   font-size: 54px;
   font-family: $stolzlBold;
   line-height: 92%;
-  padding: 28px;
+  padding: 32px 28px;
   transform: rotate(-6deg);
   position: absolute;
   letter-spacing: -0.04em;
+  z-index: 100;
 }
 
 .about-container-class {
@@ -80,12 +81,12 @@ $sourceCodePro: 'Source Code Pro', 'sans serif';
   position: relative;
   align-self: start;
   padding: 90px 28px 20px;
+  max-width: 400px;
 
   ul {
     &::before {
       display: inline-block;
       content: '';
-
       position: absolute;
       top: 0;
       bottom: 0;
@@ -108,7 +109,7 @@ $sourceCodePro: 'Source Code Pro', 'sans serif';
     }
     li.item {
       display: flex;
-      gap: 40px;
+      gap: 20px;
 
       .text {
         min-width: 297px;
