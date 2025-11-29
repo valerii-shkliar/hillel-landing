@@ -954,6 +954,129 @@ main {
       }
     }
   }
+  section.christmas-cocktails {
+    background-image: url('../images/decor/background-christmas-cocktails.svg');
+    background-repeat: no-repeat;
+    background-position: 50% -50px;
+    mix-blend-mode: multiply;
+    padding-top: 270px;
+
+    .wrapper {
+      .content-container {
+        color: $greenDarkColor;
+        font-size: 32px;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 1080px;
+        position: relative;
+        margin-bottom: 180px;
+
+        &::before {
+          @include before_after('../images/pictures/img-3.png', 543px, 651px);
+          @include positionDecorIcon;
+          transform: rotate(-10deg);
+          mix-blend-mode: multiply;
+          left: -47%;
+          top: -12%;
+        }
+
+        &::after {
+          @include before_after('../images/pictures/img-4.png', 447px, 536px);
+          @include positionDecorIcon;
+          transform: rotate(12deg);
+          mix-blend-mode: multiply;
+          right: -44%;
+          top: -20%;
+        }
+
+        .title {
+          font-family: $stolzlBold;
+          line-height: 102%;
+          letter-spacing: -0.04em;
+          font-size: 58px;
+          margin-bottom: 20px;
+        }
+        .note {
+          line-height: 120%;
+          font-family: $sourceCodePro;
+          margin-bottom: 40px;
+        }
+        .text {
+          line-height: 120%;
+          font-family: $stolzlRegular;
+          margin-bottom: 40px;
+
+          strong {
+            font-family: $stolzlBold;
+          }
+        }
+      }
+      .cocktails-container {
+        @include flex_horizonAlign(center);
+        gap: 30px;
+
+        article.card-recipe {
+          max-width: 340px;
+          position: relative;
+
+          &::before {
+            @include positionDecorIcon;
+            top: -15%;
+            right: 3%;
+          }
+          &:nth-child(1) {
+            &::before {
+              @include before_after('../images/decor/img-14.svg', 142px);
+              transform: rotate(17deg);
+            }
+          }
+          &:nth-child(2) {
+            &::before {
+              @include before_after('../images/decor/img-15.svg', 101px, 123px);
+              transform: rotate(-22deg);
+            }
+          }
+          &:nth-child(3) {
+            &::before {
+              @include before_after('../images/decor/img-16.svg', 149px);
+              transform: rotate(22deg);
+            }
+          }
+          &:nth-child(4) {
+            &::before {
+              @include before_after('../images/decor/img-17.svg', 141px);
+              transform: rotate(-4deg);
+            }
+          }
+          &:nth-child(5) {
+            &::before {
+              @include before_after('../images/decor/img-18.svg', 151px, 137px);
+              transform: rotate(14deg);
+            }
+          }
+
+          .title {
+            font-family: $stolzlBold;
+            padding-bottom: 30px;
+            color: $primaryGreenColor;
+            font-size: 40px;
+            line-height: 110%;
+          }
+          .text {
+            font-family: $stolzlRegular;
+            padding-bottom: 30px;
+            color: $greenDarkColor;
+            font-size: 26px;
+            line-height: 110%;
+
+            strong {
+              font-family: $stolzlBold;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 footer {
   .wrapper {
