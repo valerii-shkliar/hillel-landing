@@ -61,7 +61,7 @@ header {
         max-width: 187px;
 
         .story-text {
-          color: $primaryDarkColor;
+          color: $greenDarkColor;
           font-family: $stolzlRegular;
           line-height: 110%;
           font-size: 24px;
@@ -153,19 +153,6 @@ header {
       letter-spacing: -0.04em;
       font-size: 48px;
     }
-  }
-  &::before {
-    @include before_after('../images/decor/red-snow.svg', 268px);
-    @include positionDecorIcon;
-    left: 25px;
-    top: 193px;
-  }
-  &::after {
-    @include before_after('../images/decor/red-snow.svg', 133px);
-
-    @include positionDecorIcon;
-    right: -40px;
-    bottom: 0px;
   }
 }
 main {
@@ -685,6 +672,269 @@ main {
           transform: initial;
           position: static;
           text-transform: uppercase;
+        }
+      }
+    }
+  }
+  section.presents-for-developer {
+    position: relative;
+
+    .letter-container {
+      margin: 0 auto;
+      width: 1116px;
+      height: 1385px;
+      background-image: url('../images/decor/letter-background.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      transform: rotate(5deg);
+      mix-blend-mode: multiply;
+      @include flex_AlignBooth(center, center);
+      position: relative;
+
+      .content-container {
+        color: $greenDarkColor;
+        max-width: 770px;
+        position: relative;
+        top: -106px;
+
+        .title {
+          letter-spacing: -0.04em;
+          font-size: 58px;
+          font-family: $stolzlBold;
+          line-height: 102%;
+          margin-bottom: 30px;
+        }
+        .text {
+          font-size: 32px;
+          font-family: $stolzlRegular;
+          line-height: 120%;
+          max-width: 580px;
+          margin: 0 auto;
+          text-align: center;
+
+          strong {
+            font-family: $stolzlBold;
+          }
+        }
+      }
+    }
+    .cards-ideas-container {
+      position: absolute;
+      bottom: -40%;
+      left: 0px;
+      right: 0px;
+      top: 46%;
+
+      article.card-idea {
+        position: absolute;
+
+        &::before {
+          @include positionDecorIcon;
+        }
+
+        .content-container {
+          background-image: url('../images/decor/card-idea-background.svg');
+          background-position: center;
+          background-repeat: no-repeat;
+          color: $primaryWhiteColor;
+          padding: 75px 60px 140px;
+          width: 446px;
+          height: 540px;
+
+          .title {
+            font-size: 28px;
+            font-family: $stolzlBold;
+            letter-spacing: -0.04em;
+            line-height: 94%;
+            margin-bottom: 20px;
+          }
+          .text {
+            font-family: $stolzlMedium;
+            font-size: 18px;
+            line-height: 120%;
+          }
+          .card-number {
+            font-family: $greatVibesRegular;
+            font-size: 84px;
+            line-height: 92%;
+            color: #ffffff;
+            position: absolute;
+            transform: rotate(-14deg);
+          }
+        }
+
+        &:nth-child(1) {
+          top: 9%;
+          left: 5%;
+          z-index: 100;
+
+          &::before {
+            @include before_after('../images/decor/img-6.svg', 188px, 251px);
+            transform: rotate(21deg);
+            top: -8%;
+            left: -19%;
+          }
+
+          .content-container {
+            transform: rotate(-7deg);
+
+            .card-number {
+              top: 52px;
+              right: 45px;
+            }
+          }
+        }
+        &:nth-child(2) {
+          z-index: 101;
+          bottom: 14%;
+          left: 4%;
+
+          &::before {
+            @include before_after('../images/decor/img-7.svg', 165px, 197px);
+            transform: rotate(4deg);
+            bottom: 9%;
+            right: -11%;
+          }
+
+          .content-container {
+            transform: rotate(-16deg);
+
+            .card-number {
+              bottom: 90px;
+              left: 59px;
+            }
+          }
+        }
+        &:nth-child(3) {
+          z-index: 102;
+          top: 18%;
+          left: 27%;
+
+          &::before {
+            @include before_after('../images/decor/img-8.svg', 118px, 180px);
+            transform: rotate(-25deg);
+            top: -8%;
+            right: -5%;
+          }
+          .content-container {
+            transform: rotate(2deg);
+
+            .card-number {
+              bottom: 90px;
+              right: 59px;
+            }
+          }
+        }
+        &:nth-child(4) {
+          z-index: 103;
+          top: 11%;
+          right: 11%;
+
+          &::before {
+            @include before_after('../images/decor/img-10.svg', 136px);
+            transform: rotate(-6deg);
+            top: -8%;
+            left: -7%;
+          }
+          .content-container {
+            transform: rotate(9deg);
+
+            .card-number {
+              top: 52px;
+              right: 45px;
+            }
+          }
+        }
+        &:nth-child(5) {
+          z-index: 104;
+          transform: rotate(7deg);
+          bottom: 12%;
+          right: 32%;
+
+          &::before {
+            @include before_after('../images/decor/img-9.svg', 209px);
+            transform: rotate(40deg);
+            bottom: -3%;
+            right: 2%;
+          }
+          .content-container {
+            transform: rotate(7deg);
+
+            .card-number {
+              top: 52px;
+              right: 45px;
+            }
+          }
+        }
+        &:nth-child(6) {
+          z-index: 105;
+          bottom: 13%;
+          right: 2%;
+
+          &::before {
+            @include before_after('../images/decor/img-11.svg', 189px, 119px);
+            transform: rotate(10deg);
+            top: -3%;
+            right: 2%;
+          }
+
+          .content-container {
+            transform: rotate(-4deg);
+
+            .card-number {
+              bottom: 90px;
+              right: 59px;
+            }
+          }
+        }
+      }
+    }
+    .icons-container {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+
+      .icons-snow {
+        &::before {
+          @include before_after('../images/decor/red-snow.svg', 198px);
+          @include positionDecorIcon;
+          top: 33%;
+          left: 6%;
+        }
+        &::after {
+          @include before_after('../images/decor/red-snow.svg', 138px);
+          @include positionDecorIcon;
+          top: 3%;
+          right: 28%;
+        }
+      }
+      .icons-year {
+        &::before {
+          @include before_after('../images/decor/new-year.svg', 202px, 608px);
+          @include positionDecorIcon;
+          transform: rotate(-14deg);
+          top: -3%;
+          right: 10%;
+        }
+      }
+      .icons-presents {
+        &::before {
+          @include before_after('../images/decor/img-13.svg', 246px);
+          @include positionDecorIcon;
+          mix-blend-mode: multiply;
+          transform: rotate(-8deg);
+          top: -1%;
+          left: 23%;
+        }
+        &::after {
+          @include before_after('../images/decor/img-12.svg', 298px, 206px);
+          @include positionDecorIcon;
+          mix-blend-mode: multiply;
+          bottom: 46%;
+          right: 3%;
         }
       }
     }

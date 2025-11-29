@@ -1412,4 +1412,42 @@ main section.advent-calendar .modal-container .btn-container .buy-book-btn {
   transform: initial;
   position: static;
   text-transform: uppercase;
+}
+main section.presents-for-developer .letter-container {
+  margin: 0 auto;
+  width: 1116px;
+  height: 1385px;
+  background-image: url("../images/decor/letter-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: rotate(5deg);
+  mix-blend-mode: multiply;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main section.presents-for-developer .letter-container .content-container {
+  color: #003619;
+  max-width: 770px;
+  position: relative;
+  top: -106px;
+}
+main section.presents-for-developer .letter-container .content-container .title {
+  letter-spacing: -0.04em;
+  font-size: 58px;
+  font-family: "Stolzl Bold", "sans serif";
+  line-height: 102%;
+  margin-bottom: 30px;
+}
+main section.presents-for-developer .letter-container .content-container .text {
+  font-size: 32px;
+  font-family: "Stolzl Regular", "sans serif";
+  line-height: 120%;
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
+}
+main section.presents-for-developer .letter-container .content-container .text strong {
+  font-family: "Stolzl Bold", "sans serif";
 }/*# sourceMappingURL=styles.css.map */
