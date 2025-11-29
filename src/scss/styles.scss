@@ -678,6 +678,7 @@ main {
   }
   section.presents-for-developer {
     position: relative;
+    margin-bottom: 500px;
 
     .letter-container {
       margin: 0 auto;
@@ -936,6 +937,90 @@ main {
           bottom: 46%;
           right: 3%;
         }
+      }
+    }
+  }
+}
+footer {
+  position: relative;
+  background-image: url('../images/decor/snow-bottom.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  .content-container {
+    margin: 0 auto;
+    max-width: 800px;
+    color: $primaryGreenColor;
+    font-family: $stolzlBold;
+    padding-top: 130px;
+    padding-bottom: 100px;
+    position: relative;
+
+    .title {
+      font-size: 169px;
+
+      line-height: 82%;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .about {
+      font-size: 22px;
+      line-height: 110%;
+    }
+    &::before {
+      @include before_after('../images/decor/santa-claus.svg', 326px, 507px);
+      @include positionDecorIcon;
+      bottom: 8%;
+      left: -44%;
+    }
+    &::after {
+      @include before_after('../images/decor/rabbit.svg', 256px, 340px);
+      @include positionDecorIcon;
+      bottom: 4%;
+      right: -23%;
+    }
+  }
+  .caption {
+    font-size: 15px;
+    font-family: $stolzlRegular;
+    color: $greenDarkColor;
+    position: absolute;
+    right: 28px;
+    bottom: 20px;
+
+    strong {
+      font-family: $stolzlBold;
+    }
+  }
+  .icons-container {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+
+    .icons-snow-small {
+      &::before {
+        @include before_after('../images/decor/red-snow.svg', 66px);
+        @include positionDecorIcon;
+        top: 9%;
+        left: 3%;
+      }
+      &::after {
+        @include before_after('../images/decor/red-snow.svg', 107px);
+        @include positionDecorIcon;
+        top: 58%;
+        right: 36%;
+      }
+    }
+    .icons-snow-big {
+      &::before {
+        @include before_after('../images/decor/red-snow.svg', 184px);
+        @include positionDecorIcon;
+        top: 19%;
+        right: 6%;
       }
     }
   }
