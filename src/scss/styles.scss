@@ -26,188 +26,165 @@ body {
   }
 }
 .wrapper {
-  max-width: 1200px;
+  max-width: 1920px;
   margin: auto;
 }
 
 header {
-  position: relative;
-
   margin-bottom: 120px;
-  .wrapper {
-    max-width: 1089px;
 
-    .title {
-      font-size: 276px;
-      color: $primaryGreenColor;
-      font-family: $HiraKaku;
-      line-height: 92%;
-      letter-spacing: -0.04em;
-      margin-bottom: 10px;
+  .wrapper {
+    position: relative;
+
+    .content-container {
+      max-width: 1089px;
+      margin: auto;
+
+      .title {
+        font-size: 276px;
+        color: $primaryGreenColor;
+        font-family: $HiraKaku;
+        line-height: 92%;
+        letter-spacing: -0.04em;
+        margin-bottom: 10px;
+
+        &::after {
+          content: 'IT School';
+          @include ellipseLabel($primaryGreenColor);
+          top: 215px;
+          left: 37%;
+        }
+      }
+      .stories-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        li.story {
+          max-width: 187px;
+
+          .story-text {
+            color: $greenDarkColor;
+            font-family: $stolzlRegular;
+            line-height: 110%;
+            font-size: 24px;
+            position: relative;
+
+            strong {
+              font-family: $stolzlBold;
+            }
+          }
+          &:nth-child(1) {
+            .story-text {
+              &::before {
+                @include before_after('../images/decor/img-1.svg', 119px);
+                @include positionDecorIcon;
+                right: -13px;
+                bottom: -75px;
+              }
+            }
+          }
+          &:nth-child(2) {
+            .story-text {
+              text-indent: 40px;
+              &::before {
+                @include before_after('../images/decor/img-2.svg', 97px, 102px);
+                @include positionDecorIcon;
+                top: -53px;
+                left: -47px;
+              }
+            }
+          }
+          &:nth-child(3) {
+            .story-text {
+              &::before {
+                @include before_after('../images/decor/img-3.svg', 96px, 93px);
+                @include positionDecorIcon;
+                top: 25px;
+                right: -27px;
+              }
+            }
+          }
+          &:nth-child(4) {
+            .story-text {
+              &::before {
+                @include before_after('../images/decor/img-4.svg', 80px, 87px);
+                @include positionDecorIcon;
+                bottom: -69px;
+                right: -1px;
+              }
+            }
+          }
+          &:nth-child(5) {
+            .story-text {
+              &::before {
+                @include before_after('../images/decor/img-5.svg', 130px, 124px);
+                @include positionDecorIcon;
+                top: -38px;
+                right: -107px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .release-caption {
+      position: absolute;
+      top: 85px;
+      right: 28px;
 
       &::after {
-        content: 'IT School';
-        @include ellipseLabel($primaryGreenColor);
-        top: 215px;
-        left: 37%;
+        @include before_after('../images/decor/canvas.png', 700px);
+        @include positionDecorIcon;
+        mix-blend-mode: multiply;
+        bottom: -273px;
+        right: -227px;
       }
-    }
-    .stories-container {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
 
-      li.story {
-        max-width: 187px;
-
-        .story-text {
-          color: $greenDarkColor;
-          font-family: $stolzlRegular;
-          line-height: 110%;
-          font-size: 24px;
-          position: relative;
-
-          strong {
-            font-family: $stolzlBold;
-          }
-        }
-        &:nth-child(1) {
-          .story-text {
-            &::before {
-              @include before_after('../images/decor/img-1.svg', 119px);
-              @include positionDecorIcon;
-              right: -13px;
-              bottom: -75px;
-            }
-          }
-        }
-        &:nth-child(2) {
-          .story-text {
-            text-indent: 40px;
-            &::before {
-              @include before_after('../images/decor/img-2.svg', 97px, 102px);
-              @include positionDecorIcon;
-              top: -53px;
-              left: -47px;
-            }
-          }
-        }
-        &:nth-child(3) {
-          .story-text {
-            &::before {
-              @include before_after('../images/decor/img-3.svg', 96px, 93px);
-              @include positionDecorIcon;
-              top: 25px;
-              right: -27px;
-            }
-          }
-        }
-        &:nth-child(4) {
-          .story-text {
-            &::before {
-              @include before_after('../images/decor/img-4.svg', 80px, 87px);
-              @include positionDecorIcon;
-              bottom: -69px;
-              right: -1px;
-            }
-          }
-        }
-        &:nth-child(5) {
-          .story-text {
-            &::before {
-              @include before_after('../images/decor/img-5.svg', 130px, 124px);
-              @include positionDecorIcon;
-              top: -38px;
-              right: -107px;
-            }
-          }
-        }
+      .date,
+      .release {
+        color: $primaryGreenColor;
       }
-    }
-  }
-  .release-caption {
-    position: absolute;
-    top: 85px;
-    right: 28px;
-
-    &::after {
-      @include before_after('../images/decor/canvas.png', 700px);
-      @include positionDecorIcon;
-      mix-blend-mode: multiply;
-      bottom: -273px;
-      right: -227px;
-    }
-
-    .date,
-    .release {
-      color: $primaryGreenColor;
-    }
-    .date {
-      font-family: $greatVibesRegular;
-      font-size: 40px;
-      line-height: 92%;
-    }
-    .release {
-      font-family: $stolzlBold;
-      line-height: 92%;
-      letter-spacing: -0.04em;
-      font-size: 48px;
+      .date {
+        font-family: $greatVibesRegular;
+        font-size: 40px;
+        line-height: 92%;
+      }
+      .release {
+        font-family: $stolzlBold;
+        line-height: 92%;
+        letter-spacing: -0.04em;
+        font-size: 48px;
+      }
     }
   }
 }
 main {
   section.cozy-vibe {
-    padding: 0 28px;
-    position: relative;
-    margin-bottom: 300px;
+    .wrapper {
+      padding: 0 28px;
+      position: relative;
+      margin-bottom: 300px;
 
-    .left-side {
-      width: 55%;
+      .left-side {
+        width: 55%;
 
-      .upper-content-container {
-        margin-bottom: 60px;
-        .title {
-          color: $primaryGreenColor;
-          font-size: 114px;
-          font-family: $greatVibesRegular;
-          line-height: 92%;
-          margin-bottom: 20px;
-
-          strong {
-            font-size: 48px;
-            font-family: $stolzlBold;
-            letter-spacing: -0.04em;
-            text-transform: uppercase;
-          }
-        }
-        .text {
-          @include textStyle;
-          margin-bottom: 20px;
-
-          strong {
-            @include strongTextStyle;
-          }
-          em {
+        .upper-content-container {
+          margin-bottom: 60px;
+          .title {
+            color: $primaryGreenColor;
+            font-size: 114px;
             font-family: $greatVibesRegular;
-            font-size: 54px;
+            line-height: 92%;
+            margin-bottom: 20px;
+
+            strong {
+              font-size: 48px;
+              font-family: $stolzlBold;
+              letter-spacing: -0.04em;
+              text-transform: uppercase;
+            }
           }
-        }
-      }
-      .low-content-container {
-        display: flex;
-        justify-content: end;
-        margin-bottom: 60px;
-
-        .picture {
-          mix-blend-mode: multiply;
-          position: absolute;
-          transform: rotate(15deg);
-          left: -122px;
-          bottom: 125px;
-        }
-        .text-container {
-          width: 60%;
-
           .text {
             @include textStyle;
             margin-bottom: 20px;
@@ -217,188 +194,111 @@ main {
             }
             em {
               font-family: $greatVibesRegular;
-              font-size: 45px;
+              font-size: 54px;
             }
           }
         }
+        .low-content-container {
+          display: flex;
+          justify-content: end;
+          margin-bottom: 60px;
+
+          .picture {
+            mix-blend-mode: multiply;
+            position: absolute;
+            transform: rotate(15deg);
+            left: -122px;
+            bottom: 125px;
+          }
+          .text-container {
+            width: 60%;
+
+            .text {
+              @include textStyle;
+              margin-bottom: 20px;
+
+              strong {
+                @include strongTextStyle;
+              }
+              em {
+                font-family: $greatVibesRegular;
+                font-size: 45px;
+              }
+            }
+          }
+        }
+        .title {
+          font-size: 48px;
+          line-height: 94%;
+          letter-spacing: -0.04em;
+          color: #003619;
+          font-family: $stolzlBold;
+        }
       }
-      .title {
-        font-size: 48px;
-        line-height: 94%;
-        letter-spacing: -0.04em;
-        color: #003619;
-        font-family: $stolzlBold;
-      }
-    }
-    .right-side {
-      .picture {
-        mix-blend-mode: multiply;
-        position: absolute;
-        top: -275px;
-        right: -408px;
+      .right-side {
+        .picture {
+          mix-blend-mode: multiply;
+          position: absolute;
+          top: -275px;
+          right: -408px;
+        }
       }
     }
   }
   section.first-history {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    position: relative;
-    margin-bottom: 300px;
-
-    &::before {
-      @include before_after('../images/decor/background-paper.png', 1303px, 894px);
-      @include positionDecorIcon;
-      mix-blend-mode: multiply;
-      left: 15%;
-      top: -8%;
-    }
-    .advice-container {
+    .wrapper {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      margin-bottom: 300px;
 
-      ul {
-        li {
-          .title {
-            position: relative;
-            &::before {
-              @include before_after('../images/decor/christmas-tree.svg', 219px, 403px);
-              @include positionDecorIcon;
-              mix-blend-mode: multiply;
-              top: -368px;
-            }
-          }
-        }
+      &::before {
+        @include before_after('../images/decor/background-paper.png', 1303px, 894px);
+        @include positionDecorIcon;
+        mix-blend-mode: multiply;
+        left: 15%;
+        top: -8%;
       }
+      .advice-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-      .picture-container {
-        position: relative;
-        left: -80px;
-
-        .picture {
-          mix-blend-mode: multiply;
-          transform: rotate(-6deg);
-        }
-        &::after {
-          @include before_after('../images/decor/stamp.svg', 177px, 151px);
-          @include positionDecorIcon;
-          mix-blend-mode: multiply;
-          top: 40px;
-          right: 0px;
-        }
-      }
-      @extend .advice-container-class;
-    }
-
-    .main-content-container {
-      .title {
-        color: #003619;
-        font-family: $stolzlBold;
-        line-height: 94%;
-        letter-spacing: 0.04em;
-        font-size: 48px;
-        position: relative;
-        margin-bottom: 40px;
-
-        &::before {
-          content: 'історія №1';
-          text-transform: uppercase;
-          @include ellipseLabel($redColor);
-          top: -100%;
-          left: -6%;
-        }
-      }
-      .qoute {
-        line-height: 120%;
-        font-size: 32px;
-        color: #003619;
-        font-family: $sourceCodePro;
-        margin-bottom: 40px;
-      }
-      .text-container {
-        padding-left: 20px;
-        padding-right: 20px;
-
-        .text {
-          font-family: $stolzlRegular;
-          color: #003619;
-          font-size: 32px;
-          line-height: 120%;
-          margin-bottom: 40px;
-
-          strong {
-            font-family: $stolzlBold;
-          }
-        }
-      }
-    }
-    .about-container {
-      @extend .about-container-class;
-
-      .picture-container {
-        .picture {
-          mix-blend-mode: multiply;
-          transform: rotate(10deg);
-          position: absolute;
-          left: -162px;
-          bottom: -80%;
-        }
-      }
-    }
-  }
-
-  section.second-history {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    position: relative;
-
-    &::before {
-      @include before_after('../images/decor/background-paper.png', 1303px, 894px);
-      @include positionDecorIcon;
-      mix-blend-mode: multiply;
-      left: 15%;
-      top: -8%;
-    }
-    .about-container {
-      @extend .about-container-class;
-
-      ul {
-        &::before {
-          right: -10px;
-          left: initial;
-        }
-      }
-
-      .picture-container {
-        position: absolute;
-        left: -46px;
-
-        .picture {
-          mix-blend-mode: multiply;
-          transform: rotate(-10deg);
-        }
-      }
-    }
-
-    .main-content-container {
-      max-width: 970px;
-
-      .content-container {
-        &:first-child {
-          .title {
-            &::before {
-              content: 'історія №2';
-              text-transform: uppercase;
-              @include ellipseLabel($redColor);
-              transform: rotate(7deg);
-              top: -141%;
-              right: -6%;
+        ul {
+          li {
+            .title {
+              position: relative;
+              &::before {
+                @include before_after('../images/decor/christmas-tree.svg', 219px, 403px);
+                @include positionDecorIcon;
+                mix-blend-mode: multiply;
+                top: -368px;
+              }
             }
           }
         }
 
+        .picture-container {
+          position: relative;
+          left: -80px;
+
+          .picture {
+            mix-blend-mode: multiply;
+            transform: rotate(-6deg);
+          }
+          &::after {
+            @include before_after('../images/decor/stamp.svg', 177px, 151px);
+            @include positionDecorIcon;
+            mix-blend-mode: multiply;
+            top: 40px;
+            right: 0px;
+          }
+        }
+        @extend .advice-container-class;
+      }
+
+      .main-content-container {
         .title {
           color: #003619;
           font-family: $stolzlBold;
@@ -407,6 +307,14 @@ main {
           font-size: 48px;
           position: relative;
           margin-bottom: 40px;
+
+          &::before {
+            content: 'історія №1';
+            text-transform: uppercase;
+            @include ellipseLabel($redColor);
+            top: -100%;
+            left: -6%;
+          }
         }
         .qoute {
           line-height: 120%;
@@ -432,48 +340,149 @@ main {
           }
         }
       }
+      .about-container {
+        @extend .about-container-class;
+
+        .picture-container {
+          .picture {
+            mix-blend-mode: multiply;
+            transform: rotate(10deg);
+            position: absolute;
+            left: -162px;
+            bottom: -80%;
+          }
+        }
+      }
     }
-
-    .pictures-container {
-      max-width: 400px;
+  }
+  section.second-history {
+    .wrapper {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 80px;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
 
-      &::after {
-        @include before_after('../images/decor/red-snow.svg', 274px);
+      &::before {
+        @include before_after('../images/decor/background-paper.png', 1303px, 894px);
         @include positionDecorIcon;
-        right: -4%;
-        bottom: 37%;
+        mix-blend-mode: multiply;
+        left: 15%;
+        top: -8%;
+      }
+      .about-container {
+        @extend .about-container-class;
+
+        ul {
+          &::before {
+            right: -10px;
+            left: initial;
+          }
+        }
+
+        .picture-container {
+          position: absolute;
+          left: -46px;
+
+          .picture {
+            mix-blend-mode: multiply;
+            transform: rotate(-10deg);
+          }
+        }
       }
 
-      .picture-container {
-        position: relative;
+      .main-content-container {
+        max-width: 970px;
 
-        .picture {
-          mix-blend-mode: multiply;
-        }
+        .content-container {
+          &:first-child {
+            .title {
+              &::before {
+                content: 'історія №2';
+                text-transform: uppercase;
+                @include ellipseLabel($redColor);
+                transform: rotate(7deg);
+                top: -141%;
+                right: -6%;
+              }
+            }
+          }
 
-        &:nth-child(1) {
-          left: -22%;
-          .picture {
-            transform: rotate(8deg);
+          .title {
+            color: #003619;
+            font-family: $stolzlBold;
+            line-height: 94%;
+            letter-spacing: 0.04em;
+            font-size: 48px;
+            position: relative;
+            margin-bottom: 40px;
+          }
+          .qoute {
+            line-height: 120%;
+            font-size: 32px;
+            color: #003619;
+            font-family: $sourceCodePro;
+            margin-bottom: 40px;
+          }
+          .text-container {
+            padding-left: 20px;
+            padding-right: 20px;
+
+            .text {
+              font-family: $stolzlRegular;
+              color: #003619;
+              font-size: 32px;
+              line-height: 120%;
+              margin-bottom: 40px;
+
+              strong {
+                font-family: $stolzlBold;
+              }
+            }
           }
         }
-        &:nth-child(2) {
-          left: -6%;
-          .picture {
-            transform: rotate(-13deg);
-          }
+      }
+
+      .pictures-container {
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 80px;
+
+        &::after {
+          @include before_after('../images/decor/red-snow.svg', 274px);
+          @include positionDecorIcon;
+          right: -4%;
+          bottom: 37%;
         }
-        &:nth-child(3) {
-          margin-top: auto;
-          left: -6%;
-          bottom: 8%;
+
+        .picture-container {
+          position: relative;
 
           .picture {
-            transform: rotate(8deg);
+            mix-blend-mode: multiply;
+          }
+
+          &:nth-child(1) {
+            left: -22%;
+            .picture {
+              transform: rotate(8deg);
+            }
+          }
+          &:nth-child(2) {
+            left: -6%;
+            .picture {
+              transform: rotate(-13deg);
+            }
+          }
+          &:nth-child(3) {
+            margin-top: auto;
+            left: -6%;
+            bottom: 8%;
+
+            .picture {
+              transform: rotate(8deg);
+            }
           }
         }
       }
@@ -482,413 +491,522 @@ main {
   section.advent-calendar {
     margin-bottom: 200px;
 
-    .house-container {
-      background-image: url('../images/advent-calendar/house.png');
+    .wrapper {
+      .house-container {
+        background-image: url('../images/advent-calendar/house.png');
 
-      width: 1832px;
-      height: 1609px;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      margin: 0 auto;
-      padding-left: 94px;
-      padding-right: 94px;
-      display: grid;
-      grid-template-columns: repeat(6, auto);
-      grid-template-rows: repeat(2, 247px) repeat(4, 255px);
-      align-items: flex-start;
-      place-items: center;
-      position: relative;
-      z-index: 90;
-
-      &::before {
-        @include before_after('../images/advent-calendar/bow.svg', 231px, 175px);
-        @include positionDecorIcon;
-        mix-blend-mode: multiply;
-        left: 44%;
-        top: -31px;
-      }
-
-      &::after {
-        @include before_after('../images/advent-calendar/snow-down.svg', 2139px, 224px);
-        @include positionDecorIcon;
-        background-size: cover;
-        bottom: -112px;
-      }
-
-      .card-item {
+        width: 1832px;
+        height: 1609px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+        padding-left: 94px;
+        padding-right: 94px;
+        display: grid;
+        grid-template-columns: repeat(6, auto);
+        grid-template-rows: repeat(2, 247px) repeat(4, 255px);
+        align-items: flex-start;
+        place-items: center;
         position: relative;
-        cursor: pointer;
-        .card {
-          display: block;
-          margin: 0 auto;
+        z-index: 90;
+
+        &::before {
+          @include before_after('../images/advent-calendar/bow.svg', 231px, 175px);
+          @include positionDecorIcon;
+          mix-blend-mode: multiply;
+          left: 44%;
+          top: -31px;
         }
 
-        @for $i from 1 through 24 {
-          &:nth-child(#{$i}) {
-            @if ($i == 1) {
-              grid-column: span 6;
-              align-self: end;
-            }
-            @if ($i == 2) {
-              grid-column: 3 / 4;
-            }
-            @if ($i == 3) {
-              grid-column: 4 / 5;
-            }
-            @if ($i >= 4 and $i <=9) {
-              grid-row: 3;
-            }
-            @if ($i >= 10 and $i <= 15) {
-              grid-row: 4;
-            }
-            @if ($i >= 16 and $i <= 20 and $i != 18) {
-              grid-row: 5;
-            }
-            @if ($i >= 21 and $i <= 24) {
-              grid-row: 6;
-            }
+        &::after {
+          @include before_after('../images/advent-calendar/snow-down.svg', 2139px, 224px);
+          @include positionDecorIcon;
+          background-size: cover;
+          bottom: -112px;
+        }
 
-            @if ($i == 4 or $i == 10 or $i == 16 or $i == 21) {
-              grid-column: 1;
-            }
+        .card-item {
+          position: relative;
+          cursor: pointer;
+          .card {
+            display: block;
+            margin: 0 auto;
+          }
 
-            @if ($i == 5 or $i == 11 or $i == 17 or $i == 22) {
-              grid-column: 2;
-            }
-            @if ($i == 18) {
-              grid-row: 6;
-              grid-column: 3 / 5;
-              align-self: flex-start;
-            }
+          @for $i from 1 through 24 {
+            &:nth-child(#{$i}) {
+              @if ($i == 1) {
+                grid-column: span 6;
+                align-self: end;
+              }
+              @if ($i == 2) {
+                grid-column: 3 / 4;
+              }
+              @if ($i == 3) {
+                grid-column: 4 / 5;
+              }
+              @if ($i >= 4 and $i <=9) {
+                grid-row: 3;
+              }
+              @if ($i >= 10 and $i <= 15) {
+                grid-row: 4;
+              }
+              @if ($i >= 16 and $i <= 20 and $i != 18) {
+                grid-row: 5;
+              }
+              @if ($i >= 21 and $i <= 24) {
+                grid-row: 6;
+              }
 
-            @if ($i == 6 or $i == 12) {
-              grid-column: 3;
-            }
+              @if ($i == 4 or $i == 10 or $i == 16 or $i == 21) {
+                grid-column: 1;
+              }
 
-            @if ($i == 7 or $i == 13) {
-              grid-column: 4;
-            }
+              @if ($i == 5 or $i == 11 or $i == 17 or $i == 22) {
+                grid-column: 2;
+              }
+              @if ($i == 18) {
+                grid-row: 6;
+                grid-column: 3 / 5;
+                align-self: flex-start;
+              }
 
-            @if ($i == 8 or $i == 14 or $i == 19 or $i == 23) {
-              grid-column: 5;
-            }
-            @if ($i == 9 or $i == 15 or $i == 20 or $i == 24) {
-              grid-column: 6;
-            }
+              @if ($i == 6 or $i == 12) {
+                grid-column: 3;
+              }
 
-            &::before {
-              $fontSize: if($i == 1 or $i == 2 or $i == 3 or $i == 18, 66px, 86px);
-              $color: if($i == 4 or $i == 5, $primaryGreenColor, #fff);
+              @if ($i == 7 or $i == 13) {
+                grid-column: 4;
+              }
 
-              @include numberCardAdventCalendar('#{$i}', $fontSize, $color);
-              @include alignPositionElement;
+              @if ($i == 8 or $i == 14 or $i == 19 or $i == 23) {
+                grid-column: 5;
+              }
+              @if ($i == 9 or $i == 15 or $i == 20 or $i == 24) {
+                grid-column: 6;
+              }
+
+              &::before {
+                $fontSize: if($i == 1 or $i == 2 or $i == 3 or $i == 18, 66px, 86px);
+                $color: if($i == 4 or $i == 5, $primaryGreenColor, #fff);
+
+                @include numberCardAdventCalendar('#{$i}', $fontSize, $color);
+                @include alignPositionElement;
+              }
             }
+          }
+        }
+
+        .decor-container {
+          &::after,
+          &::before {
+            @include before_after('../images/decor/christmas-tree.svg', 335px, 615px);
+            @include positionDecorIcon;
+            mix-blend-mode: multiply;
+            z-index: 105;
+            background-repeat: no-repeat;
+            background-size: cover;
+            bottom: -171px;
+          }
+          &::before {
+            left: -176px;
+            transform: rotate(5deg);
+          }
+          &::after {
+            right: -179px;
+            bottom: -141px;
+            transform: rotate(-4deg);
+          }
+        }
+        .caption-container {
+          &::after {
+            content: '';
+            width: 708px;
+            height: 326px;
+            display: inline-block;
+            background-image: url('../images/advent-calendar/caption.svg'),
+              url('../images/advent-calendar/snow-on-top.png');
+            background-position: 50% 49%, 50% 68%;
+            background-repeat: no-repeat, no-repeat;
+            position: absolute;
+            z-index: 150;
+            right: 31%;
+            bottom: 25%;
           }
         }
       }
 
-      .decor-container {
-        &::after,
-        &::before {
-          @include before_after('../images/decor/christmas-tree.svg', 335px, 615px);
-          @include positionDecorIcon;
-          mix-blend-mode: multiply;
-          z-index: 105;
-          background-repeat: no-repeat;
-          background-size: cover;
-          bottom: -171px;
-        }
-        &::before {
-          left: -176px;
-          transform: rotate(5deg);
-        }
-        &::after {
-          right: -179px;
-          bottom: -141px;
-          transform: rotate(-4deg);
-        }
-      }
-      .caption-container {
-        &::after {
-          content: '';
-          width: 708px;
-          height: 326px;
-          display: inline-block;
-          background-image: url('../images/advent-calendar/caption.svg'),
-            url('../images/advent-calendar/snow-on-top.png');
-          background-position: 50% 49%, 50% 68%;
-          background-repeat: no-repeat, no-repeat;
-          position: absolute;
-          z-index: 150;
-          right: 31%;
-          bottom: 25%;
-        }
-      }
-    }
+      .modal-container {
+        max-width: 1052px;
+        background-color: $primaryGreenColor;
+        position: fixed;
+        z-index: 200;
+        padding: 60px;
+        color: #ffffff;
+        @include alignPositionElement;
+        opacity: 0;
+        visibility: hidden;
 
-    .modal-container {
-      max-width: 1052px;
-      background-color: $primaryGreenColor;
-      position: fixed;
-      z-index: 200;
-      padding: 60px;
-      color: #ffffff;
-      @include alignPositionElement;
-      opacity: 0;
-      visibility: hidden;
-
-      &.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .title-container {
-        @include flex_verticalAlign(center);
-        gap: 40px;
-        margin-bottom: 30px;
-
-        .book-cover {
+        &.active {
+          opacity: 1;
+          visibility: visible;
         }
-        .title {
-          line-height: 120%;
-          font-family: $stolzlBold;
-          font-size: 40px;
-        }
-      }
-      .text {
-        font-size: 20px;
-        line-height: 170%;
-        font-family: $stolzlRegular;
-        margin-bottom: 60px;
-      }
-      .btn-container {
-        display: flex;
-        justify-content: flex-end;
 
-        .buy-book-btn {
-          @include ellipseLabel($redColor);
-          font-size: 28px;
-          transform: initial;
-          position: static;
-          text-transform: uppercase;
+        .title-container {
+          @include flex_verticalAlign(center);
+          gap: 40px;
+          margin-bottom: 30px;
+
+          .book-cover {
+          }
+          .title {
+            line-height: 120%;
+            font-family: $stolzlBold;
+            font-size: 40px;
+          }
+        }
+        .text {
+          font-size: 20px;
+          line-height: 170%;
+          font-family: $stolzlRegular;
+          margin-bottom: 60px;
+        }
+        .btn-container {
+          display: flex;
+          justify-content: flex-end;
+
+          .buy-book-btn {
+            @include ellipseLabel($redColor);
+            font-size: 28px;
+            transform: initial;
+            position: static;
+            text-transform: uppercase;
+          }
         }
       }
     }
   }
   section.presents-for-developer {
-    position: relative;
     margin-bottom: 500px;
 
-    .letter-container {
-      margin: 0 auto;
-      width: 1116px;
-      height: 1385px;
-      background-image: url('../images/decor/letter-background.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      transform: rotate(5deg);
-      mix-blend-mode: multiply;
-      @include flex_AlignBooth(center, center);
+    .wrapper {
       position: relative;
 
-      .content-container {
-        color: $greenDarkColor;
-        max-width: 770px;
+      .letter-container {
+        margin: 0 auto;
+        width: 1116px;
+        height: 1385px;
+        background-image: url('../images/decor/letter-background.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transform: rotate(5deg);
+        mix-blend-mode: multiply;
+        @include flex_AlignBooth(center, center);
         position: relative;
-        top: -106px;
 
-        .title {
-          letter-spacing: -0.04em;
-          font-size: 58px;
-          font-family: $stolzlBold;
-          line-height: 102%;
-          margin-bottom: 30px;
-        }
-        .text {
-          font-size: 32px;
-          font-family: $stolzlRegular;
-          line-height: 120%;
-          max-width: 580px;
-          margin: 0 auto;
-          text-align: center;
+        .content-container {
+          color: $greenDarkColor;
+          max-width: 770px;
+          position: relative;
+          top: -106px;
 
-          strong {
+          .title {
+            letter-spacing: -0.04em;
+            font-size: 58px;
             font-family: $stolzlBold;
+            line-height: 102%;
+            margin-bottom: 30px;
+          }
+          .text {
+            font-size: 32px;
+            font-family: $stolzlRegular;
+            line-height: 120%;
+            max-width: 580px;
+            margin: 0 auto;
+            text-align: center;
+
+            strong {
+              font-family: $stolzlBold;
+            }
+          }
+        }
+      }
+      .cards-ideas-container {
+        position: absolute;
+        bottom: -40%;
+        left: 0px;
+        right: 0px;
+        top: 46%;
+
+        article.card-idea {
+          position: absolute;
+
+          &::before {
+            @include positionDecorIcon;
+          }
+
+          .content-container {
+            background-image: url('../images/decor/card-idea-background.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            color: $primaryWhiteColor;
+            padding: 75px 60px 140px;
+            width: 446px;
+            height: 540px;
+
+            .title {
+              font-size: 28px;
+              font-family: $stolzlBold;
+              letter-spacing: -0.04em;
+              line-height: 94%;
+              margin-bottom: 20px;
+            }
+            .text {
+              font-family: $stolzlMedium;
+              font-size: 18px;
+              line-height: 120%;
+            }
+            .card-number {
+              font-family: $greatVibesRegular;
+              font-size: 84px;
+              line-height: 92%;
+              color: #ffffff;
+              position: absolute;
+              transform: rotate(-14deg);
+            }
+          }
+
+          &:nth-child(1) {
+            top: 9%;
+            left: 5%;
+            z-index: 100;
+
+            &::before {
+              @include before_after('../images/decor/img-6.svg', 188px, 251px);
+              transform: rotate(21deg);
+              top: -8%;
+              left: -19%;
+            }
+
+            .content-container {
+              transform: rotate(-7deg);
+
+              .card-number {
+                top: 52px;
+                right: 45px;
+              }
+            }
+          }
+          &:nth-child(2) {
+            z-index: 101;
+            bottom: 14%;
+            left: 4%;
+
+            &::before {
+              @include before_after('../images/decor/img-7.svg', 165px, 197px);
+              transform: rotate(4deg);
+              bottom: 9%;
+              right: -11%;
+            }
+
+            .content-container {
+              transform: rotate(-16deg);
+
+              .card-number {
+                bottom: 90px;
+                left: 59px;
+              }
+            }
+          }
+          &:nth-child(3) {
+            z-index: 102;
+            top: 18%;
+            left: 27%;
+
+            &::before {
+              @include before_after('../images/decor/img-8.svg', 118px, 180px);
+              transform: rotate(-25deg);
+              top: -8%;
+              right: -5%;
+            }
+            .content-container {
+              transform: rotate(2deg);
+
+              .card-number {
+                bottom: 90px;
+                right: 59px;
+              }
+            }
+          }
+          &:nth-child(4) {
+            z-index: 103;
+            top: 11%;
+            right: 11%;
+
+            &::before {
+              @include before_after('../images/decor/img-10.svg', 136px);
+              transform: rotate(-6deg);
+              top: -8%;
+              left: -7%;
+            }
+            .content-container {
+              transform: rotate(9deg);
+
+              .card-number {
+                top: 52px;
+                right: 45px;
+              }
+            }
+          }
+          &:nth-child(5) {
+            z-index: 104;
+            transform: rotate(7deg);
+            bottom: 12%;
+            right: 32%;
+
+            &::before {
+              @include before_after('../images/decor/img-9.svg', 209px);
+              transform: rotate(40deg);
+              bottom: -3%;
+              right: 2%;
+            }
+            .content-container {
+              transform: rotate(7deg);
+
+              .card-number {
+                top: 52px;
+                right: 45px;
+              }
+            }
+          }
+          &:nth-child(6) {
+            z-index: 105;
+            bottom: 13%;
+            right: 2%;
+
+            &::before {
+              @include before_after('../images/decor/img-11.svg', 189px, 119px);
+              transform: rotate(10deg);
+              top: -3%;
+              right: 2%;
+            }
+
+            .content-container {
+              transform: rotate(-4deg);
+
+              .card-number {
+                bottom: 90px;
+                right: 59px;
+              }
+            }
+          }
+        }
+      }
+      .icons-container {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+
+        .icons-snow {
+          &::before {
+            @include before_after('../images/decor/red-snow.svg', 198px);
+            @include positionDecorIcon;
+            top: 33%;
+            left: 6%;
+          }
+          &::after {
+            @include before_after('../images/decor/red-snow.svg', 138px);
+            @include positionDecorIcon;
+            top: 3%;
+            right: 28%;
+          }
+        }
+        .icons-year {
+          &::before {
+            @include before_after('../images/decor/new-year.svg', 202px, 608px);
+            @include positionDecorIcon;
+            transform: rotate(-14deg);
+            top: -3%;
+            right: 10%;
+          }
+        }
+        .icons-presents {
+          &::before {
+            @include before_after('../images/decor/img-13.svg', 246px);
+            @include positionDecorIcon;
+            mix-blend-mode: multiply;
+            transform: rotate(-8deg);
+            top: -1%;
+            left: 23%;
+          }
+          &::after {
+            @include before_after('../images/decor/img-12.svg', 298px, 206px);
+            @include positionDecorIcon;
+            mix-blend-mode: multiply;
+            bottom: 46%;
+            right: 3%;
           }
         }
       }
     }
-    .cards-ideas-container {
+  }
+}
+footer {
+  .wrapper {
+    position: relative;
+    background-image: url('../images/decor/snow-bottom.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    .content-container {
+      margin: 0 auto;
+      max-width: 800px;
+      color: $primaryGreenColor;
+      font-family: $stolzlBold;
+      padding-top: 130px;
+      padding-bottom: 100px;
+      position: relative;
+
+      .title {
+        font-size: 169px;
+
+        line-height: 82%;
+        letter-spacing: -0.04em;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+      .about {
+        font-size: 22px;
+        line-height: 110%;
+      }
+      &::before {
+        @include before_after('../images/decor/santa-claus.svg', 326px, 507px);
+        @include positionDecorIcon;
+        bottom: 8%;
+        left: -44%;
+      }
+      &::after {
+        @include before_after('../images/decor/rabbit.svg', 256px, 340px);
+        @include positionDecorIcon;
+        bottom: 4%;
+        right: -23%;
+      }
+    }
+    .caption {
+      font-size: 15px;
+      font-family: $stolzlRegular;
+      color: $greenDarkColor;
       position: absolute;
-      bottom: -40%;
-      left: 0px;
-      right: 0px;
-      top: 46%;
+      right: 28px;
+      bottom: 20px;
 
-      article.card-idea {
-        position: absolute;
-
-        &::before {
-          @include positionDecorIcon;
-        }
-
-        .content-container {
-          background-image: url('../images/decor/card-idea-background.svg');
-          background-position: center;
-          background-repeat: no-repeat;
-          color: $primaryWhiteColor;
-          padding: 75px 60px 140px;
-          width: 446px;
-          height: 540px;
-
-          .title {
-            font-size: 28px;
-            font-family: $stolzlBold;
-            letter-spacing: -0.04em;
-            line-height: 94%;
-            margin-bottom: 20px;
-          }
-          .text {
-            font-family: $stolzlMedium;
-            font-size: 18px;
-            line-height: 120%;
-          }
-          .card-number {
-            font-family: $greatVibesRegular;
-            font-size: 84px;
-            line-height: 92%;
-            color: #ffffff;
-            position: absolute;
-            transform: rotate(-14deg);
-          }
-        }
-
-        &:nth-child(1) {
-          top: 9%;
-          left: 5%;
-          z-index: 100;
-
-          &::before {
-            @include before_after('../images/decor/img-6.svg', 188px, 251px);
-            transform: rotate(21deg);
-            top: -8%;
-            left: -19%;
-          }
-
-          .content-container {
-            transform: rotate(-7deg);
-
-            .card-number {
-              top: 52px;
-              right: 45px;
-            }
-          }
-        }
-        &:nth-child(2) {
-          z-index: 101;
-          bottom: 14%;
-          left: 4%;
-
-          &::before {
-            @include before_after('../images/decor/img-7.svg', 165px, 197px);
-            transform: rotate(4deg);
-            bottom: 9%;
-            right: -11%;
-          }
-
-          .content-container {
-            transform: rotate(-16deg);
-
-            .card-number {
-              bottom: 90px;
-              left: 59px;
-            }
-          }
-        }
-        &:nth-child(3) {
-          z-index: 102;
-          top: 18%;
-          left: 27%;
-
-          &::before {
-            @include before_after('../images/decor/img-8.svg', 118px, 180px);
-            transform: rotate(-25deg);
-            top: -8%;
-            right: -5%;
-          }
-          .content-container {
-            transform: rotate(2deg);
-
-            .card-number {
-              bottom: 90px;
-              right: 59px;
-            }
-          }
-        }
-        &:nth-child(4) {
-          z-index: 103;
-          top: 11%;
-          right: 11%;
-
-          &::before {
-            @include before_after('../images/decor/img-10.svg', 136px);
-            transform: rotate(-6deg);
-            top: -8%;
-            left: -7%;
-          }
-          .content-container {
-            transform: rotate(9deg);
-
-            .card-number {
-              top: 52px;
-              right: 45px;
-            }
-          }
-        }
-        &:nth-child(5) {
-          z-index: 104;
-          transform: rotate(7deg);
-          bottom: 12%;
-          right: 32%;
-
-          &::before {
-            @include before_after('../images/decor/img-9.svg', 209px);
-            transform: rotate(40deg);
-            bottom: -3%;
-            right: 2%;
-          }
-          .content-container {
-            transform: rotate(7deg);
-
-            .card-number {
-              top: 52px;
-              right: 45px;
-            }
-          }
-        }
-        &:nth-child(6) {
-          z-index: 105;
-          bottom: 13%;
-          right: 2%;
-
-          &::before {
-            @include before_after('../images/decor/img-11.svg', 189px, 119px);
-            transform: rotate(10deg);
-            top: -3%;
-            right: 2%;
-          }
-
-          .content-container {
-            transform: rotate(-4deg);
-
-            .card-number {
-              bottom: 90px;
-              right: 59px;
-            }
-          }
-        }
+      strong {
+        font-family: $stolzlBold;
       }
     }
     .icons-container {
@@ -898,129 +1016,27 @@ main {
       right: 0px;
       top: 0px;
 
-      .icons-snow {
+      .icons-snow-small {
         &::before {
-          @include before_after('../images/decor/red-snow.svg', 198px);
+          @include before_after('../images/decor/red-snow.svg', 66px);
           @include positionDecorIcon;
-          top: 33%;
-          left: 6%;
+          top: 9%;
+          left: 3%;
         }
         &::after {
-          @include before_after('../images/decor/red-snow.svg', 138px);
+          @include before_after('../images/decor/red-snow.svg', 107px);
           @include positionDecorIcon;
-          top: 3%;
-          right: 28%;
+          top: 58%;
+          right: 36%;
         }
       }
-      .icons-year {
+      .icons-snow-big {
         &::before {
-          @include before_after('../images/decor/new-year.svg', 202px, 608px);
+          @include before_after('../images/decor/red-snow.svg', 184px);
           @include positionDecorIcon;
-          transform: rotate(-14deg);
-          top: -3%;
-          right: 10%;
+          top: 19%;
+          right: 6%;
         }
-      }
-      .icons-presents {
-        &::before {
-          @include before_after('../images/decor/img-13.svg', 246px);
-          @include positionDecorIcon;
-          mix-blend-mode: multiply;
-          transform: rotate(-8deg);
-          top: -1%;
-          left: 23%;
-        }
-        &::after {
-          @include before_after('../images/decor/img-12.svg', 298px, 206px);
-          @include positionDecorIcon;
-          mix-blend-mode: multiply;
-          bottom: 46%;
-          right: 3%;
-        }
-      }
-    }
-  }
-}
-footer {
-  position: relative;
-  background-image: url('../images/decor/snow-bottom.svg');
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  .content-container {
-    margin: 0 auto;
-    max-width: 800px;
-    color: $primaryGreenColor;
-    font-family: $stolzlBold;
-    padding-top: 130px;
-    padding-bottom: 100px;
-    position: relative;
-
-    .title {
-      font-size: 169px;
-
-      line-height: 82%;
-      letter-spacing: -0.04em;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
-    .about {
-      font-size: 22px;
-      line-height: 110%;
-    }
-    &::before {
-      @include before_after('../images/decor/santa-claus.svg', 326px, 507px);
-      @include positionDecorIcon;
-      bottom: 8%;
-      left: -44%;
-    }
-    &::after {
-      @include before_after('../images/decor/rabbit.svg', 256px, 340px);
-      @include positionDecorIcon;
-      bottom: 4%;
-      right: -23%;
-    }
-  }
-  .caption {
-    font-size: 15px;
-    font-family: $stolzlRegular;
-    color: $greenDarkColor;
-    position: absolute;
-    right: 28px;
-    bottom: 20px;
-
-    strong {
-      font-family: $stolzlBold;
-    }
-  }
-  .icons-container {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-
-    .icons-snow-small {
-      &::before {
-        @include before_after('../images/decor/red-snow.svg', 66px);
-        @include positionDecorIcon;
-        top: 9%;
-        left: 3%;
-      }
-      &::after {
-        @include before_after('../images/decor/red-snow.svg', 107px);
-        @include positionDecorIcon;
-        top: 58%;
-        right: 36%;
-      }
-    }
-    .icons-snow-big {
-      &::before {
-        @include before_after('../images/decor/red-snow.svg', 184px);
-        @include positionDecorIcon;
-        top: 19%;
-        right: 6%;
       }
     }
   }
