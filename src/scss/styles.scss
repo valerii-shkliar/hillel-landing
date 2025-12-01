@@ -719,7 +719,7 @@ main {
           gap: 400px;
           position: absolute;
           right: -1%;
-          top: 28%;
+          top: 33%;
 
           .picture-container {
             &:first-of-type {
@@ -735,7 +735,7 @@ main {
           }
 
           @media screen and (max-width: 1385px) {
-            gap: 600px;
+            gap: 300px;
             right: 1%;
             .picture-container {
               &:first-of-type {
@@ -931,15 +931,34 @@ main {
               }
             }
           }
+          @media screen and (max-width: 1740px) {
+            top: 32%;
+          }
+          @media screen and (max-width: 1550px) {
+            top: 24%;
+          }
+          @media screen and (max-width: 1385px) {
+            top: 38%;
+          }
         }
         > .picture-container {
           @extend .picture-container-class;
           right: -182px;
           bottom: -14%;
 
+          @media screen and (max-width: 1740px) {
+            bottom: 7%;
+          }
+          @media screen and (max-width: 1550px) {
+            bottom: 29%;
+          }
+
           @media screen and (max-width: 1385px) {
             right: -88px;
-            bottom: -3%;
+            bottom: -21%;
+          }
+          @media screen and (max-width: 1110px) {
+            bottom: 0%;
           }
           @media screen and (max-width: 910px) {
             right: initial;
@@ -1075,7 +1094,9 @@ main {
               transform: rotate(13deg);
             }
           }
-
+          @media screen and (max-width: 1550px) {
+            bottom: 50%;
+          }
           @media screen and (max-width: 1385px) {
             right: -57px;
             bottom: 28%;
@@ -1265,7 +1286,7 @@ main {
         }
         .advice-container {
           @extend .advice-container-class;
-          top: 44%;
+          top: 35%;
 
           ul {
             li.item {
@@ -1277,6 +1298,18 @@ main {
                 max-width: 100%;
               }
             }
+          }
+          @media screen and (max-width: 1740px) {
+            top: 28%;
+          }
+          @media screen and (max-width: 1550px) {
+            top: 22%;
+          }
+          @media screen and (max-width: 1385px) {
+            top: 38%;
+          }
+          @media screen and (max-width: 1110px) {
+            top: 30%;
           }
         }
         > .picture-container {
@@ -1293,9 +1326,19 @@ main {
               transform: rotate(-11deg);
             }
           }
+          @media screen and (max-width: 1740px) {
+            bottom: 19%;
+
+            &:last-of-type {
+              top: -88px;
+            }
+          }
+          @media screen and (max-width: 1550px) {
+            bottom: 35%;
+          }
 
           @media screen and (max-width: 1385px) {
-            bottom: 21%;
+            bottom: 6%;
             right: 20px;
 
             .picture {
@@ -1303,6 +1346,9 @@ main {
               height: 295px;
               transform: rotate(-4deg);
             }
+          }
+          @media screen and (max-width: 1110px) {
+            bottom: 22%;
           }
           @media screen and (max-width: 910px) {
             right: initial;

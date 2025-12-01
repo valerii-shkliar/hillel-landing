@@ -57,10 +57,14 @@
       }
     }
     @media screen and (max-width: 1385px) {
-      position: static;
       @include flex_horizonAlign(center);
+      left: -20px;
       margin-bottom: 20px;
     }
+
+    // @media screen and (max-width: px) {
+    // position: static;
+    // }
     @media screen and (max-width: 910px) {
       position: relative;
       left: initial;
