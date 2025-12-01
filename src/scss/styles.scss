@@ -586,6 +586,18 @@ main {
           .picture-container {
             .picture {
             }
+            @media screen and (max-width: 1740px) {
+              bottom: 16%;
+            }
+            @media screen and (max-width: 1550px) {
+              bottom: 35%;
+            }
+            @media screen and (max-width: 1380px) {
+              bottom: -9%;
+            }
+            @media screen and (max-width: 1110px) {
+              bottom: 11%;
+            }
           }
         }
         .about-container {
@@ -593,6 +605,7 @@ main {
         }
         .advice-container {
           @extend .advice-container-class;
+          bottom: 19%;
 
           ul {
             &::after {
@@ -611,6 +624,18 @@ main {
                 right: -62px;
               }
             }
+          }
+          @media screen and (max-width: 1740px) {
+            bottom: 39%;
+          }
+          @media screen and (max-width: 1550px) {
+            bottom: 51%;
+          }
+          @media screen and (max-width: 1380px) {
+            bottom: 1%;
+          }
+          @media screen and (max-width: 1110px) {
+            bottom: 24%;
           }
         }
         @media screen and (max-width: 1740px) {
@@ -938,6 +963,9 @@ main {
           }
           @media screen and (max-width: 1385px) {
             top: 38%;
+          }
+          @media screen and (max-width: 1110px) {
+            top: 31%;
           }
         }
         > .picture-container {
@@ -1358,7 +1386,7 @@ main {
             }
           }
           @media screen and (max-width: 1110px) {
-            bottom: 22%;
+            bottom: 13%;
 
             &:last-of-type {
               position: absolute;
