@@ -1551,6 +1551,8 @@ main {
 
     .wrapper {
       position: relative;
+      display: flex;
+      justify-content: center;
 
       .letter-container {
         margin: 0 auto;
@@ -1591,6 +1593,28 @@ main {
             }
           }
         }
+        @media screen and (max-width: 1460px) {
+          width: 460px;
+          height: 570px;
+
+          .content-container {
+            max-width: 370px;
+            top: -34px;
+
+            .title {
+              font-size: 28px;
+              margin-bottom: 10px;
+            }
+            .text {
+              font-size: 14px;
+              max-width: 302px;
+            }
+          }
+        }
+        @media screen and (max-width: 530px) {
+          margin-left: -30px;
+          margin-right: -51px;
+        }
       }
       .cards-ideas-container {
         position: absolute;
@@ -1602,18 +1626,20 @@ main {
         article.card-idea {
           position: absolute;
 
-          &::before {
-            @include positionDecorIcon;
-          }
-
           .content-container {
             background-image: url('../images/decor/card-idea-background.svg');
             background-position: center;
             background-repeat: no-repeat;
+            background-size: cover;
+            background-size: 140%;
             color: $primaryWhiteColor;
-            padding: 75px 60px 140px;
+            padding: 75px 64px 86px;
             width: 446px;
             height: 540px;
+
+            &::before {
+              @include positionDecorIcon;
+            }
 
             .title {
               font-size: 28px;
@@ -1635,6 +1661,22 @@ main {
               position: absolute;
               transform: rotate(-14deg);
             }
+            @media screen and (max-width: 1460px) {
+              width: 225px;
+              height: 262px;
+              padding: 28px 30px 49px;
+
+              .title {
+                font-size: 14px;
+                margin-bottom: 10px;
+              }
+              .text {
+                font-size: 9px;
+              }
+              .card-number {
+                font-size: 42px;
+              }
+            }
           }
 
           &:nth-child(1) {
@@ -1642,40 +1684,42 @@ main {
             left: 5%;
             z-index: 100;
 
-            &::before {
-              @include before_after('../images/decor/img-6.svg', 188px, 251px);
-              transform: rotate(21deg);
-              top: -8%;
-              left: -19%;
-            }
-
             .content-container {
               transform: rotate(-7deg);
+              position: relative;
+
+              &::before {
+                @include before_after('../images/decor/img-6.svg', 188px, 251px);
+                transform: rotate(21deg);
+                top: -14%;
+                left: -16%;
+              }
 
               .card-number {
-                top: 52px;
-                right: 45px;
+                top: 9%;
+                right: 10%;
               }
             }
           }
           &:nth-child(2) {
             z-index: 101;
-            bottom: 14%;
+            top: 44%;
             left: 4%;
-
-            &::before {
-              @include before_after('../images/decor/img-7.svg', 165px, 197px);
-              transform: rotate(4deg);
-              bottom: 9%;
-              right: -11%;
-            }
 
             .content-container {
               transform: rotate(-16deg);
+              position: relative;
+
+              &::before {
+                @include before_after('../images/decor/img-7.svg', 165px, 197px);
+                transform: rotate(23deg);
+                bottom: 0%;
+                right: -6%;
+              }
 
               .card-number {
-                bottom: 90px;
-                left: 59px;
+                bottom: 17%;
+                left: 13%;
               }
             }
           }
@@ -1684,18 +1728,20 @@ main {
             top: 18%;
             left: 27%;
 
-            &::before {
-              @include before_after('../images/decor/img-8.svg', 118px, 180px);
-              transform: rotate(-25deg);
-              top: -8%;
-              right: -5%;
-            }
             .content-container {
+              position: relative;
               transform: rotate(2deg);
 
+              &::before {
+                @include before_after('../images/decor/img-8.svg', 118px, 180px);
+                transform: rotate(-25deg);
+                top: -8%;
+                right: -5%;
+              }
+
               .card-number {
-                bottom: 90px;
-                right: 59px;
+                bottom: 32%;
+                right: 9%;
               }
             }
           }
@@ -1704,63 +1750,252 @@ main {
             top: 11%;
             right: 11%;
 
-            &::before {
-              @include before_after('../images/decor/img-10.svg', 136px);
-              transform: rotate(-6deg);
-              top: -8%;
-              left: -7%;
-            }
             .content-container {
+              position: relative;
               transform: rotate(9deg);
 
+              &::before {
+                @include before_after('../images/decor/img-10.svg', 136px);
+                transform: rotate(-12deg);
+                top: -5%;
+                left: -16%;
+              }
+
               .card-number {
-                top: 52px;
-                right: 45px;
+                top: 10%;
+                right: 10%;
               }
             }
           }
           &:nth-child(5) {
             z-index: 104;
-            transform: rotate(7deg);
-            bottom: 12%;
+            top: 47%;
             right: 32%;
 
-            &::before {
-              @include before_after('../images/decor/img-9.svg', 209px);
-              transform: rotate(40deg);
-              bottom: -3%;
-              right: 2%;
-            }
             .content-container {
+              position: relative;
               transform: rotate(7deg);
 
+              &::before {
+                @include before_after('../images/decor/img-9.svg', 209px);
+                transform: rotate(40deg);
+                bottom: -3%;
+                right: 2%;
+              }
+
               .card-number {
-                top: 52px;
-                right: 45px;
+                top: 10%;
+                right: 10%;
               }
             }
           }
           &:nth-child(6) {
             z-index: 105;
-            bottom: 13%;
+            top: 46%;
             right: 2%;
-
-            &::before {
-              @include before_after('../images/decor/img-11.svg', 189px, 119px);
-              transform: rotate(10deg);
-              top: -3%;
-              right: 2%;
-            }
 
             .content-container {
               transform: rotate(-4deg);
+              position: relative;
+
+              &::before {
+                @include before_after('../images/decor/img-11.svg', 189px, 119px);
+                transform: rotate(10deg);
+                top: -3%;
+                right: 2%;
+              }
 
               .card-number {
-                bottom: 90px;
-                right: 59px;
+                bottom: 18%;
+                right: 9%;
               }
             }
           }
+          @media screen and (max-width: 1460px) {
+            &:nth-child(1) {
+              .content-container {
+                &::before {
+                  width: 95px;
+                  height: 127px;
+                }
+              }
+            }
+            &:nth-child(2) {
+              top: 49%;
+
+              .content-container {
+                &::before {
+                  width: 84px;
+                  height: 100px;
+                }
+              }
+            }
+            &:nth-child(3) {
+              .content-container {
+                &::before {
+                  top: initial;
+                  right: initial;
+                  bottom: -8%;
+                  left: 5%;
+                  width: 60px;
+                  height: 91px;
+                }
+                .card-number {
+                  bottom: 17%;
+                }
+              }
+            }
+            &:nth-child(4) {
+              .content-container {
+                &::before {
+                  width: 69px;
+                  height: 69px;
+                  bottom: 4%;
+                  right: 5%;
+                  top: initial;
+                  left: initial;
+                }
+                .card-number {
+                  top: 8%;
+                  right: 9%;
+                }
+              }
+            }
+            &:nth-child(5) {
+              .content-container {
+                &::before {
+                  width: 106px;
+                  height: 106px;
+                }
+                .card-number {
+                  top: 8%;
+                  right: 9%;
+                }
+              }
+            }
+            &:nth-child(6) {
+              .content-container {
+                &::before {
+                  width: 95px;
+                  height: 60px;
+                }
+              }
+            }
+          }
+
+          @media screen and (max-width: 1460px) {
+            position: relative;
+
+            &:nth-child(1) {
+              top: 0%;
+              left: 7%;
+
+              .content-container {
+                &::before {
+                  width: 95px;
+                  height: 127px;
+                }
+              }
+            }
+            &:nth-child(2) {
+              left: initial;
+              right: 0%;
+              top: -5%;
+              align-self: flex-end;
+
+              .content-container {
+                transform: rotate(10deg);
+
+                &::before {
+                  width: 84px;
+                  height: 100px;
+                }
+              }
+            }
+            &:nth-child(3) {
+              z-index: 100;
+              top: -9%;
+              left: 6%;
+
+              .content-container {
+                transform: rotate(-10deg);
+
+                &::before {
+                  top: initial;
+                  right: initial;
+                  bottom: -8%;
+                  left: 5%;
+                  width: 60px;
+                  height: 91px;
+                }
+                .card-number {
+                  bottom: 17%;
+                }
+              }
+            }
+            &:nth-child(4) {
+              align-self: flex-end;
+              left: initial;
+              top: -13%;
+              right: -1%;
+
+              .content-container {
+                transform: rotate(9deg);
+
+                &::before {
+                  width: 69px;
+                  height: 69px;
+                  bottom: 4%;
+                  right: 5%;
+                  top: initial;
+                  left: initial;
+                }
+                .card-number {
+                  top: 8%;
+                  right: 9%;
+                }
+              }
+            }
+            &:nth-child(5) {
+              right: initial;
+              left: initial;
+              top: -18%;
+
+              .content-container {
+                position: relative;
+                transform: rotate(-15deg);
+
+                &::before {
+                  width: 106px;
+                  height: 106px;
+                }
+                .card-number {
+                  top: 8%;
+                  right: 9%;
+                }
+              }
+            }
+            &:nth-child(6) {
+              left: initial;
+              right: 2%;
+              top: -20%;
+              align-self: flex-end;
+
+              .content-container {
+                transform: rotate(-4deg);
+
+                &::before {
+                  width: 95px;
+                  height: 60px;
+                }
+              }
+            }
+          }
+        }
+        @media screen and (max-width: 1460px) {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
         }
       }
       .icons-container {
@@ -1810,7 +2045,55 @@ main {
             right: 3%;
           }
         }
+        @media screen and (max-width: 1460px) {
+          .icons-snow {
+            &::before {
+              width: 111px;
+              height: 111px;
+              top: 267%;
+            }
+            &::after {
+              width: 63px;
+              height: 63px;
+              top: 223%;
+            }
+          }
+        }
+        @media screen and (max-width: 1380px) {
+          .icons-year {
+            &::before {
+              width: 41px;
+              height: 125px;
+            }
+          }
+          .icons-presents {
+            &::before {
+              width: 111px;
+              height: 111px;
+            }
+            &::after {
+              width: 151px;
+              height: 105px;
+            }
+          }
+        }
+        @media screen and (max-width: 800px) {
+          .icons-presents {
+            &::before {
+              top: 102%;
+              left: 0%;
+            }
+            &::after {
+              bottom: -64%;
+              right: 0%;
+              z-index: 10;
+            }
+          }
+        }
       }
+    }
+    @media screen and (max-width: 1460px) {
+      margin-bottom: 1100px;
     }
   }
   section.christmas-cocktails {
@@ -1822,108 +2105,172 @@ main {
 
     .wrapper {
       .content-container {
-        color: $greenDarkColor;
-        font-size: 32px;
-        text-align: center;
-        margin: 0 auto;
-        max-width: 1080px;
         position: relative;
         margin-bottom: 180px;
 
         &::before {
-          @include before_after('../images/pictures/img-3.png', 543px, 651px);
+          @include before_after('../images/pictures/img-6.png', 543px, 651px);
           @include positionDecorIcon;
           transform: rotate(-10deg);
           mix-blend-mode: multiply;
-          left: -47%;
+          left: -7%;
           top: -12%;
+
+          @media screen and (max-width: 1680px) {
+            left: initial;
+            top: initial;
+            right: -5%;
+            bottom: -70%;
+          }
+          @media screen and (max-width: 1385px) {
+            width: 213px;
+            height: 255px;
+          }
+          @media screen and (max-width: 465px) {
+            bottom: -62%;
+          }
         }
 
         &::after {
-          @include before_after('../images/pictures/img-4.png', 447px, 536px);
+          @include before_after('../images/pictures/img-7.png', 447px, 536px);
           @include positionDecorIcon;
           transform: rotate(12deg);
           mix-blend-mode: multiply;
-          right: -44%;
+          right: -4%;
           top: -20%;
-        }
 
-        .title {
-          font-family: $stolzlBold;
-          line-height: 102%;
-          letter-spacing: -0.04em;
-          font-size: 58px;
-          margin-bottom: 20px;
-        }
-        .note {
-          line-height: 120%;
-          font-family: $sourceCodePro;
-          margin-bottom: 40px;
-        }
-        .text {
-          line-height: 120%;
-          font-family: $stolzlRegular;
-          margin-bottom: 40px;
-
-          strong {
-            font-family: $stolzlBold;
+          @media screen and (max-width: 1680px) {
+            transform: rotate(12deg);
+            left: 8%;
+            top: -110%;
           }
+          @media screen and (max-width: 1385px) {
+            width: 274px;
+            height: 329px;
+            top: -122%;
+          }
+          @media screen and (max-width: 700px) {
+            top: -104%;
+          }
+          @media screen and (max-width: 470px) {
+            top: -88%;
+          }
+          @media screen and (max-width: 375px) {
+            top: -72%;
+          }
+        }
+
+        .content-item {
+          color: $greenDarkColor;
+          font-size: 32px;
+          text-align: center;
+          margin: 0 auto;
+          max-width: 1080px;
+
+          .title {
+            font-family: $stolzlBold;
+            line-height: 102%;
+            letter-spacing: -0.04em;
+            font-size: 58px;
+            margin-bottom: 20px;
+          }
+          .note {
+            line-height: 120%;
+            font-family: $sourceCodePro;
+            margin-bottom: 40px;
+          }
+          .text {
+            line-height: 120%;
+            font-family: $stolzlRegular;
+            margin-bottom: 40px;
+
+            strong {
+              font-family: $stolzlBold;
+            }
+          }
+          @media screen and (max-width: 1385px) {
+            max-width: 600px;
+
+            .title {
+              font-size: 28px;
+            }
+            .text,
+            .note {
+              font-size: 16px;
+            }
+          }
+        }
+        @media screen and (max-width: 1680px) {
+          margin-bottom: 300px;
         }
       }
       .cocktails-container {
         @include flex_horizonAlign(center);
-        gap: 30px;
+        column-gap: 30px;
+        row-gap: 10px;
+        flex-wrap: wrap;
 
         article.card-recipe {
           max-width: 340px;
           position: relative;
 
-          &::before {
-            @include positionDecorIcon;
-            top: -15%;
-            right: 3%;
-          }
           &:nth-child(1) {
-            &::before {
-              @include before_after('../images/decor/img-14.svg', 142px);
-              transform: rotate(17deg);
+            .title-container {
+              &::after {
+                @include before_after('../images/decor/img-14.svg', 142px);
+                transform: rotate(17deg);
+              }
             }
           }
           &:nth-child(2) {
-            &::before {
-              @include before_after('../images/decor/img-15.svg', 101px, 123px);
-              transform: rotate(-22deg);
+            .title-container {
+              &::after {
+                @include before_after('../images/decor/img-15.svg', 101px, 123px);
+                transform: rotate(-22deg);
+              }
             }
           }
           &:nth-child(3) {
-            &::before {
-              @include before_after('../images/decor/img-16.svg', 149px);
-              transform: rotate(22deg);
+            .title-container {
+              &::after {
+                @include before_after('../images/decor/img-16.svg', 149px);
+                transform: rotate(22deg);
+              }
             }
           }
           &:nth-child(4) {
-            &::before {
-              @include before_after('../images/decor/img-17.svg', 141px);
-              transform: rotate(-4deg);
+            .title-container {
+              &::after {
+                @include before_after('../images/decor/img-17.svg', 141px);
+                transform: rotate(-4deg);
+              }
             }
           }
           &:nth-child(5) {
-            &::before {
-              @include before_after('../images/decor/img-18.svg', 151px, 137px);
-              transform: rotate(14deg);
+            .title-container {
+              &::after {
+                @include before_after('../images/decor/img-18.svg', 151px, 137px);
+                transform: rotate(14deg);
+              }
             }
           }
 
-          .title {
+          .title-container {
             font-family: $stolzlBold;
-            padding-bottom: 30px;
+            margin-bottom: 30px;
             color: $primaryGreenColor;
             font-size: 40px;
             line-height: 110%;
+
+            &::after {
+              @include positionDecorIcon;
+              top: -15%;
+              right: 3%;
+            }
           }
           .text {
             font-family: $stolzlRegular;
-            padding-bottom: 30px;
+            margin-bottom: 30px;
             color: $greenDarkColor;
             font-size: 26px;
             line-height: 110%;
@@ -1932,8 +2279,74 @@ main {
               font-family: $stolzlBold;
             }
           }
+          @media screen and (max-width: 1385px) {
+            .title-container {
+              @include flex_AlignBooth(center);
+              margin-bottom: initial;
+
+              .title {
+                font-size: 24px;
+                line-height: 94%;
+              }
+              &::after {
+                inset: initial;
+                position: relative;
+              }
+            }
+            .text {
+              font-size: 18px;
+              margin-bottom: 20px;
+            }
+
+            &:nth-child(1) {
+              .title-container {
+                &::after {
+                  width: 125px;
+                  height: 125px;
+                }
+              }
+            }
+            &:nth-child(2) {
+              .title-container {
+                &::after {
+                  width: 94px;
+                  height: 115px;
+                }
+              }
+            }
+            &:nth-child(3) {
+              .title-container {
+                &::after {
+                  width: 135px;
+                  height: 135px;
+                }
+              }
+            }
+            &:nth-child(4) {
+              .title-container {
+                &::after {
+                  width: 146px;
+                  height: 146px;
+                }
+              }
+            }
+            &:nth-child(5) {
+              .title-container {
+                &::after {
+                  width: 143px;
+                  height: 130px;
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 800px) {
+            max-width: 100%;
+          }
         }
       }
+    }
+    @media screen and (max-width: 1680px) {
+      padding-top: 450px;
     }
   }
 }
@@ -1956,11 +2369,19 @@ footer {
 
       .title {
         font-size: 169px;
-
         line-height: 82%;
         letter-spacing: -0.04em;
         margin-bottom: 10px;
         text-transform: uppercase;
+
+        .dash {
+          display: none;
+        }
+        @media screen and (max-width: 1385px) {
+          .dash {
+            display: initial;
+          }
+        }
       }
       .about {
         font-size: 22px;
@@ -1978,6 +2399,38 @@ footer {
         bottom: 4%;
         right: -23%;
       }
+      @media screen and (max-width: 1385px) {
+        max-width: 500px;
+        padding-top: 20px;
+
+        .title {
+          font-size: 105px;
+          line-height: 76%;
+        }
+        .about {
+          font-size: 14px;
+        }
+
+        &::before {
+          width: 179px;
+          height: 279px;
+        }
+
+        &::after {
+          width: 123px;
+          height: 164px;
+        }
+      }
+      @media screen and (max-width: 910px) {
+        position: static;
+        &::before {
+          display: none;
+        }
+        &::after {
+          bottom: 1%;
+          right: 0%;
+        }
+      }
     }
     .caption {
       font-size: 15px;
@@ -1989,6 +2442,13 @@ footer {
 
       strong {
         font-family: $stolzlBold;
+      }
+
+      @media screen and (max-width: 1800px) {
+        right: initial;
+        left: 14px;
+        bottom: 8px;
+        font-size: 9px;
       }
     }
     .icons-container {
@@ -2011,6 +2471,15 @@ footer {
           top: 58%;
           right: 36%;
         }
+
+        @media screen and (max-width: 910px) {
+          &::after {
+            display: none;
+          }
+        }
+        @media screen and (max-width: 675px) {
+          display: none;
+        }
       }
       .icons-snow-big {
         &::before {
@@ -2019,7 +2488,29 @@ footer {
           top: 19%;
           right: 6%;
         }
+
+        @media screen and (max-width: 1840px) {
+          &::before {
+            top: -8%;
+          }
+        }
+        @media screen and (max-width: 1385px) {
+          &::before {
+            width: 66px;
+            height: 66px;
+            top: 32%;
+          }
+        }
+        @media screen and (max-width: 500px) {
+          display: none;
+        }
       }
+    }
+    @media screen and (max-width: 910px) {
+      background-size: 150%;
+    }
+    @media screen and (max-width: 600px) {
+      background-size: 250%;
     }
   }
 }
