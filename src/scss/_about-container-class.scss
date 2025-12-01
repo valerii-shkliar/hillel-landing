@@ -1,0 +1,118 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.about-container-class {
+  color: $primaryWhiteColor;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  padding: 90px 28px 20px;
+  max-width: 387px;
+
+  ul {
+    &::before {
+      display: inline-block;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -5px;
+      width: 440px;
+      background-color: $primaryGreenColor;
+      transform: rotate(2deg);
+
+      @media screen and (max-width: 910px) {
+        right: -50px;
+        left: -50px;
+        width: initial;
+      }
+    }
+
+    li.item {
+      margin-bottom: 30px;
+
+      .title {
+        @include primaryTitleFormat;
+        color: $primaryWhiteColor;
+        position: relative;
+      }
+    }
+    li.item {
+      display: flex;
+      gap: 20px;
+
+      .text {
+        @include primaryTextFormat;
+        font-size: 24px;
+        color: $primaryWhiteColor;
+        margin-bottom: 30px;
+        position: relative;
+
+        @media screen and (max-width: 1385px) {
+          font-size: 14px;
+        }
+
+        strong {
+          @include strongTextFormat;
+
+          @media screen and (max-width: 1385px) {
+            font-size: 14px;
+          }
+        }
+      }
+      &::before {
+        display: inline-block;
+        font-family: $greatVibesRegular;
+        font-size: 32px;
+        position: relative;
+      }
+      &:nth-of-type(1) {
+        &::before {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      @for $i from 1 through 6 {
+        &:nth-of-type(#{$i}) {
+          &::before {
+            content: '(0#{$i})';
+          }
+        }
+      }
+      @media screen and (max-width: 1385px) {
+        gap: 10px;
+      }
+      @media screen and (max-width: 910px) {
+        gap: 40px;
+
+        &:nth-of-type(1) {
+          justify-content: center;
+          &::before {
+            content: none;
+          }
+        }
+      }
+      @media screen and (max-width: 450px) {
+        &:nth-of-type(1) {
+          &::before {
+            content: '(00)';
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 910px) {
+      position: relative;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+  @media screen and (max-width: 1385px) {
+    max-width: 260px;
+  }
+  @media screen and (max-width: 910px) {
+    position: static;
+    max-width: initial;
+    padding: 40px 0px;
+  }
+}

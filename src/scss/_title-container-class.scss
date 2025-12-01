@@ -1,0 +1,70 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.title-container-class {
+  .title {
+    @include primaryTitleFormat;
+    position: relative;
+    margin-bottom: 40px;
+
+    &::before {
+      content: 'історія №1';
+      @include ellipseLabel($redColor);
+      top: -150px;
+      left: -7%;
+
+      @media screen and (max-width: 1385px) {
+        font-size: 16px;
+        padding: 12px 18px;
+        top: -60px;
+      }
+      @media screen and (max-width: 910px) {
+        left: 4%;
+      }
+    }
+    @media screen and (max-width: 1385px) {
+      margin-bottom: 20px;
+    }
+  }
+  .quote {
+    @include primaryTextFormat;
+    font-family: $sourceCodePro;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 1385px) {
+      margin-bottom: 20px;
+    }
+    @media screen and (max-width: 450px) {
+      margin-bottom: initial;
+    }
+  }
+
+  .picture-container {
+    position: absolute;
+    left: -80px;
+    top: 0%;
+
+    .picture {
+      mix-blend-mode: multiply;
+      transform: rotate(-6deg);
+
+      @media screen and (max-width: 1385px) {
+        width: 325px;
+        height: 357px;
+      }
+      @media screen and (max-width: 910px) {
+        transform: rotate(6deg);
+      }
+    }
+    @media screen and (max-width: 1385px) {
+      position: static;
+      @include flex_horizonAlign(center);
+      margin-bottom: 20px;
+    }
+    @media screen and (max-width: 910px) {
+      position: relative;
+      left: initial;
+      right: initial;
+    }
+  }
+}

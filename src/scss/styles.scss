@@ -1,6 +1,12 @@
 @use 'reset' as *;
 @use 'fonts' as *;
 @use 'variables' as *;
+@use 'mixins' as *;
+@use 'about-container-class' as *;
+@use 'advice-container-class' as *;
+@use '_title-container-class' as *;
+@use '_content-container-class' as *;
+@use '_picture-container-class' as *;
 
 html,
 body {
@@ -28,10 +34,19 @@ body {
 .wrapper {
   max-width: 1920px;
   margin: auto;
+  padding: 0 28px;
+
+  @media screen and (max-width: 910px) {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+@media screen and (max-width: 1385px) {
 }
 
 header {
-  margin-bottom: 120px;
+  margin-bottom: 60px;
 
   .wrapper {
     position: relative;
@@ -47,12 +62,31 @@ header {
         line-height: 92%;
         letter-spacing: -0.04em;
         margin-bottom: 10px;
+        position: relative;
 
         &::after {
           content: 'IT School';
           @include ellipseLabel($primaryGreenColor);
-          top: 215px;
-          left: 37%;
+          top: 42%;
+          left: 28%;
+        }
+
+        @media screen and (max-width: 1285px) {
+          font-size: 93px;
+          margin-bottom: 30px;
+
+          &::after {
+            font-size: 16px;
+            padding: 10px 17px;
+            left: 10%;
+          }
+        }
+        @media screen and (max-width: 910px) {
+          text-align: center;
+
+          &::after {
+            left: 42%;
+          }
         }
       }
       .stories-container {
@@ -73,6 +107,10 @@ header {
             strong {
               font-family: $stolzlBold;
             }
+
+            @media screen and (max-width: 1285px) {
+              font-size: 18px;
+            }
           }
           &:nth-child(1) {
             .story-text {
@@ -81,6 +119,16 @@ header {
                 @include positionDecorIcon;
                 right: -13px;
                 bottom: -75px;
+
+                @media screen and (max-width: 1285px) {
+                  width: 83px;
+                  height: 83px;
+                  bottom: -66px;
+                }
+                @media screen and (max-width: 910px) {
+                  right: -10px;
+                  bottom: -45px;
+                }
               }
             }
           }
@@ -92,6 +140,16 @@ header {
                 @include positionDecorIcon;
                 top: -53px;
                 left: -47px;
+
+                @media screen and (max-width: 1285px) {
+                  width: 59px;
+                  height: 62px;
+                  top: -33px;
+                  left: 0px;
+                }
+              }
+              @media screen and (max-width: 910px) {
+                text-indent: 70px;
               }
             }
           }
@@ -102,6 +160,17 @@ header {
                 @include positionDecorIcon;
                 top: 25px;
                 right: -27px;
+
+                @media screen and (max-width: 1285px) {
+                  width: 96px;
+                  height: 93px;
+                  top: 82px;
+                  right: -35px;
+                }
+                @media screen and (max-width: 910px) {
+                  top: -75px;
+                  right: -15px;
+                }
               }
             }
           }
@@ -112,6 +181,22 @@ header {
                 @include positionDecorIcon;
                 bottom: -69px;
                 right: -1px;
+
+                @media screen and (max-width: 1285px) {
+                  width: 56px;
+                  height: 62px;
+                  bottom: -32px;
+                  right: 9px;
+                }
+                @media screen and (max-width: 910px) {
+                  bottom: 34px;
+                  left: 5px;
+                  right: initial;
+                  transform: rotate(-38deg);
+                }
+              }
+              @media screen and (max-width: 910px) {
+                text-indent: 70px;
               }
             }
           }
@@ -122,10 +207,35 @@ header {
                 @include positionDecorIcon;
                 top: -38px;
                 right: -107px;
+
+                @media screen and (max-width: 1285px) {
+                  width: 94px;
+                  height: 90px;
+                  top: -5px;
+                  right: -51px;
+                }
+                @media screen and (max-width: 910px) {
+                  top: -40px;
+                  right: -32px;
+                }
               }
             }
           }
         }
+
+        @media screen and (max-width: 910px) {
+          flex-direction: column;
+          align-items: center;
+          gap: 40px;
+
+          li.story {
+            max-width: 440px;
+            padding-right: 25px;
+          }
+        }
+      }
+      @media screen and (max-width: 1285px) {
+        padding-top: 95px;
       }
     }
     .release-caption {
@@ -156,336 +266,1085 @@ header {
         letter-spacing: -0.04em;
         font-size: 48px;
       }
+      @media screen and (max-width: 1285px) {
+        top: 25px;
+        right: 14px;
+
+        .date {
+          font-size: 20px;
+        }
+        .release {
+          font-size: 24px;
+        }
+      }
     }
   }
 }
 main {
   section.cozy-vibe {
     .wrapper {
-      padding: 0 28px;
       position: relative;
-      margin-bottom: 300px;
 
-      .left-side {
-        width: 55%;
+      .main-container {
+        position: relative;
+        display: flex;
 
-        .upper-content-container {
-          margin-bottom: 60px;
-          .title {
-            color: $primaryGreenColor;
-            font-size: 114px;
-            font-family: $greatVibesRegular;
-            line-height: 92%;
-            margin-bottom: 20px;
+        .left-side {
+          width: 55%;
 
-            strong {
-              font-size: 48px;
-              font-family: $stolzlBold;
-              letter-spacing: -0.04em;
-              text-transform: uppercase;
-            }
-          }
-          .text {
-            @include textStyle;
-            margin-bottom: 20px;
+          .upper-content-container {
+            margin-bottom: 60px;
 
-            strong {
-              @include strongTextStyle;
-            }
-            em {
+            .title {
+              color: $primaryGreenColor;
+              font-size: 114px;
               font-family: $greatVibesRegular;
-              font-size: 54px;
-            }
-          }
-        }
-        .low-content-container {
-          display: flex;
-          justify-content: end;
-          margin-bottom: 60px;
-
-          .picture {
-            mix-blend-mode: multiply;
-            position: absolute;
-            transform: rotate(15deg);
-            left: -122px;
-            bottom: 125px;
-          }
-          .text-container {
-            width: 60%;
-
-            .text {
-              @include textStyle;
+              line-height: 92%;
               margin-bottom: 20px;
 
               strong {
-                @include strongTextStyle;
+                font-size: 48px;
+                font-family: $stolzlBold;
+                letter-spacing: -0.04em;
+                text-transform: uppercase;
+              }
+
+              @media screen and (max-width: 1385px) {
+                font-size: 54px;
+
+                strong {
+                  font-size: 28px;
+                }
+              }
+            }
+            .text {
+              @include primaryTextFormat;
+              margin-bottom: 20px;
+
+              strong {
+                @include strongTextFormat;
               }
               em {
                 font-family: $greatVibesRegular;
-                font-size: 45px;
+                font-size: 54px;
               }
             }
           }
+          .low-content-container {
+            display: flex;
+            justify-content: end;
+            margin-bottom: 40px;
+
+            .picture-container {
+              width: 45%;
+              position: relative;
+              left: -138px;
+              top: -72px;
+
+              .picture {
+                mix-blend-mode: multiply;
+                transform: rotate(15deg);
+              }
+              @media screen and (max-width: 1385px) {
+                position: static;
+
+                .picture {
+                  width: 274px;
+                  height: 315px;
+                }
+              }
+              @media screen and (max-width: 1080px) {
+                .picture {
+                  width: 164px;
+                  height: 197px;
+                }
+              }
+              @media screen and (max-width: 910px) {
+                position: absolute;
+                left: initial;
+                top: initial;
+                width: initial;
+                bottom: 0%;
+                right: -4%;
+              }
+            }
+            .text-container {
+              width: 55%;
+
+              .text {
+                @include primaryTextFormat;
+                margin-bottom: 20px;
+
+                strong {
+                  @include strongTextFormat;
+                }
+                em {
+                  font-family: $greatVibesRegular;
+                  font-size: 45px;
+
+                  @media screen and (max-width: 1385px) {
+                    line-height: 110%;
+                    font-size: 32px;
+                  }
+                }
+              }
+              @media screen and (max-width: 910px) {
+                width: 100%;
+              }
+            }
+          }
+          @media screen and (max-width: 910px) {
+            .upper-content-container,
+            .low-content-container {
+              margin-bottom: 20px;
+            }
+          }
         }
-        .title {
-          font-size: 48px;
-          line-height: 94%;
-          letter-spacing: -0.04em;
-          color: #003619;
-          font-family: $stolzlBold;
+        .right-side {
+          width: 45%;
+
+          .letter-container {
+            width: 1583px;
+            height: 1583px;
+            background-image: url('../images/decor/letter-red-background-rotate.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            mix-blend-mode: multiply;
+            @include flex_AlignBooth(center, center);
+            position: relative;
+            top: -16%;
+            left: -26%;
+
+            .content-container {
+              color: #8f0700;
+              max-width: 390px;
+              position: relative;
+              top: -87px;
+              left: -35px;
+              transform: rotate(-12deg);
+
+              .title {
+                letter-spacing: -0.04em;
+                font-size: 30px;
+                text-align: center;
+                font-family: $stolzlBold;
+                line-height: 102%;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+              }
+              .text {
+                font-size: 18px;
+                font-family: $stolzlRegular;
+                max-width: 386px;
+                margin: 0 auto;
+                text-align: center;
+                margin-bottom: 10px;
+
+                strong {
+                  font-family: $stolzlBold;
+
+                  em {
+                    color: $redColor;
+                  }
+                }
+
+                @for $i from 1 through 4 {
+                  $baseWidth: 580px;
+
+                  &:nth-of-type(#{$i}) {
+                    max-width: calc($baseWidth - ($baseWidth * 0.15 * $i));
+                  }
+                }
+              }
+            }
+            @media screen and (max-width: 1740px) {
+              left: -35%;
+            }
+            @media screen and (max-width: 1580px) {
+              width: 878px;
+              height: 878px;
+              top: 5%;
+              left: 2%;
+
+              .content-container {
+                max-width: 284px;
+                top: -75px;
+
+                .title,
+                .text {
+                  font-size: 12px;
+                  margin-bottom: 2px;
+                }
+              }
+            }
+            @media screen and (max-width: 1290px) {
+              left: -23%;
+            }
+            @media screen and (max-width: 910px) {
+              left: initial;
+              margin-top: -100px;
+            }
+            @media screen and (max-width: 910px) {
+              margin-left: -20px;
+              margin-right: -75px;
+            }
+          }
+        }
+        @media screen and (max-width: 1080px) {
+          .left-side {
+            width: 45%;
+          }
+          .right-side {
+            width: 55%;
+          }
+        }
+        @media screen and (max-width: 910px) {
+          flex-direction: column;
+
+          .left-side {
+            width: 100%;
+          }
+          .right-side {
+            width: 100%;
+            display: flex;
+          }
         }
       }
-      .right-side {
-        .picture {
-          mix-blend-mode: multiply;
-          position: absolute;
-          top: -275px;
-          right: -408px;
+      .additional-message {
+        font-size: 48px;
+        line-height: 94%;
+        letter-spacing: -0.04em;
+        color: #003619;
+        font-family: $stolzlBold;
+        max-width: 1000px;
+
+        &.mobile {
+          display: none;
+        }
+
+        @media screen and (max-width: 1385px) {
+          font-size: 28px;
+        }
+        @media screen and (max-width: 910px) {
+          display: none;
+
+          &.mobile {
+            display: block;
+          }
         }
       }
+    }
+    @media screen and (max-width: 1620px) {
+      margin-bottom: 200px;
+    }
+    @media screen and (max-width: 1385px) {
+      margin-bottom: 80px;
     }
   }
   section.first-history {
+    margin-bottom: 300px;
+
     .wrapper {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
       position: relative;
-      margin-bottom: 300px;
 
       &::before {
-        @include before_after('../images/decor/background-paper.png', 1303px, 894px);
+        @include before_after('../images/decor/background-paper-history-1.svg', 1303px, 894px);
         @include positionDecorIcon;
         mix-blend-mode: multiply;
         left: 15%;
         top: -8%;
-      }
-      .advice-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
 
-        ul {
-          li {
-            .title {
-              position: relative;
-              &::before {
-                @include before_after('../images/decor/christmas-tree.svg', 219px, 403px);
-                @include positionDecorIcon;
-                mix-blend-mode: multiply;
-                top: -368px;
+        @media screen and (max-width: 910px) {
+          left: -25%;
+          top: -3%;
+        }
+        @media screen and (max-width: 450px) {
+          width: 557px;
+          height: 420px;
+          left: -11%;
+          top: -1%;
+          transform: rotate(-5deg);
+        }
+      }
+
+      .main-container {
+        margin: 0 auto;
+        width: 1088px;
+        padding-top: 48px;
+
+        .title-container {
+          @extend .title-container-class;
+
+          .picture-container {
+            .picture {
+            }
+          }
+        }
+        .content-container {
+          @extend .content-container-class;
+
+          .picture-container {
+            .picture {
+            }
+          }
+        }
+        .about-container {
+          @extend .about-container-class;
+        }
+        .advice-container {
+          @extend .advice-container-class;
+
+          ul {
+            &::after {
+              @include before_after('../images/decor/christmas-tree.svg', 219px, 403px);
+              @include positionDecorIcon;
+              mix-blend-mode: multiply;
+              top: -368px;
+
+              @media screen and (max-width: 1385px) {
+                width: 172px;
+                height: 316px;
+                top: -298px;
+              }
+              @media screen and (max-width: 910px) {
+                top: 24%;
+                right: -62px;
               }
             }
           }
         }
-
-        .picture-container {
-          position: relative;
-          left: -80px;
-
-          .picture {
-            mix-blend-mode: multiply;
-            transform: rotate(-6deg);
-          }
-          &::after {
-            @include before_after('../images/decor/stamp.svg', 177px, 151px);
-            @include positionDecorIcon;
-            mix-blend-mode: multiply;
-            top: 40px;
-            right: 0px;
-          }
+        @media screen and (max-width: 1740px) {
+          width: 800px;
         }
-        @extend .advice-container-class;
-      }
-
-      .main-content-container {
-        .title {
-          color: #003619;
-          font-family: $stolzlBold;
-          line-height: 94%;
-          letter-spacing: 0.04em;
-          font-size: 48px;
-          position: relative;
-          margin-bottom: 40px;
-
-          &::before {
-            content: 'історія №1';
-            text-transform: uppercase;
-            @include ellipseLabel($redColor);
-            top: -100%;
-            left: -6%;
-          }
+        @media screen and (max-width: 1550px) {
+          width: 600px;
         }
-        .qoute {
-          line-height: 120%;
-          font-size: 32px;
-          color: #003619;
-          font-family: $sourceCodePro;
-          margin-bottom: 40px;
+        @media screen and (max-width: 1110px) {
+          width: 400px;
         }
-        .text-container {
-          padding-left: 20px;
-          padding-right: 20px;
 
-          .text {
-            font-family: $stolzlRegular;
-            color: #003619;
-            font-size: 32px;
-            line-height: 120%;
-            margin-bottom: 40px;
-
-            strong {
-              font-family: $stolzlBold;
-            }
-          }
+        @media screen and (max-width: 910px) {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
         }
       }
-      .about-container {
-        @extend .about-container-class;
-
-        .picture-container {
-          .picture {
-            mix-blend-mode: multiply;
-            transform: rotate(10deg);
-            position: absolute;
-            left: -162px;
-            bottom: -80%;
-          }
-        }
+      @media screen and (max-width: 910px) {
+        padding-left: 14px;
+        padding-right: 14px;
       }
+    }
+    @media screen and (max-width: 910px) {
+      margin-bottom: 80px;
     }
   }
   section.second-history {
+    margin-bottom: 300px;
+
     .wrapper {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
       position: relative;
 
       &::before {
-        @include before_after('../images/decor/background-paper.png', 1303px, 894px);
+        @include before_after('../images/decor/background-paper-history-1.svg', 1303px, 894px);
         @include positionDecorIcon;
         mix-blend-mode: multiply;
         left: 15%;
         top: -8%;
-      }
-      .about-container {
-        @extend .about-container-class;
 
-        ul {
-          &::before {
-            right: -10px;
+        @media screen and (max-width: 910px) {
+          left: -25%;
+          top: -3%;
+        }
+        @media screen and (max-width: 450px) {
+          width: 557px;
+          height: 420px;
+          left: -11%;
+          top: -1%;
+          transform: rotate(-5deg);
+        }
+      }
+
+      .main-container {
+        margin: 0 auto;
+        width: 1088px;
+        padding-top: 48px;
+
+        .title-container {
+          @extend .title-container-class;
+
+          .title {
+            &:before {
+              content: 'історія №2';
+              left: initial;
+              right: -4%;
+              transform: rotate(8deg);
+
+              @media screen and (max-width: 910px) {
+                left: 1%;
+                right: initial;
+                transform: rotate(-8deg);
+              }
+            }
+          }
+
+          .picture-container {
+            right: -43px;
             left: initial;
+            top: 1%;
+
+            .picture {
+              transform: rotate(8deg);
+            }
+            @media screen and (max-width: 1385px) {
+              .picture {
+                transform: rotate(5deg);
+                width: 342px;
+                height: 436px;
+              }
+            }
           }
         }
+        .content-container {
+          @extend .content-container-class;
 
-        .picture-container {
+          .picture-container {
+            .picture {
+            }
+          }
+        }
+        .pictures-container {
+          display: flex;
+          flex-direction: column;
+          gap: 400px;
           position: absolute;
-          left: -46px;
+          right: -1%;
+          top: 28%;
+
+          .picture-container {
+            &:first-of-type {
+              .picture {
+                transform: rotate(-13deg);
+              }
+            }
+            &:last-of-type {
+              .picture {
+                transform: rotate(8deg);
+              }
+            }
+          }
+
+          @media screen and (max-width: 1385px) {
+            gap: 600px;
+            right: 1%;
+            .picture-container {
+              &:first-of-type {
+                .picture {
+                  width: 180px;
+                  height: 217px;
+                }
+              }
+              &:last-of-type {
+                .picture {
+                  width: 184px;
+                  height: 222px;
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 910px) {
+            flex-direction: row;
+            gap: initial;
+            justify-content: space-around;
+            margin-bottom: 20px;
+
+            .picture-container {
+              &:first-of-type {
+                position: relative;
+                top: -50px;
+                .picture {
+                }
+              }
+              &:last-of-type {
+                .picture {
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 910px) {
+            position: static;
+          }
+        }
+        > .picture-container {
+          position: absolute;
+          left: -29px;
+          bottom: 11%;
 
           .picture {
             mix-blend-mode: multiply;
             transform: rotate(-10deg);
           }
+
+          @media screen and (max-width: 1385px) {
+            right: -63px;
+            bottom: -8%;
+
+            .picture {
+              width: 423px;
+              height: 507px;
+            }
+          }
+          @media screen and (max-width: 1110px) {
+            bottom: 18%;
+          }
+          @media screen and (max-width: 910px) {
+            position: relative;
+            left: initial;
+            right: initial;
+            @include flex_horizonAlign(center);
+          }
+          @media screen and (max-width: 450px) {
+            padding-top: 40px;
+
+            .picture {
+              width: 171px;
+              height: 205px;
+            }
+          }
         }
-      }
+        .about-container {
+          @extend .about-container-class;
+          left: 0%;
 
-      .main-content-container {
-        max-width: 970px;
+          ul {
+            &::before {
+              left: -60px;
+              transform: rotate(-2deg);
 
-        .content-container {
-          &:first-child {
-            .title {
-              &::before {
-                content: 'історія №2';
-                text-transform: uppercase;
-                @include ellipseLabel($redColor);
-                transform: rotate(7deg);
-                top: -141%;
-                right: -6%;
+              @media screen and (max-width: 1385px) {
+                left: -187px;
               }
             }
           }
+        }
+        @media screen and (max-width: 1740px) {
+          width: 800px;
+        }
+        @media screen and (max-width: 1550px) {
+          width: 600px;
+        }
+        @media screen and (max-width: 1110px) {
+          width: 400px;
+        }
+
+        @media screen and (max-width: 910px) {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+      }
+      @media screen and (max-width: 910px) {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+    @media screen and (max-width: 910px) {
+      margin-bottom: 80px;
+    }
+  }
+  section.third-history {
+    margin-bottom: 300px;
+
+    .wrapper {
+      position: relative;
+
+      &::before {
+        @include before_after('../images/decor/background-paper-history-1.svg', 1303px, 894px);
+        @include positionDecorIcon;
+        mix-blend-mode: multiply;
+        left: 15%;
+        top: -8%;
+
+        @media screen and (max-width: 910px) {
+          left: -25%;
+          top: -3%;
+        }
+        @media screen and (max-width: 450px) {
+          width: 557px;
+          height: 420px;
+          left: -11%;
+          top: -1%;
+          transform: rotate(-5deg);
+        }
+      }
+
+      .main-container {
+        margin: 0 auto;
+        width: 1088px;
+        padding-top: 48px;
+
+        .title-container {
+          @extend .title-container-class;
 
           .title {
-            color: #003619;
-            font-family: $stolzlBold;
-            line-height: 94%;
-            letter-spacing: 0.04em;
-            font-size: 48px;
-            position: relative;
-            margin-bottom: 40px;
+            &:before {
+              content: 'історія №3';
+            }
           }
-          .qoute {
-            line-height: 120%;
-            font-size: 32px;
-            color: #003619;
-            font-family: $sourceCodePro;
-            margin-bottom: 40px;
-          }
-          .text-container {
-            padding-left: 20px;
-            padding-right: 20px;
 
-            .text {
-              font-family: $stolzlRegular;
-              color: #003619;
-              font-size: 32px;
-              line-height: 120%;
-              margin-bottom: 40px;
+          .picture-container {
+            .picture {
+            }
 
-              strong {
-                font-family: $stolzlBold;
+            @media screen and (max-width: 1385px) {
+              .picture {
+                width: 298px;
+                height: 388px;
+                transform: rotate(-7deg);
               }
             }
           }
         }
-      }
+        .content-container {
+          @extend .content-container-class;
 
-      .pictures-container {
-        max-width: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 80px;
+          .picture-container {
+            .picture {
+            }
+          }
+        }
+        .about-container {
+          @extend .about-container-class;
+        }
+        .advice-container {
+          @extend .advice-container-class;
+          top: 44%;
 
-        &::after {
-          @include before_after('../images/decor/red-snow.svg', 274px);
-          @include positionDecorIcon;
-          right: -4%;
-          bottom: 37%;
+          ul {
+            li.item {
+              &:before {
+                display: none;
+              }
+
+              @media screen and (max-width: 910px) {
+                max-width: 100%;
+              }
+            }
+          }
+        }
+        > .picture-container {
+          @extend .picture-container-class;
+          right: -182px;
+          bottom: -14%;
+
+          @media screen and (max-width: 1385px) {
+            right: -88px;
+            bottom: -3%;
+          }
+          @media screen and (max-width: 910px) {
+            right: initial;
+            bottom: -3%;
+            margin-top: -100px;
+            margin-bottom: -19px;
+            justify-content: flex-start;
+
+            .picture {
+              width: 246px;
+              height: 295px;
+              transform: rotate(-15deg);
+            }
+          }
+        }
+        @media screen and (max-width: 1740px) {
+          width: 800px;
+        }
+        @media screen and (max-width: 1550px) {
+          width: 600px;
+        }
+        @media screen and (max-width: 1110px) {
+          width: 400px;
         }
 
-        .picture-container {
-          position: relative;
+        @media screen and (max-width: 910px) {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+      }
+      @media screen and (max-width: 910px) {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+    @media screen and (max-width: 910px) {
+      margin-bottom: 80px;
+    }
+  }
+  section.four-history {
+    margin-bottom: 300px;
+
+    .wrapper {
+      position: relative;
+
+      &::before {
+        @include before_after('../images/decor/background-paper-history-1.svg', 1303px, 894px);
+        @include positionDecorIcon;
+        mix-blend-mode: multiply;
+        left: 15%;
+        top: -8%;
+
+        @media screen and (max-width: 910px) {
+          left: -25%;
+          top: -3%;
+        }
+        @media screen and (max-width: 450px) {
+          width: 557px;
+          height: 420px;
+          left: -11%;
+          top: -1%;
+          transform: rotate(-5deg);
+        }
+      }
+
+      .main-container {
+        margin: 0 auto;
+        width: 1088px;
+        padding-top: 48px;
+
+        .title-container {
+          @extend .title-container-class;
+
+          .title {
+            &:before {
+              content: 'історія №4';
+              left: initial;
+              right: -4%;
+              transform: rotate(8deg);
+
+              @media screen and (max-width: 910px) {
+                left: 1%;
+                right: initial;
+                transform: rotate(-8deg);
+              }
+            }
+          }
+
+          .picture-container {
+            right: -71px;
+            left: initial;
+            top: 6%;
+
+            .picture {
+              transform: rotate(7deg);
+            }
+            @media screen and (max-width: 1385px) {
+              .picture {
+                transform: rotate(5deg);
+                width: 342px;
+                height: 436px;
+              }
+            }
+            @media screen and (max-width: 910px) {
+              right: initial;
+            }
+          }
+        }
+        .content-container {
+          @extend .content-container-class;
+
+          .picture-container {
+            .picture {
+            }
+          }
+        }
+        > .picture-container {
+          position: absolute;
+          right: -60px;
+          bottom: 31%;
 
           .picture {
             mix-blend-mode: multiply;
+            transform: rotate(-10deg);
           }
 
-          &:nth-child(1) {
-            left: -22%;
-            .picture {
-              transform: rotate(8deg);
-            }
-          }
-          &:nth-child(2) {
-            left: -6%;
-            .picture {
-              transform: rotate(-13deg);
-            }
-          }
-          &:nth-child(3) {
-            margin-top: auto;
-            left: -6%;
-            bottom: 8%;
+          &:last-of-type {
+            right: 54px;
+            bottom: -6%;
 
             .picture {
-              transform: rotate(8deg);
+              transform: rotate(13deg);
+            }
+          }
+
+          @media screen and (max-width: 1385px) {
+            right: -57px;
+            bottom: 28%;
+
+            .picture {
+              width: 274px;
+              height: 329px;
+            }
+
+            &:last-of-type {
+              .picture {
+                width: 237px;
+                height: 284px;
+              }
+            }
+          }
+
+          @media screen and (max-width: 1110px) {
+            bottom: 18%;
+          }
+          @media screen and (max-width: 910px) {
+            position: relative;
+            left: initial;
+            right: initial;
+            @include flex_horizonAlign(center);
+            justify-content: flex-start;
+            padding-left: 5%;
+            margin-top: -73px;
+
+            &:last-of-type {
+              justify-content: flex-end;
+              padding: initial;
+              position: relative;
+              right: -50px;
+            }
+          }
+          @media screen and (max-width: 450px) {
+            padding-top: 40px;
+
+            .picture {
+              width: 171px;
+              height: 205px;
             }
           }
         }
+        .about-container {
+          @extend .about-container-class;
+          left: 0%;
+
+          ul {
+            li.item {
+              &:first-child {
+                &:before {
+                  display: none;
+                }
+              }
+            }
+            &::before {
+              left: -60px;
+              transform: rotate(1deg);
+
+              @media screen and (max-width: 1385px) {
+                left: -187px;
+              }
+            }
+          }
+        }
+        .advice-container {
+          @extend .advice-container-class;
+          position: static;
+          max-width: 100%;
+
+          ul {
+            &::before {
+              top: -79px;
+              bottom: -41px;
+              right: -76px;
+              transform: rotate(-4deg);
+              width: 120%;
+
+              @media screen and (max-width: 1350px) {
+                top: -45px;
+              }
+              @media screen and (max-width: 1120px) {
+                width: 155%;
+              }
+            }
+            li.item {
+              &:before {
+                display: none;
+              }
+
+              @media screen and (max-width: 910px) {
+                max-width: 100%;
+              }
+            }
+          }
+        }
+        @media screen and (max-width: 1740px) {
+          width: 800px;
+        }
+        @media screen and (max-width: 1550px) {
+          width: 600px;
+        }
+        @media screen and (max-width: 1110px) {
+          width: 400px;
+        }
+
+        @media screen and (max-width: 910px) {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
       }
+      @media screen and (max-width: 910px) {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+    @media screen and (max-width: 910px) {
+      margin-bottom: 80px;
+    }
+  }
+  section.five-history {
+    margin-bottom: 300px;
+
+    .wrapper {
+      position: relative;
+
+      &::before {
+        @include before_after('../images/decor/background-paper-history-1.svg', 1303px, 894px);
+        @include positionDecorIcon;
+        mix-blend-mode: multiply;
+        left: 15%;
+        top: -8%;
+
+        @media screen and (max-width: 910px) {
+          left: -25%;
+          top: -3%;
+        }
+        @media screen and (max-width: 450px) {
+          width: 557px;
+          height: 420px;
+          left: -11%;
+          top: -1%;
+          transform: rotate(-5deg);
+        }
+      }
+
+      .main-container {
+        margin: 0 auto;
+        width: 1088px;
+        padding-top: 48px;
+
+        .title-container {
+          @extend .title-container-class;
+
+          .title {
+            &:before {
+              content: 'історія №5';
+            }
+          }
+
+          .picture-container {
+            .picture {
+            }
+
+            @media screen and (max-width: 1385px) {
+              .picture {
+                width: 298px;
+                height: 388px;
+                transform: rotate(-7deg);
+              }
+            }
+          }
+        }
+        .content-container {
+          @extend .content-container-class;
+
+          .picture-container {
+            .picture {
+            }
+          }
+        }
+        .about-container {
+          @extend .about-container-class;
+        }
+        .advice-container {
+          @extend .advice-container-class;
+          top: 44%;
+
+          ul {
+            li.item {
+              &:before {
+                display: none;
+              }
+
+              @media screen and (max-width: 910px) {
+                max-width: 100%;
+              }
+            }
+          }
+        }
+        > .picture-container {
+          @extend .picture-container-class;
+          right: -108px;
+          bottom: 7%;
+
+          &:last-of-type {
+            position: relative;
+            left: -100px;
+            top: -20px;
+
+            .picture {
+              transform: rotate(-11deg);
+            }
+          }
+
+          @media screen and (max-width: 1385px) {
+            bottom: 21%;
+            right: 20px;
+
+            .picture {
+              width: 246px;
+              height: 295px;
+              transform: rotate(-4deg);
+            }
+          }
+          @media screen and (max-width: 910px) {
+            right: initial;
+            bottom: initial;
+            justify-content: flex-end;
+            padding-right: 10%;
+          }
+
+          @media screen and (max-width: 910px) {
+            &:last-of-type {
+              justify-content: flex-end;
+              padding-right: initial;
+              margin-top: -40px;
+              right: initial;
+              left: initial;
+            }
+          }
+        }
+
+        @media screen and (max-width: 1740px) {
+          width: 800px;
+        }
+        @media screen and (max-width: 1550px) {
+          width: 600px;
+        }
+        @media screen and (max-width: 1110px) {
+          width: 400px;
+        }
+
+        @media screen and (max-width: 910px) {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+      }
+      @media screen and (max-width: 910px) {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+    @media screen and (max-width: 910px) {
+      margin-bottom: 80px;
     }
   }
   section.advent-calendar {
