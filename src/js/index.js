@@ -1,13 +1,25 @@
-const overlay = document.querySelector('body .overlay');
-const modalContainer = document.querySelector('body .advent-calendar .modal-container');
-const houseContainer = document.querySelector('body .advent-calendar .house-container');
+const overlay = document.querySelector('.overlay');
+const modalContainer = document.querySelector('.advent-calendar .wrapper .modal-container');
+const modalTitle = document.querySelector(
+  '.advent-calendar .wrapper .modal-container .title-container .title'
+);
+const modalText = document.querySelector('.advent-calendar .wrapper .modal-container .text');
+const modalImage = document.querySelector(
+  '.advent-calendar .wrapper .modal-container .title-container .book-cover'
+);
+const houseContainer = document.querySelector('.advent-calendar .wrapper .house-container');
+const cardItem = document.querySelector('.advent-calendar .wrapper .house-container .card-item');
+
 const buyBookBtn = document.querySelector(
-  'body .advent-calendar .modal-container .btn-container .buy-book-btn'
+  '.advent-calendar .wrapper .modal-container .btn-container .buy-book-btn'
 );
 const ACTIVE_CLASS = 'active';
+const CLICKED_CLASS = 'clicked';
+const CARD_ITEM_CLASS = 'card-item';
 
 buyBookBtn.addEventListener('click', onBuyBookBtnClick);
 houseContainer.addEventListener('click', onHouseContainerClick);
+overlay.addEventListener('click', onHouseOverlayClick);
 
 function onBuyBookBtnClick() {
   overlay.classList.remove(ACTIVE_CLASS);
@@ -15,5 +27,43 @@ function onBuyBookBtnClick() {
 }
 
 function onHouseContainerClick(e) {
-  const itemNumber = e.target.getAttribute('item-number');
+  const cardItemClicked = e.target.closest('.' + CARD_ITEM_CLASS);
+
+  if (cardItemClicked) {
+    const itemNumber = cardItemClicked.getAttribute('data-item-number');
+    const book = findBookByAttr(itemNumber);
+
+    fillModalWindow(book);
+    cardItemClicked.classList.add(CLICKED_CLASS);
+  }
+}
+
+function onHouseOverlayClick() {
+  closeModal();
+}
+
+function findBookByAttr(itemNumber) {
+  return booksList.find((book) => book.id === itemNumber);
+}
+
+function fillModalWindow(book) {
+  const titleStr = book.author + ' “' + book.title + '”';
+  const bookPath = `./dist/images/books-covers/book-${book.id}.png`;
+
+  modalText.innerHTML = book.text;
+  modalTitle.innerHTML = titleStr;
+  modalImage.src = bookPath;
+  buyBookBtn.href = book.link;
+
+  openModal();
+}
+
+function openModal() {
+  modalContainer.classList.add(ACTIVE_CLASS);
+  overlay.classList.add(ACTIVE_CLASS);
+}
+
+function closeModal() {
+  modalContainer.classList.remove(ACTIVE_CLASS);
+  overlay.classList.remove(ACTIVE_CLASS);
 }
