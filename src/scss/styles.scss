@@ -1737,7 +1737,8 @@ main {
       background-repeat: repeat;
       position: absolute;
       inset: 0;
-      z-index: 200;
+      z-index: 100;
+      pointer-events: none;
     }
 
     .wrapper {
@@ -2868,6 +2869,10 @@ main {
           display: flex;
           justify-content: space-between;
           flex-direction: column;
+        }
+        @media screen and (max-width: 910px) {
+          top: 62%;
+          bottom: -120%;
         }
       }
       .icons-container {
