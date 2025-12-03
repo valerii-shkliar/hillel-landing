@@ -1,17 +1,22 @@
 const overlay = document.querySelector('.overlay');
-const modalContainer = document.querySelector('.advent-calendar .wrapper .modal-container');
+const modalContainer = document.querySelector('.advent-calendar-body .wrapper .modal-container');
 const modalTitle = document.querySelector(
-  '.advent-calendar .wrapper .modal-container .title-container .title'
+  '.advent-calendar-body .wrapper .modal-container .title-container .title'
 );
-const modalText = document.querySelector('.advent-calendar .wrapper .modal-container .text');
+const modalText = document.querySelector('.advent-calendar-body .wrapper .modal-container .text');
 const modalImage = document.querySelector(
-  '.advent-calendar .wrapper .modal-container .title-container .book-cover'
+  '.advent-calendar-body .wrapper .modal-container .title-container .book-cover'
 );
-const houseContainer = document.querySelector('.advent-calendar .wrapper .house-container');
-const cardItem = document.querySelector('.advent-calendar .wrapper .house-container .card-item');
+const houseContainer = document.querySelector('.advent-calendar-body .wrapper .house-container');
+const cardItem = document.querySelector(
+  '.advent-calendar-body .wrapper .house-container .card-item'
+);
+const cardImage = document.querySelector(
+  '.advent-calendar-body .wrapper .house-container .card-item .card'
+);
 
 const buyBookBtn = document.querySelector(
-  '.advent-calendar .wrapper .modal-container .btn-container .buy-book-btn'
+  '.advent-calendar-body .wrapper .modal-container .btn-container .buy-book-btn'
 );
 const ACTIVE_CLASS = 'active';
 const CLICKED_CLASS = 'clicked';
@@ -31,9 +36,13 @@ function onHouseContainerClick(e) {
 
   if (cardItemClicked) {
     const itemNumber = cardItemClicked.getAttribute('data-item-number');
+    const cardPicture = cardItemClicked.querySelector(
+      '.advent-calendar-body .wrapper .house-container .card-item .card'
+    );
     const book = findBookByAttr(itemNumber);
 
     fillModalWindow(book);
+    // cardPicture.src = `./dist/images/books-covers/book-${book.id}.png`;
     cardItemClicked.classList.add(CLICKED_CLASS);
   }
 }

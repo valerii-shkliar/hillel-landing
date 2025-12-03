@@ -69,11 +69,10 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin numberCardAdventCalendar($number, $fontSize, $color) {
+@mixin numberCardAdventCalendar($number, $color) {
   content: $number;
   position: absolute;
   display: inline-block;
-  font-size: $fontSize;
   font-family: $HiraKaku;
   color: $color;
   letter-spacing: -0.04em;
@@ -94,79 +93,4 @@
   position: absolute;
   letter-spacing: -0.04em;
   z-index: 100;
-}
-
-@mixin log-in-btn() {
-  font-family: $primaryFontBold;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 125%;
-  color: #fff;
-  background-color: $mainColor;
-  border-radius: 6px;
-  padding: 10px 26px;
-  border: 1px solid transparent;
-  transition: 0.6s;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  font-family: $primaryFontMedium;
-  padding: 8px 17px;
-
-  .icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    stroke: #fff;
-    margin-right: 4px;
-    transition: 0.6s;
-  }
-  &:hover {
-    border: 1px solid $mainColor;
-    background-color: #eee;
-    color: $mainColor;
-
-    .icon {
-      stroke: $mainColor;
-    }
-  }
-}
-@mixin green-btn {
-  font-family: $primaryFontBold;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 125%;
-  color: #fff;
-  background-color: $mainColor;
-  border-radius: 6px;
-  padding: 10px 26px;
-  border: 1px solid transparent;
-  transition: 0.6s;
-}
-@mixin green-btn-hover {
-  border: 1px solid $mainColor;
-  background-color: #eee;
-  color: $mainColor;
-}
-@mixin owl-nav {
-  display: block;
-
-  button {
-    position: absolute;
-    bottom: 171px;
-    width: 18px;
-    height: 18px;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    &:active {
-      stroke: $mainColor;
-    }
-  }
-  button.owl-prev {
-    background-image: url('../images/icons/arrow-left-slider.svg');
-  }
-  button.owl-next {
-    background-image: url('../images/icons/arrow-right-slider.svg');
-  }
 }

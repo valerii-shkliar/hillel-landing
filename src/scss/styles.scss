@@ -392,7 +392,22 @@ main {
               }
             }
           }
+          @media screen and (max-width: 1460px) {
+            width: 50%;
+          }
+          @media screen and (max-width: 1385px) {
+            padding-top: 150px;
+          }
+          @media screen and (max-width: 1195px) {
+            width: 47%;
+          }
+          @media screen and (max-width: 1110px) {
+            padding-top: initial;
+            width: 50%;
+          }
           @media screen and (max-width: 910px) {
+            margin-bottom: -80px;
+
             .upper-content-container,
             .low-content-container {
               margin-bottom: 20px;
@@ -460,25 +475,92 @@ main {
             @media screen and (max-width: 1740px) {
               left: -35%;
             }
-            @media screen and (max-width: 1580px) {
+            // @media screen and (max-width: 1580px) {
+            // width: 878px;
+            // height: 878px;
+            // top: 5%;
+            // left: 2%;
+
+            // }
+            @media screen and (max-width: 1600px) {
+              left: -45%;
+            }
+            @media screen and (max-width: 1520px) {
+              left: -50%;
+            }
+            @media screen and (max-width: 1415px) {
+              left: -58%;
+            }
+            @media screen and (max-width: 1385px) {
+              left: -55%;
+            }
+            // @media screen and (max-width: 1340px) {
+            //   left: -58%;
+            // }
+
+            @media screen and (max-width: 1385px) {
+              // width: 878px;
+              // height: 878px;
+              // top: -16%;
+              // left: -7%;
+
+              // .content-container {
+              //   max-width: 284px;
+              //   top: -75px;
+
+              //   .title,
+              //   .text {
+              //     font-size: 12px;
+              //     margin-bottom: 2px;
+              //   }
+              // }
+            }
+            @media screen and (max-width: 1340px) {
+              left: -59%;
+            }
+            @media screen and (max-width: 1300px) {
+              left: -60%;
+            }
+            @media screen and (max-width: 1270px) {
+              left: -62%;
+            }
+            @media screen and (max-width: 1230px) {
+              left: -66%;
+            }
+            @media screen and (max-width: 1195px) {
+              left: -69%;
+            }
+            @media screen and (max-width: 1140px) {
+              left: -72%;
+            }
+            @media screen and (max-width: 1110px) {
+              top: -21%;
+              left: -51%;
               width: 878px;
               height: 878px;
-              top: 5%;
-              left: 2%;
+              top: -16%;
+              left: -7%;
 
               .content-container {
-                max-width: 284px;
-                top: -75px;
+                max-width: 260px;
+                top: -39px;
+                left: -25px;
 
                 .title,
                 .text {
                   font-size: 12px;
-                  margin-bottom: 2px;
+                  line-height: 110%;
+                  margin-bottom: 7px;
+                }
+                .text {
+                  &:last-of-type {
+                    max-width: 150px;
+                  }
                 }
               }
             }
-            @media screen and (max-width: 1290px) {
-              left: -23%;
+            @media screen and (max-width: 1050px) {
+              left: -16%;
             }
             @media screen and (max-width: 910px) {
               left: initial;
@@ -517,6 +599,7 @@ main {
         color: #003619;
         font-family: $stolzlBold;
         max-width: 1000px;
+        text-transform: uppercase;
 
         &.mobile {
           display: none;
@@ -609,7 +692,7 @@ main {
 
           ul {
             &::after {
-              @include before_after('../images/decor/christmas-tree.svg', 219px, 403px);
+              @include before_after('../images/decor/christmas-tree.png', 219px, 403px);
               @include positionDecorIcon;
               mix-blend-mode: multiply;
               top: -368px;
@@ -759,6 +842,52 @@ main {
           }
 
           @media screen and (max-width: 1385px) {
+            gap: 250px;
+            right: -1%;
+
+            .picture-container {
+              &:first-of-type {
+                .picture {
+                  width: 324px;
+                  height: 390px;
+                }
+              }
+              &:last-of-type {
+                .picture {
+                  width: 331px;
+                  height: 399px;
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 1220px) {
+            right: -3%;
+
+            .picture-container {
+              &:first-of-type {
+                .picture {
+                  transform: rotate(16deg);
+                }
+              }
+            }
+          }
+          // @media screen and (max-width: 1180px) {
+          //   right: -4%;
+          // }
+          @media screen and (max-width: 1110px) {
+            .picture-container {
+              &:first-of-type {
+                .picture {
+                  transform: rotate(-13deg);
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 960px) {
+            right: -5%;
+          }
+
+          @media screen and (max-width: 910px) {
             gap: 300px;
             right: 1%;
             .picture-container {
@@ -775,8 +904,7 @@ main {
                 }
               }
             }
-          }
-          @media screen and (max-width: 910px) {
+
             flex-direction: row;
             gap: initial;
             justify-content: space-around;
@@ -828,11 +956,13 @@ main {
             @include flex_horizonAlign(center);
           }
           @media screen and (max-width: 450px) {
-            padding-top: 40px;
+            padding-top: 20px;
+
+            margin-bottom: -60px;
 
             .picture {
-              width: 171px;
-              height: 205px;
+              width: 313px;
+              height: 369px;
             }
           }
         }
@@ -1097,6 +1227,8 @@ main {
         }
         .content-container {
           @extend .content-container-class;
+          position: relative;
+          z-index: 3;
 
           .picture-container {
             .picture {
@@ -1114,8 +1246,10 @@ main {
           }
 
           &:last-of-type {
-            right: 54px;
+            right: -20px;
             bottom: -6%;
+            z-index: 1;
+            mix-blend-mode: multiply;
 
             .picture {
               transform: rotate(13deg);
@@ -1140,7 +1274,16 @@ main {
               }
             }
           }
-
+          @media screen and (max-width: 1700px) {
+            &:last-of-type {
+              right: -101px;
+            }
+          }
+          @media screen and (max-width: 1380px) {
+            &:last-of-type {
+              right: -2%;
+            }
+          }
           @media screen and (max-width: 1110px) {
             bottom: 18%;
           }
@@ -1148,6 +1291,9 @@ main {
             position: relative;
             left: initial;
             right: initial;
+            mix-blend-mode: multiply;
+            z-index: 5;
+
             @include flex_horizonAlign(center);
             justify-content: flex-start;
             padding-left: 5%;
@@ -1156,8 +1302,9 @@ main {
             &:last-of-type {
               justify-content: flex-end;
               padding: initial;
-              position: relative;
+              position: absolute;
               right: -50px;
+              bottom: -5%;
             }
           }
           @media screen and (max-width: 450px) {
@@ -1166,6 +1313,10 @@ main {
             .picture {
               width: 171px;
               height: 205px;
+            }
+
+            &:last-of-type {
+              bottom: -4%;
             }
           }
         }
@@ -1191,37 +1342,7 @@ main {
             }
           }
         }
-        .advice-container {
-          @extend .advice-container-class;
-          position: static;
-          max-width: 100%;
 
-          ul {
-            &::before {
-              top: -79px;
-              bottom: -41px;
-              right: -76px;
-              transform: rotate(-4deg);
-              width: 120%;
-
-              @media screen and (max-width: 1350px) {
-                top: -45px;
-              }
-              @media screen and (max-width: 1110px) {
-                width: 155%;
-              }
-            }
-            li.item {
-              &:before {
-                display: none;
-              }
-
-              @media screen and (max-width: 910px) {
-                max-width: 100%;
-              }
-            }
-          }
-        }
         @media screen and (max-width: 1740px) {
           width: 800px;
         }
@@ -1238,6 +1359,78 @@ main {
           width: 100%;
         }
       }
+      .advice-container {
+        @extend .advice-container-class;
+        position: static;
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: initial;
+
+        &::before {
+          @include before_after('../images/decor/red-snow.svg', 455px);
+          @include positionDecorIcon;
+          left: -10%;
+          bottom: 8%;
+        }
+
+        ul {
+          &::before {
+            top: -120px;
+            bottom: -36px;
+            right: -173px;
+            transform: rotate(-4deg);
+            width: 134%;
+
+            @media screen and (max-width: 1385px) {
+              top: -45px;
+            }
+            @media screen and (max-width: 1110px) {
+              width: 155%;
+            }
+          }
+          li.item {
+            &:before {
+              display: none;
+            }
+
+            @media screen and (max-width: 910px) {
+              max-width: 100%;
+            }
+          }
+        }
+        @media screen and (max-width: 1650px) {
+          &::before {
+            width: 210px;
+            height: 210px;
+            left: -5%;
+          }
+        }
+        @media screen and (max-width: 1550px) {
+          max-width: 70%;
+        }
+        @media screen and (max-width: 910px) {
+          max-width: 100%;
+          margin-bottom: 100px;
+
+          &::before {
+            width: 141px;
+            height: 141px;
+            right: 1%;
+            left: initial;
+            bottom: 15%;
+          }
+          ul {
+            &::before {
+              bottom: 29px;
+            }
+          }
+        }
+        @media screen and (max-width: 400px) {
+          &::before {
+            bottom: 17%;
+          }
+        }
+      }
       @media screen and (max-width: 910px) {
         padding-left: 14px;
         padding-right: 14px;
@@ -1248,7 +1441,7 @@ main {
     }
   }
   section.five-history {
-    margin-bottom: 300px;
+    margin-bottom: -200px;
 
     .wrapper {
       position: relative;
@@ -1408,6 +1601,7 @@ main {
               margin-top: -40px;
               right: initial;
               left: initial;
+              top: -50px;
             }
           }
         }
@@ -1433,124 +1627,506 @@ main {
         padding-right: 14px;
       }
     }
+    @media screen and (max-width: 1110px) {
+      margin-bottom: -100px;
+    }
     @media screen and (max-width: 910px) {
-      margin-bottom: 80px;
+      margin-bottom: -200px;
+    }
+    @media screen and (max-width: 600px) {
+      margin-bottom: -250px;
     }
   }
-  section.advent-calendar {
-    margin-bottom: 200px;
+  section.advent-calendar-header {
+    margin-bottom: -200px;
 
     .wrapper {
-      .house-container {
-        background-image: url('../images/advent-calendar/house.png');
+      margin: 0;
+      padding: 0;
+      @include flex_AlignBooth(center, center);
 
-        width: 1832px;
-        height: 1609px;
-        background-position: center;
-        background-size: contain;
+      .description-container {
+        width: 1550px;
+        height: 1593px;
+        background-image: url('../images/decor/background-paper-advent-calendar-title.png');
+        mix-blend-mode: multiply;
         background-repeat: no-repeat;
-        margin: 0 auto;
-        padding-left: 94px;
-        padding-right: 94px;
-        display: grid;
-        grid-template-columns: repeat(6, auto);
-        grid-template-rows: repeat(2, 247px) repeat(4, 255px);
-        align-items: flex-start;
-        place-items: center;
+        background-position: center;
         position: relative;
-        z-index: 90;
+        @include flex_AlignBooth(center, center);
 
-        &::before {
-          @include before_after('../images/advent-calendar/bow.svg', 231px, 175px);
-          @include positionDecorIcon;
-          mix-blend-mode: multiply;
-          left: 44%;
-          top: -31px;
-        }
-
-        &::after {
-          @include before_after('../images/advent-calendar/snow-down.svg', 2139px, 224px);
-          @include positionDecorIcon;
-          background-size: cover;
-          bottom: -112px;
-        }
-
-        .card-item {
+        .content-container {
+          max-width: 930px;
           position: relative;
-          cursor: pointer;
-          .card {
-            display: block;
-            margin: 0 auto;
+
+          &::before {
+            @include before_after('../images/decor/stamp-red.svg', 248px);
+            @include positionDecorIcon;
+            mix-blend-mode: multiply;
+            right: -9%;
+            bottom: -19%;
           }
 
-          @for $i from 1 through 24 {
-            &:nth-child(#{$i}) {
-              @if ($i == 1) {
-                grid-column: span 6;
-                align-self: end;
-              }
-              @if ($i == 2) {
-                grid-column: 3 / 4;
-              }
-              @if ($i == 3) {
-                grid-column: 4 / 5;
-              }
-              @if ($i >= 4 and $i <=9) {
-                grid-row: 3;
-              }
-              @if ($i >= 10 and $i <= 15) {
-                grid-row: 4;
-              }
-              @if ($i >= 16 and $i <= 20 and $i != 18) {
-                grid-row: 5;
-              }
-              @if ($i >= 21 and $i <= 24) {
-                grid-row: 6;
-              }
+          .title {
+            @include primaryTitleFormat;
+            font-size: 78px;
+            margin-bottom: 40px;
+            text-align: center;
+          }
+          .text-container {
+            .text {
+              @include primaryTextFormat;
+              font-size: 24px;
+              margin-bottom: 40px;
+              text-align: center;
 
-              @if ($i == 4 or $i == 10 or $i == 16 or $i == 21) {
-                grid-column: 1;
-              }
-
-              @if ($i == 5 or $i == 11 or $i == 17 or $i == 22) {
-                grid-column: 2;
-              }
-              @if ($i == 18) {
-                grid-row: 6;
-                grid-column: 3 / 5;
-                align-self: flex-start;
-              }
-
-              @if ($i == 6 or $i == 12) {
-                grid-column: 3;
-              }
-
-              @if ($i == 7 or $i == 13) {
-                grid-column: 4;
-              }
-
-              @if ($i == 8 or $i == 14 or $i == 19 or $i == 23) {
-                grid-column: 5;
-              }
-              @if ($i == 9 or $i == 15 or $i == 20 or $i == 24) {
-                grid-column: 6;
-              }
-
-              &::before {
-                $fontSize: if($i == 1 or $i == 2 or $i == 3 or $i == 18, 66px, 86px);
-                $color: if($i == 4 or $i == 5, $primaryGreenColor, #fff);
-
-                @include numberCardAdventCalendar('#{$i}', $fontSize, $color);
-                @include alignPositionElement;
+              strong {
+                @include strongTextFormat;
               }
             }
           }
         }
+        @media screen and (max-width: 1110px) {
+          height: 1039px;
+          background-size: cover;
 
+          .content-container {
+            padding-left: 14px;
+            padding-right: 14px;
+            max-width: 600px;
+
+            .title {
+              font-size: 28px;
+              margin-bottom: 20px;
+            }
+            .text-container {
+              .text {
+                font-size: 14px;
+                margin-bottom: 20px;
+              }
+            }
+            &::before {
+              content: none;
+            }
+          }
+        }
+        @media screen and (max-width: 450px) {
+          height: 1206px;
+        }
+        @media screen and (max-width: 350px) {
+          height: 1406px;
+        }
+      }
+    }
+    @media screen and (max-width: 1500px) {
+      margin-bottom: -300px;
+    }
+    @media screen and (max-width: 1500px) {
+      margin-bottom: -200px;
+    }
+  }
+  section.advent-calendar-body {
+    margin-bottom: 200px;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      background-image: url('../images/advent-calendar/background-snowfall.png');
+      background-size: cover;
+      background-repeat: repeat;
+      position: absolute;
+      inset: 0;
+      z-index: 200;
+    }
+
+    .wrapper {
+      position: relative;
+
+      .house-wrapper {
+        @include flex_AlignBooth(center);
+        background-image: url('../images/advent-calendar/house-12.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        .house-container {
+          width: 1806px;
+          height: 1589px;
+          padding-bottom: 117px;
+          padding-top: 115px;
+          padding-left: 58px;
+          padding-right: 57px;
+          background-repeat: no-repeat;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          grid-template-rows: 1fr 2fr repeat(4, 2fr);
+          align-items: flex-start;
+          place-items: center;
+          position: relative;
+
+          .bow-container {
+            position: relative;
+
+            &::before {
+              @include before_after('../images/advent-calendar/bow.svg', 231px, 175px);
+              @include positionDecorIcon;
+              mix-blend-mode: multiply;
+              left: 44%;
+              top: -31px;
+            }
+          }
+          &::after {
+            @include before_after('../images/advent-calendar/snow-down.svg', 2139px, 334px);
+            @include positionDecorIcon;
+            bottom: -10%;
+          }
+
+          .card-item {
+            position: relative;
+            cursor: pointer;
+            background-size: contain;
+            transition: 0.4s;
+
+            &::before {
+              font-size: 86px;
+            }
+            &:nth-child(1) {
+              position: relative;
+
+              &::after {
+                @include before_after('../images/advent-calendar/bow.svg', 231px, 175px);
+                @include positionDecorIcon;
+                mix-blend-mode: multiply;
+                top: -69%;
+                left: -26%;
+              }
+            }
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(18) {
+              font-size: 66px;
+            }
+
+            .card {
+              display: block;
+              margin: 0 auto;
+              width: 100%;
+              height: 100%;
+            }
+
+            .book-cover {
+              position: absolute;
+              z-index: -1;
+              inset: 0;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-color: #fff;
+              background-size: 83%;
+              mix-blend-mode: multiply;
+            }
+
+            @for $i from 1 through 24 {
+              &:nth-child(#{$i}) {
+                .book-cover {
+                  background-image: url('../images/books-covers/book-#{$i}.png');
+                }
+
+                @if ($i == 1) {
+                  grid-column: span 6;
+                  align-self: end;
+                  border-radius: 50%;
+                }
+                @if ($i == 2) {
+                  grid-column: 3 / 4;
+                }
+                @if ($i == 3) {
+                  grid-column: 4 / 5;
+                }
+
+                @if ($i == 3) {
+                  grid-column: 4 / 5;
+                }
+                @if ($i >= 4 and $i <=9) {
+                  grid-row: 3;
+                }
+                @if ($i >= 10 and $i <= 15) {
+                  grid-row: 4;
+                }
+                @if ($i >= 16 and $i <= 20 and $i != 18) {
+                  grid-row: 5;
+                }
+                @if ($i >= 21 and $i <= 24) {
+                  grid-row: 6;
+                }
+
+                @if ($i == 4 or $i == 10 or $i == 16 or $i == 21) {
+                  grid-column: 1;
+                }
+
+                @if ($i == 5 or $i == 11 or $i == 17 or $i == 22) {
+                  grid-column: 2;
+                }
+                @if ($i == 18) {
+                  grid-row: 6;
+                  grid-column: 3 / 5;
+                  align-self: flex-start;
+                }
+
+                @if ($i == 6 or $i == 12) {
+                  grid-column: 3;
+                }
+
+                @if ($i == 7 or $i == 13) {
+                  grid-column: 4;
+                }
+
+                @if ($i == 8 or $i == 14 or $i == 19 or $i == 23) {
+                  grid-column: 5;
+                }
+                @if ($i == 9 or $i == 15 or $i == 20 or $i == 24) {
+                  grid-column: 6;
+                }
+
+                &::before {
+                  $color: if($i == 4 or $i == 5, $primaryGreenColor, #fff);
+
+                  @include numberCardAdventCalendar('#{$i}', $color);
+                  @include alignPositionElement;
+                  transition: 0.4s;
+                }
+              }
+            }
+
+            &:hover,
+            &.clicked {
+              &:not(:first-of-type) {
+                background-image: url('../images/advent-calendar/empty-card.png');
+              }
+              background-color: #fff;
+
+              .card {
+                opacity: 0;
+              }
+              .book-cover {
+                z-index: 200;
+              }
+              &::before {
+                opacity: 0;
+              }
+            }
+          }
+
+          @media screen and (max-width: 1750px) {
+            padding-bottom: 151px;
+            padding-top: 143px;
+            &::after {
+              bottom: -7%;
+            }
+          }
+
+          @media screen and (max-width: 1560px) {
+            padding-bottom: 204px;
+            padding-top: 202px;
+          }
+
+          @media screen and (max-width: 1650px) {
+            &::after {
+              bottom: -4%;
+            }
+          }
+          @media screen and (max-width: 1650px) {
+            &::after {
+              bottom: -2%;
+            }
+          }
+
+          @media screen and (max-width: 1450px) {
+            padding-bottom: 274px;
+            padding-top: 244px;
+
+            .card-item {
+              &:nth-child(1),
+              &:nth-child(2),
+              &:nth-child(3),
+              &:nth-child(18) {
+                &::before {
+                  font-size: 48px;
+                }
+              }
+              &::before {
+                font-size: 63px;
+              }
+            }
+          }
+          @media screen and (max-width: 1420px) {
+            &::after {
+              bottom: 2%;
+              width: 1550px;
+            }
+          }
+          @media screen and (max-width: 1370px) {
+            padding-bottom: 287px;
+            padding-top: 300px;
+
+            .card-item {
+              &:nth-child(1) {
+                &::after {
+                  top: -95%;
+                  left: -42%;
+                }
+                .card {
+                  width: 120px;
+                }
+              }
+              &:nth-child(2),
+              &:nth-child(3),
+              &:nth-child(18) {
+                .card {
+                  width: 140px;
+                }
+              }
+            }
+
+            &::after {
+              bottom: 5%;
+            }
+          }
+          @media screen and (max-width: 1300px) {
+            padding-bottom: 334px;
+            padding-top: 319px;
+          }
+          @media screen and (max-width: 1200px) {
+            padding-bottom: 368px;
+            padding-top: 349px;
+
+            &::after {
+              bottom: 7%;
+            }
+          }
+          @media screen and (max-width: 1120px) {
+            width: 812px;
+            height: 715px;
+            padding-bottom: 51px;
+            padding-top: 48px;
+            padding-left: 30px;
+            padding-right: 30px;
+
+            &::after {
+              bottom: -21%;
+              width: 950px;
+            }
+
+            .card-item {
+              width: 95px;
+              height: 76px;
+
+              &:nth-child(1) {
+                .card {
+                  width: 72px;
+                }
+                &::after {
+                  top: -143%;
+                  left: -64%;
+                }
+                &::before {
+                  font-size: 32px;
+                }
+              }
+              &:nth-child(2),
+              &:nth-child(3),
+              &:nth-child(18) {
+                .card {
+                  width: 84px;
+                  height: 68px;
+                }
+                &::before {
+                  font-size: 28px;
+                }
+              }
+
+              &::before {
+                font-size: 36px;
+              }
+            }
+          }
+          @media screen and (max-width: 750px) {
+            padding-bottom: 76px;
+            padding-top: 67px;
+          }
+
+          @media screen and (max-width: 710px) {
+            padding-bottom: 98px;
+            padding-top: 81px;
+
+            &::after {
+              bottom: -15%;
+              width: 800px;
+            }
+          }
+          @media screen and (max-width: 680px) {
+            width: 394px;
+            height: 350px;
+            padding: initial;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top: 15px;
+            padding-bottom: 29px;
+
+            &::after {
+              bottom: -45%;
+              width: 450px;
+            }
+
+            .card-item {
+              width: 58px;
+              height: 47px;
+
+              &:nth-child(1) {
+                .card {
+                  width: 34px;
+                }
+                &::after {
+                  width: 53px;
+                  height: 40px;
+                  top: -62%;
+                  left: 4%;
+                }
+                &::before {
+                  font-size: 15px;
+                }
+              }
+
+              &:nth-child(2),
+              &:nth-child(3),
+              &:nth-child(18) {
+                .card {
+                  width: 43px;
+                  height: 35px;
+                }
+                &::before {
+                  font-size: 15px;
+                  top: 38%;
+                }
+              }
+
+              &::before {
+                font-size: 20px;
+              }
+            }
+          }
+          @media screen and (max-width: 370px) {
+            padding-top: 25px;
+            padding-bottom: 32px;
+          }
+        }
         .decor-container {
+          pointer-events: none;
           &::after,
           &::before {
-            @include before_after('../images/decor/christmas-tree.svg', 335px, 615px);
+            @include before_after('../images/decor/christmas-tree.png', 335px, 615px);
             @include positionDecorIcon;
             mix-blend-mode: multiply;
             z-index: 105;
@@ -1559,29 +2135,160 @@ main {
             bottom: -171px;
           }
           &::before {
-            left: -176px;
-            transform: rotate(5deg);
+            left: -4%;
+            bottom: -13%;
           }
           &::after {
-            right: -179px;
-            bottom: -141px;
+            right: -6%;
+            bottom: -8%;
             transform: rotate(-4deg);
+          }
+
+          @media screen and (max-width: 1650px) {
+            &::before {
+              left: -8%;
+              bottom: -4%;
+            }
+            &::after {
+              right: -9%;
+              bottom: -3%;
+            }
+          }
+          @media screen and (max-width: 1400px) {
+            &::before {
+              left: -7%;
+              bottom: 1%;
+            }
+            &::after {
+              right: -10%;
+              bottom: 2%;
+            }
+          }
+          @media screen and (max-width: 1200px) {
+            &::before {
+              left: -9%;
+              bottom: 6%;
+            }
+            &::after {
+              right: -12%;
+              bottom: 6%;
+            }
+          }
+          @media screen and (max-width: 1120px) {
+            &::before {
+              height: 430px;
+              width: 234px;
+              left: 1%;
+              bottom: -6%;
+            }
+            &::after {
+              height: 430px;
+              width: 234px;
+              right: -1%;
+              bottom: -6%;
+            }
+          }
+          @media screen and (max-width: 1050px) {
+            &::before {
+              left: -9%;
+            }
+            &::after {
+              right: -10%;
+            }
+          }
+
+          @media screen and (max-width: 900px) {
+            &::before {
+              left: -15%;
+            }
+            &::after {
+              right: -15%;
+            }
+          }
+          @media screen and (max-width: 680px) {
+            &::before {
+              height: 141px;
+              width: 76px;
+              left: 8%;
+            }
+            &::after {
+              height: 141px;
+              width: 76px;
+              right: 8%;
+            }
+          }
+          @media screen and (max-width: 540px) {
+            &::before {
+              left: -6%;
+            }
+            &::after {
+              right: -6%;
+            }
+
+            @media screen and (max-width: 380px) {
+              &::before {
+                left: -9%;
+              }
+              &::after {
+                right: -9%;
+              }
+            }
           }
         }
         .caption-container {
+          pointer-events: none;
+
           &::after {
             content: '';
             width: 708px;
             height: 326px;
             display: inline-block;
+            background-size: contain;
             background-image: url('../images/advent-calendar/caption.svg'),
               url('../images/advent-calendar/snow-on-top.png');
             background-position: 50% 49%, 50% 68%;
             background-repeat: no-repeat, no-repeat;
             position: absolute;
             z-index: 150;
-            right: 31%;
+            right: 50%;
+            transform: translate(50%);
             bottom: 25%;
+          }
+          @media screen and (max-width: 1700px) {
+            &::after {
+              width: 566px;
+              bottom: 28%;
+            }
+          }
+          @media screen and (max-width: 130px) {
+            &::after {
+              width: 539px;
+              bottom: 29%;
+            }
+          }
+          @media screen and (max-width: 1210px) {
+            &::after {
+              bottom: 30%;
+            }
+          }
+          @media screen and (max-width: 1120px) {
+            &::after {
+              width: 318px;
+              height: 146px;
+              bottom: 25%;
+            }
+          }
+          @media screen and (max-width: 715px) {
+            &::after {
+              width: 297px;
+              bottom: 26%;
+            }
+          }
+          @media screen and (max-width: 680px) {
+            &::after {
+              width: 151px;
+              bottom: 17%;
+            }
           }
         }
       }
@@ -1634,11 +2341,61 @@ main {
             text-transform: uppercase;
           }
         }
+        @media screen and (max-width: 910px) {
+          padding: 10px 10px 20px;
+          max-width: 340px;
+
+          .title-container {
+            gap: 10px;
+            margin-bottom: 10px;
+
+            .book-cover {
+              width: 100px;
+              height: 100px;
+            }
+            .title {
+              font-size: 16px;
+            }
+          }
+          .text {
+            font-size: 12px;
+            margin-bottom: 40px;
+          }
+          .btn-container {
+            justify-content: center;
+
+            .buy-book-btn {
+              font-size: 18px;
+              padding: 16px 32px;
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 1750px) {
+      margin-bottom: 100px;
+    }
+    @media screen and (max-width: 1440px) {
+      margin-bottom: 0px;
+    }
+    @media screen and (max-width: 1120px) {
+      margin-bottom: 200px;
+    }
+    @media screen and (max-width: 910px) {
+      margin-bottom: 100px;
+    }
+    @media screen and (max-width: 720px) {
+      margin-bottom: 50px;
+    }
+    @media screen and (max-width: 870px) {
+      .wrapper {
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   }
   section.presents-for-developer {
-    margin-bottom: 500px;
+    margin-bottom: 300px;
 
     .wrapper {
       position: relative;
@@ -1684,7 +2441,7 @@ main {
             }
           }
         }
-        @media screen and (max-width: 1150px) {
+        @media screen and (max-width: 910px) {
           width: 460px;
           height: 570px;
 
@@ -1751,22 +2508,6 @@ main {
               color: #ffffff;
               position: absolute;
               transform: rotate(-14deg);
-            }
-            @media screen and (max-width: 1150px) {
-              width: 225px;
-              height: 262px;
-              padding: 28px 30px 49px;
-
-              .title {
-                font-size: 14px;
-                margin-bottom: 10px;
-              }
-              .text {
-                font-size: 9px;
-              }
-              .card-number {
-                font-size: 42px;
-              }
             }
           }
 
@@ -1902,6 +2643,76 @@ main {
               }
             }
           }
+          @media screen and (max-width: 1650px) {
+            .content-container {
+              background-size: 140%;
+              color: $primaryWhiteColor;
+              padding: 52px 45px 60px;
+              width: 312px;
+              height: 378px;
+
+              .title {
+                font-size: 20px;
+                margin-bottom: 10px;
+              }
+              .text {
+                font-size: 13px;
+              }
+              .card-number {
+                font-size: 59px;
+              }
+            }
+            &:nth-child(1) {
+              .content-container {
+                &::before {
+                  width: 131px;
+                  height: 175px;
+                }
+              }
+            }
+            &:nth-child(2) {
+              top: 49%;
+
+              .content-container {
+                &::before {
+                  width: 115px;
+                  height: 138px;
+                }
+              }
+            }
+            &:nth-child(3) {
+              .content-container {
+                &::before {
+                  width: 82px;
+                  height: 126px;
+                }
+              }
+            }
+            &:nth-child(4) {
+              .content-container {
+                &::before {
+                  width: 95px;
+                  height: 95px;
+                }
+              }
+            }
+            &:nth-child(5) {
+              .content-container {
+                &::before {
+                  width: 146px;
+                  height: 146px;
+                }
+              }
+            }
+            &:nth-child(6) {
+              .content-container {
+                &::before {
+                  width: 132px;
+                  height: 83px;
+                }
+              }
+            }
+          }
           @media screen and (max-width: 1460px) {
             &:nth-child(1) {
               left: 2%;
@@ -1926,79 +2737,25 @@ main {
               right: -2%;
             }
           }
-          @media screen and (max-width: 1150px) {
-            &:nth-child(1) {
-              .content-container {
-                &::before {
-                  width: 95px;
-                  height: 127px;
-                }
-              }
-            }
-            &:nth-child(2) {
-              top: 49%;
+          @media screen and (max-width: 910px) {
+            .content-container {
+              width: 225px;
+              height: 262px;
+              padding: 28px 30px 49px;
 
-              .content-container {
-                &::before {
-                  width: 84px;
-                  height: 100px;
-                }
+              .title {
+                font-size: 14px;
+                margin-bottom: 10px;
               }
-            }
-            &:nth-child(3) {
-              .content-container {
-                &::before {
-                  top: initial;
-                  right: initial;
-                  bottom: -8%;
-                  left: 5%;
-                  width: 60px;
-                  height: 91px;
-                }
-                .card-number {
-                  bottom: 17%;
-                }
+              .text {
+                font-size: 9px;
               }
-            }
-            &:nth-child(4) {
-              .content-container {
-                &::before {
-                  width: 69px;
-                  height: 69px;
-                  bottom: 4%;
-                  right: 5%;
-                  top: initial;
-                  left: initial;
-                }
-                .card-number {
-                  top: 8%;
-                  right: 9%;
-                }
-              }
-            }
-            &:nth-child(5) {
-              .content-container {
-                &::before {
-                  width: 106px;
-                  height: 106px;
-                }
-                .card-number {
-                  top: 8%;
-                  right: 9%;
-                }
-              }
-            }
-            &:nth-child(6) {
-              .content-container {
-                &::before {
-                  width: 95px;
-                  height: 60px;
-                }
+              .card-number {
+                font-size: 42px;
               }
             }
           }
-
-          @media screen and (max-width: 1150px) {
+          @media screen and (max-width: 910px) {
             position: relative;
 
             &:nth-child(1) {
@@ -2107,7 +2864,7 @@ main {
             }
           }
         }
-        @media screen and (max-width: 1460px) {
+        @media screen and (max-width: 1650px) {
           display: flex;
           justify-content: space-between;
           flex-direction: column;
@@ -2160,31 +2917,20 @@ main {
             right: 3%;
           }
         }
-        @media screen and (max-width: 1460px) {
-          .icons-snow {
-            &::before {
-              width: 111px;
-              height: 111px;
-              top: 267%;
-            }
-            &::after {
-              width: 63px;
-              height: 63px;
-              top: 223%;
-            }
-          }
-        }
         @media screen and (max-width: 1380px) {
           .icons-year {
             &::before {
-              width: 41px;
-              height: 125px;
+              top: -13%;
+              right: 4%;
             }
           }
+        }
+
+        @media screen and (max-width: 1100px) {
           .icons-presents {
             &::before {
-              width: 111px;
-              height: 111px;
+              top: -8%;
+              left: 1%;
             }
             &::after {
               width: 151px;
@@ -2192,11 +2938,53 @@ main {
             }
           }
         }
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 1150px) {
+          .icons-snow {
+            &::before {
+              top: 120%;
+            }
+            &::after {
+              width: 63px;
+              height: 63px;
+              top: 9%;
+              left: 13%;
+            }
+          }
+        }
+
+        @media screen and (max-width: 1110px) {
+          .icons-snow {
+            &::before {
+              right: 5%;
+              left: initial;
+            }
+          }
+        }
+
+        @media screen and (max-width: 910px) {
+          .icons-year {
+            &::before {
+              width: 41px;
+              height: 125px;
+              right: 8%;
+              top: -5%;
+            }
+          }
+          .icons-snow {
+            &::before {
+              top: 316%;
+              width: 77px;
+              height: 77px;
+              right: 2%;
+            }
+          }
+
           .icons-presents {
             &::before {
               top: 102%;
               left: 0%;
+              width: 111px;
+              height: 111px;
             }
             &::after {
               bottom: -64%;
@@ -2207,8 +2995,11 @@ main {
         }
       }
     }
-    @media screen and (max-width: 1150px) {
-      margin-bottom: 1100px;
+    @media screen and (max-width: 1650px) {
+      margin-bottom: 200px;
+    }
+    @media screen and (max-width: 910px) {
+      margin-bottom: 1200px;
     }
   }
   section.christmas-cocktails {
@@ -2232,17 +3023,31 @@ main {
           top: -12%;
 
           @media screen and (max-width: 1680px) {
+            left: -11%;
+            top: 13%;
+          }
+
+          @media screen and (max-width: 1530px) {
+            width: 380px;
+            height: 455px;
+          }
+          @media screen and (max-width: 1110px) {
             left: initial;
             top: initial;
+            right: -17%;
+            bottom: -36%;
+          }
+          @media screen and (max-width: 910px) {
             right: -5%;
             bottom: -70%;
-          }
-          @media screen and (max-width: 1150px) {
             width: 213px;
             height: 255px;
           }
           @media screen and (max-width: 465px) {
             bottom: -62%;
+          }
+          @media screen and (max-width: 390px) {
+            bottom: -53%;
           }
         }
 
@@ -2255,15 +3060,27 @@ main {
           top: -20%;
 
           @media screen and (max-width: 1680px) {
+            right: -9%;
+            top: -30%;
+          }
+          @media screen and (max-width: 1530px) {
+            width: 357px;
+            height: 429px;
+          }
+          @media screen and (max-width: 1110px) {
             transform: rotate(12deg);
+            left: -10%;
+            top: -56%;
+          }
+          @media screen and (max-width: 910px) {
+            width: 274px;
+            height: 329px;
+          }
+          @media screen and (max-width: 910px) {
             left: 8%;
             top: -110%;
           }
-          @media screen and (max-width: 1150px) {
-            width: 274px;
-            height: 329px;
-            top: -122%;
-          }
+
           @media screen and (max-width: 700px) {
             top: -104%;
           }
@@ -2293,6 +3110,7 @@ main {
             line-height: 120%;
             font-family: $sourceCodePro;
             margin-bottom: 40px;
+            display: inline-block;
           }
           .text {
             line-height: 120%;
@@ -2303,7 +3121,10 @@ main {
               font-family: $stolzlBold;
             }
           }
-          @media screen and (max-width: 1150px) {
+          @media screen and (max-width: 1345px) {
+            max-width: 70%;
+          }
+          @media screen and (max-width: 1110px) {
             max-width: 600px;
 
             .title {
@@ -2316,14 +3137,12 @@ main {
           }
         }
         @media screen and (max-width: 1680px) {
-          margin-bottom: 300px;
+          // margin-bottom: 300px;
         }
       }
       .cocktails-container {
         @include flex_horizonAlign(center);
         column-gap: 30px;
-        row-gap: 10px;
-        flex-wrap: wrap;
 
         article.card-recipe {
           max-width: 340px;
@@ -2394,7 +3213,13 @@ main {
               font-family: $stolzlBold;
             }
           }
-          @media screen and (max-width: 1385px) {
+
+          @media screen and (max-width: 1450px) {
+            .text {
+              margin-bottom: 20px;
+            }
+          }
+          @media screen and (max-width: 1150px) {
             .title-container {
               @include flex_AlignBooth(center);
               margin-bottom: initial;
@@ -2458,10 +3283,24 @@ main {
             max-width: 100%;
           }
         }
+        @media screen and (max-width: 1600px) {
+          gap: 10px;
+        }
+        @media screen and (max-width: 1150px) {
+          flex-wrap: wrap;
+          column-gap: 30px;
+        }
       }
     }
     @media screen and (max-width: 1680px) {
-      padding-top: 450px;
+      // padding-top: 450px;
+    }
+    @media screen and (max-width: 345px) {
+      background-position: 50% -12%;
+    }
+
+    @media screen and (max-width: 910px) {
+      background-position: 50% -12%;
     }
   }
 }
@@ -2492,9 +3331,9 @@ footer {
         .dash {
           display: none;
         }
-        @media screen and (max-width: 1385px) {
+        @media screen and (max-width: 1110px) {
           .dash {
-            display: initial;
+            display: inline-block;
           }
         }
       }
@@ -2514,7 +3353,7 @@ footer {
         bottom: 4%;
         right: -23%;
       }
-      @media screen and (max-width: 1385px) {
+      @media screen and (max-width: 1110px) {
         max-width: 500px;
         padding-top: 20px;
 
@@ -2587,6 +3426,17 @@ footer {
           right: 36%;
         }
 
+        @media screen and (max-width: 1605px) {
+          &::before {
+            left: 29%;
+          }
+        }
+        @media screen and (max-width: 1110px) {
+          &::before {
+            display: none;
+          }
+        }
+
         @media screen and (max-width: 910px) {
           &::after {
             display: none;
@@ -2609,6 +3459,7 @@ footer {
             top: -8%;
           }
         }
+
         @media screen and (max-width: 1385px) {
           &::before {
             width: 66px;
