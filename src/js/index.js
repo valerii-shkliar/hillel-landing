@@ -78,10 +78,3 @@ function closeModal() {
   modalContainer.classList.remove(ACTIVE_CLASS);
   overlay.classList.remove(ACTIVE_CLASS);
 }
-
-new Snow({
-  showSnowBalls: false,
-  showSnowBallsIsMobile: false,
-  iconColor: '#fff6e3',
-  iconSize: '30px',
-});

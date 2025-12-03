@@ -49,8 +49,8 @@
       transform: rotate(-6deg);
 
       @media screen and (max-width: 1385px) {
-        width: 325px;
-        height: 357px;
+        width: 332px;
+        height: 358px;
       }
       @media screen and (max-width: 910px) {
         transform: rotate(6deg);
@@ -62,9 +62,6 @@
       margin-bottom: 20px;
     }
 
-    // @media screen and (max-width: px) {
-    // position: static;
-    // }
     @media screen and (max-width: 910px) {
       position: relative;
       left: initial;
