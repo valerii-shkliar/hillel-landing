@@ -8,11 +8,8 @@ const modalImage = document.querySelector(
   '.advent-calendar-body .wrapper .modal-container .title-container .book-cover'
 );
 const houseContainer = document.querySelector('.advent-calendar-body .wrapper .house-container');
-const cardItem = document.querySelector(
+const cardItems = document.querySelectorAll(
   '.advent-calendar-body .wrapper .house-container .card-item'
-);
-const cardImage = document.querySelector(
-  '.advent-calendar-body .wrapper .house-container .card-item .card'
 );
 
 const buyBookBtn = document.querySelector(
@@ -21,6 +18,7 @@ const buyBookBtn = document.querySelector(
 const ACTIVE_CLASS = 'active';
 const CLICKED_CLASS = 'clicked';
 const CARD_ITEM_CLASS = 'card-item';
+const DISABLE_EVENTS_CLASS = 'disable-events';
 
 buyBookBtn.addEventListener('click', onBuyBookBtnClick);
 houseContainer.addEventListener('click', onHouseContainerClick);
@@ -32,6 +30,7 @@ function onBuyBookBtnClick() {
 }
 
 function onHouseContainerClick(e) {
+  console.log(e.target);
   const cardItemClicked = e.target.closest('.' + CARD_ITEM_CLASS);
 
   if (cardItemClicked) {
@@ -42,13 +41,16 @@ function onHouseContainerClick(e) {
     const book = findBookByAttr(itemNumber);
 
     fillModalWindow(book);
-    // cardPicture.src = `./dist/images/books-covers/book-${book.id}.png`;
     cardItemClicked.classList.add(CLICKED_CLASS);
+    cardItems.forEach((cardItem) => cardItem.classList.add(DISABLE_EVENTS_CLASS));
   }
 }
 
-function onHouseOverlayClick() {
+function onHouseOverlayClick(e) {
+  console.log(e.target);
+
   closeModal();
+  cardItems.forEach((cardItem) => cardItem.classList.remove(DISABLE_EVENTS_CLASS));
 }
 
 function findBookByAttr(itemNumber) {

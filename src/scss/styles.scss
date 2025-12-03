@@ -1776,12 +1776,14 @@ main {
               mix-blend-mode: multiply;
               left: 44%;
               top: -31px;
+              pointer-events: none;
             }
           }
           &::after {
             @include before_after('../images/advent-calendar/snow-down.svg', 2139px, 334px);
             @include positionDecorIcon;
             bottom: -10%;
+            pointer-events: none;
           }
 
           .card-item {
@@ -1789,6 +1791,10 @@ main {
             cursor: pointer;
             background-size: contain;
             transition: 0.4s;
+
+            &.disable-events {
+              pointer-events: none;
+            }
 
             &::before {
               font-size: 86px;
@@ -1802,6 +1808,7 @@ main {
                 mix-blend-mode: multiply;
                 top: -69%;
                 left: -26%;
+                pointer-events: none;
               }
             }
             &:nth-child(1),
@@ -1897,6 +1904,7 @@ main {
                   @include numberCardAdventCalendar('#{$i}', $color);
                   @include alignPositionElement;
                   transition: 0.4s;
+                  pointer-events: none;
                 }
               }
             }
@@ -2125,6 +2133,7 @@ main {
         }
         .decor-container {
           pointer-events: none;
+
           &::after,
           &::before {
             @include before_after('../images/decor/christmas-tree.png', 335px, 615px);
