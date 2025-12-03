@@ -2304,7 +2304,7 @@ main {
       }
 
       .modal-container {
-        max-width: 1052px;
+        width: 1052px;
         background-color: $primaryGreenColor;
         position: fixed;
         z-index: 200;
@@ -2353,7 +2353,7 @@ main {
         }
         @media screen and (max-width: 910px) {
           padding: 10px 10px 20px;
-          max-width: 340px;
+          width: 320px;
 
           .title-container {
             gap: 10px;
