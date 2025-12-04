@@ -5,6 +5,8 @@
   padding-left: 20px;
   padding-right: 20px;
 
+  &.part-1 {
+  }
   &.part-2 {
     @media screen and (max-width: 910px) {
       .text {

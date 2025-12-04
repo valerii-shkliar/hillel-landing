@@ -41,7 +41,6 @@ body {
     padding-right: 14px;
   }
 }
-
 header {
   margin-bottom: 60px;
 
@@ -524,9 +523,6 @@ main {
             @media screen and (max-width: 1520px) {
               left: -50%;
             }
-            // @media screen and (max-width: 1415px) {
-            //   left: -58%;
-            // }
             @media screen and (max-width: 1385px) {
               left: -55%;
             }
@@ -698,11 +694,18 @@ main {
 
         .title-container {
           @extend .title-container-class;
+
+          .picture-container {
+            .picture {
+            }
+          }
         }
         .content-container {
           @extend .content-container-class;
 
           .picture-container {
+            .picture {
+            }
             @media screen and (max-width: 1740px) {
               bottom: 16%;
             }
@@ -848,98 +851,113 @@ main {
         }
         .content-container {
           @extend .content-container-class;
-        }
-      }
-      .pictures-container {
-        display: flex;
-        flex-direction: column;
-        gap: 400px;
-        position: absolute;
-        right: -1%;
-        top: 33%;
 
-        .picture-container {
-          &:first-of-type {
+          .picture-container {
             .picture {
-              transform: rotate(-13deg);
-            }
-          }
-          &:last-of-type {
-            .picture {
-              transform: rotate(8deg);
             }
           }
         }
-
-        @media screen and (max-width: 1385px) {
-          gap: 250px;
+        .pictures-container {
+          display: flex;
+          flex-direction: column;
+          gap: 400px;
+          position: absolute;
           right: -1%;
+          top: 33%;
 
-          .picture-container {
-            &:first-of-type {
-              .picture {
-                width: 324px;
-                height: 390px;
-              }
-            }
-            &:last-of-type {
-              .picture {
-                width: 331px;
-                height: 399px;
-              }
-            }
-          }
-        }
-        @media screen and (max-width: 1220px) {
-          right: -3%;
-
-          .picture-container {
-            &:first-of-type {
-              .picture {
-                transform: rotate(16deg);
-              }
-            }
-          }
-        }
-        @media screen and (max-width: 1110px) {
           .picture-container {
             &:first-of-type {
               .picture {
                 transform: rotate(-13deg);
               }
             }
-          }
-        }
-        @media screen and (max-width: 960px) {
-          right: -5%;
-        }
-
-        @media screen and (max-width: 910px) {
-          gap: 300px;
-          right: 1%;
-          .picture-container {
-            &:first-of-type {
-              .picture {
-                width: 180px;
-                height: 217px;
-              }
-            }
             &:last-of-type {
               .picture {
-                width: 184px;
-                height: 222px;
+                transform: rotate(8deg);
               }
             }
           }
-          flex-direction: row;
-          gap: initial;
-          justify-content: space-around;
-          margin-bottom: 20px;
 
-          .picture-container {
-            &:first-of-type {
-              position: relative;
-              top: -50px;
+          @media screen and (max-width: 1385px) {
+            gap: 250px;
+            right: -1%;
+
+            .picture-container {
+              &:first-of-type {
+                .picture {
+                  width: 324px;
+                  height: 390px;
+                }
+              }
+              &:last-of-type {
+                .picture {
+                  width: 331px;
+                  height: 399px;
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 1220px) {
+            right: -3%;
+
+            .picture-container {
+              &:first-of-type {
+                .picture {
+                  transform: rotate(16deg);
+                }
+              }
+            }
+          }
+          // @media screen and (max-width: 1180px) {
+          //   right: -4%;
+          // }
+          @media screen and (max-width: 1110px) {
+            .picture-container {
+              &:first-of-type {
+                .picture {
+                  transform: rotate(-13deg);
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 960px) {
+            right: -5%;
+          }
+
+          @media screen and (max-width: 910px) {
+            gap: 300px;
+            right: 1%;
+            .picture-container {
+              &:first-of-type {
+                .picture {
+                  width: 180px;
+                  height: 217px;
+                }
+              }
+              &:last-of-type {
+                .picture {
+                  width: 184px;
+                  height: 222px;
+                }
+              }
+            }
+
+            flex-direction: row;
+            gap: initial;
+            justify-content: space-around;
+            margin-bottom: 20px;
+
+            .picture-container {
+              &:first-of-type {
+                position: relative;
+                top: -50px;
+                .picture {
+                }
+              }
+              &:last-of-type {
+                .picture {
+                }
+              }
             }
           }
           @media screen and (max-width: 910px) {
@@ -2244,7 +2262,7 @@ main {
             height: 326px;
             display: inline-block;
             background-size: contain;
-            background-image: url('../images/advent-calendar/caption.svg'),
+            background-image: url('../images/advent-calendar/caption.png'),
               url('../images/advent-calendar/snow-on-top.png');
             background-position: 50% 49%, 50% 68%;
             background-repeat: no-repeat, no-repeat;
