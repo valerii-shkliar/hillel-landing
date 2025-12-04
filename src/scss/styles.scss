@@ -908,9 +908,6 @@ main {
               }
             }
           }
-          // @media screen and (max-width: 1180px) {
-          //   right: -4%;
-          // }
           @media screen and (max-width: 1110px) {
             .picture-container {
               &:first-of-type {
@@ -1657,7 +1654,7 @@ main {
     margin-bottom: -200px;
 
     .wrapper {
-      margin: 0;
+      margin: 0 auto;
       padding: 0;
       @include flex_AlignBooth(center, center);
 
@@ -3158,10 +3155,11 @@ main {
       }
       .cocktails-container {
         @include flex_horizonAlign(center);
-        column-gap: 30px;
+        justify-content: space-between;
+        column-gap: 20px;
 
         article.card-recipe {
-          max-width: 340px;
+          width: 340px;
           position: relative;
 
           &:nth-child(1) {
@@ -3169,6 +3167,10 @@ main {
               &::after {
                 @include before_after('../images/decor/img-14.svg', 142px);
                 transform: rotate(17deg);
+                top: -22%;
+                right: 30%;
+                width: 125px;
+                height: 125px;
               }
             }
           }
@@ -3177,6 +3179,10 @@ main {
               &::after {
                 @include before_after('../images/decor/img-15.svg', 101px, 123px);
                 transform: rotate(-22deg);
+                top: -22%;
+                right: 17%;
+                width: 94px;
+                height: 115px;
               }
             }
           }
@@ -3185,6 +3191,9 @@ main {
               &::after {
                 @include before_after('../images/decor/img-16.svg', 149px);
                 transform: rotate(22deg);
+                width: 135px;
+                height: 135px;
+                top: -22%;
               }
             }
           }
@@ -3193,6 +3202,10 @@ main {
               &::after {
                 @include before_after('../images/decor/img-17.svg', 141px);
                 transform: rotate(-4deg);
+                width: 146px;
+                height: 146px;
+                top: -22%;
+                right: -2%;
               }
             }
           }
@@ -3201,16 +3214,24 @@ main {
               &::after {
                 @include before_after('../images/decor/img-18.svg', 151px, 137px);
                 transform: rotate(14deg);
+                top: -22%;
+                right: -4%;
+                width: 143px;
+                height: 130px;
               }
             }
           }
 
           .title-container {
             font-family: $stolzlBold;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: $primaryGreenColor;
-            font-size: 40px;
+            font-size: 32px;
             line-height: 110%;
+
+            .title {
+              max-width: 250px;
+            }
 
             &::after {
               @include positionDecorIcon;
@@ -3220,9 +3241,9 @@ main {
           }
           .text {
             font-family: $stolzlRegular;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: $greenDarkColor;
-            font-size: 26px;
+            font-size: 21px;
             line-height: 110%;
 
             strong {
@@ -3231,34 +3252,10 @@ main {
           }
 
           @media screen and (max-width: 1450px) {
-            .text {
-              margin-bottom: 20px;
-            }
-          }
-          @media screen and (max-width: 1150px) {
-            .title-container {
-              @include flex_AlignBooth(center);
-              margin-bottom: initial;
-
-              .title {
-                font-size: 24px;
-                line-height: 94%;
-              }
-              &::after {
-                inset: initial;
-                position: relative;
-              }
-            }
-            .text {
-              font-size: 18px;
-              margin-bottom: 20px;
-            }
-
             &:nth-child(1) {
               .title-container {
                 &::after {
-                  width: 125px;
-                  height: 125px;
+                  right: 17%;
                 }
               }
             }
@@ -3295,6 +3292,25 @@ main {
               }
             }
           }
+          @media screen and (max-width: 1150px) {
+            .title-container {
+              @include flex_AlignBooth(center);
+              margin-bottom: initial;
+
+              .title {
+                font-size: 24px;
+                line-height: 94%;
+              }
+              &::after {
+                inset: 0;
+                position: relative;
+              }
+            }
+            .text {
+              font-size: 18px;
+              margin-bottom: 20px;
+            }
+          }
           @media screen and (max-width: 800px) {
             max-width: 100%;
           }
@@ -3304,6 +3320,7 @@ main {
         }
         @media screen and (max-width: 1150px) {
           flex-wrap: wrap;
+          justify-content: center;
           column-gap: 30px;
         }
       }
@@ -3409,8 +3426,10 @@ footer {
       strong {
         font-family: $stolzlBold;
       }
-
-      @media screen and (max-width: 1800px) {
+      @media screen and (max-width: 1650px) {
+        bottom: 15px;
+      }
+      @media screen and (max-width: 1110px) {
         right: initial;
         left: 14px;
         bottom: 8px;
@@ -3468,7 +3487,7 @@ footer {
 
         @media screen and (max-width: 1840px) {
           &::before {
-            top: -8%;
+            top: -3%;
           }
         }
 

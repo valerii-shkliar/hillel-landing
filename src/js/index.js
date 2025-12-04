@@ -27,17 +27,14 @@ overlay.addEventListener('click', onHouseOverlayClick);
 function onBuyBookBtnClick() {
   overlay.classList.remove(ACTIVE_CLASS);
   modalContainer.classList.remove(ACTIVE_CLASS);
+  cardItems.forEach((cardItem) => cardItem.classList.remove(DISABLE_EVENTS_CLASS));
 }
 
 function onHouseContainerClick(e) {
-  console.log(e.target);
   const cardItemClicked = e.target.closest('.' + CARD_ITEM_CLASS);
 
   if (cardItemClicked) {
     const itemNumber = cardItemClicked.getAttribute('data-item-number');
-    const cardPicture = cardItemClicked.querySelector(
-      '.advent-calendar-body .wrapper .house-container .card-item .card'
-    );
     const book = findBookByAttr(itemNumber);
 
     fillModalWindow(book);
@@ -47,8 +44,6 @@ function onHouseContainerClick(e) {
 }
 
 function onHouseOverlayClick(e) {
-  console.log(e.target);
-
   closeModal();
   cardItems.forEach((cardItem) => cardItem.classList.remove(DISABLE_EVENTS_CLASS));
 }
